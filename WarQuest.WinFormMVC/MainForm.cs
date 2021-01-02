@@ -15,6 +15,8 @@ namespace WarQuest.WinFormMVC
         public MainForm()
         {
             InitializeComponent();
+            this.Text += string.Format(" Size {0} x {1} ", Models.Board.WIDTH_SIZE, Models.Board.HEIGHT_SIZE);
+
         }
 
         private void butStart_Click(object sender, EventArgs e)
@@ -43,7 +45,13 @@ namespace WarQuest.WinFormMVC
 
         private void lstBxUnits_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show("Vous avez choisi : " + lstBxUnits.SelectedItem.ToString() );
+                            
+            var myForm = new frmBoard();
+            myForm.ChosenUnit = lstBxUnits.SelectedItem.ToString();
+
+            // MessageBox.Show("Vous avez choisi : " + myForm.ChosenUnit);
+
+            myForm.Show();
         }
     }
 }

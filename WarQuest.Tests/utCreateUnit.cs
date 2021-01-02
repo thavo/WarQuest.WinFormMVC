@@ -3,7 +3,7 @@ using System;
 
 namespace WarQuest.Tests
 {
-    public class   utCreateUnit
+    public class utCreateUnit
     {
         [SetUp]
         public void Setup()
@@ -31,7 +31,7 @@ namespace WarQuest.Tests
         {
             const int NUMBER_OF_UNITS = 2;
 
-            WarQuest.WinFormMVC.Models.UnitCollection myUnitCollection = new WinFormMVC.Models.UnitCollection();
+            WarQuest.WinFormMVC.Presenters.UnitCollection myUnitCollection = new WinFormMVC.Presenters.UnitCollection();
             myUnitCollection.AddUnit(new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 0));
             myUnitCollection.AddUnit(new WinFormMVC.Models.UnitHuman(0, 0, 0, 0, 0));
 
@@ -44,7 +44,7 @@ namespace WarQuest.Tests
         {
             const int NUMBER_OF_UNITS = 5;
 
-            WarQuest.WinFormMVC.Models.UnitCollection myUnitCollection = new WinFormMVC.Models.UnitCollection();
+            WarQuest.WinFormMVC.Presenters.UnitCollection myUnitCollection = new WinFormMVC.Presenters.UnitCollection();
             myUnitCollection.AddUnit(new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 0));
             myUnitCollection.AddUnit(new WinFormMVC.Models.UnitDestroyer(0, 0, 0, 0, 0));
             myUnitCollection.AddUnit(new WinFormMVC.Models.UnitHuman(0, 0, 0, 0, 0));
@@ -58,7 +58,7 @@ namespace WarQuest.Tests
         [Test]
         public void GIVEN_Units_To_Add_WHEN_I_add_units_of_cost_500_and_257_THEN_the_total_is_757()
         {
-            WarQuest.WinFormMVC.Models.UnitCollection myUnitCollection = new WinFormMVC.Models.UnitCollection();
+            WarQuest.WinFormMVC.Presenters.UnitCollection myUnitCollection = new WinFormMVC.Presenters.UnitCollection();
 
             myUnitCollection.AddUnit(new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 500));
             myUnitCollection.AddUnit(new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 257));
@@ -71,7 +71,7 @@ namespace WarQuest.Tests
         [Test]
         public void GIVEN_Units_WHEN_Generate_Random_20_Units_of_1000_Cost_THEN_TotalCost_is_20000()
         {
-            WarQuest.WinFormMVC.Models.UnitCollection myUnitCollection = new WinFormMVC.Models.UnitCollection();
+            WarQuest.WinFormMVC.Presenters.UnitCollection myUnitCollection = new WinFormMVC.Presenters.UnitCollection();
 
             myUnitCollection.AddRandomUnit(20, 1000);
 

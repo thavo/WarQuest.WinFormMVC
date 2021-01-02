@@ -1,4 +1,4 @@
-﻿namespace WarQuest.WinFormMVC.Models
+﻿namespace WarQuest.WinFormMVC.Views
 {
     /// <summary>
     /// A Builder can ONLY Build and cannot destroy.

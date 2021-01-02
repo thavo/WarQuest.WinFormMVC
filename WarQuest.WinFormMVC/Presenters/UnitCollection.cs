@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using WarQuest.WinFormMVC.Models;
+using WarQuest.WinFormMVC.Views;
 
-namespace WarQuest.WinFormMVC.Models
+
+namespace WarQuest.WinFormMVC.Presenters
 {
     public class UnitCollection
     {
-        // Create a list of parts.
+        // Create Objects from Models.
+        // Here Create a list of parts.
         protected List<Unit> _unitCollection = new List<Unit>();
 
         public List<Unit> Units()

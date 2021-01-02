@@ -1,4 +1,6 @@
-﻿namespace WarQuest.WinFormMVC.Models
+﻿using WarQuest.WinFormMVC.Views;
+
+    namespace WarQuest.WinFormMVC.Models
 {
     public class UnitBuilder : Unit, IUnitBuilder
     {

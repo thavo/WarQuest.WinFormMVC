@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WarQuest.WinFormMVC.Models;
+using WarQuest.WinFormMVC.Presenters;
 
 namespace WarQuest.WinFormMVC
 {
@@ -21,7 +23,7 @@ namespace WarQuest.WinFormMVC
 
         private void butStart_Click(object sender, EventArgs e)
         {
-            Models.UnitCollection myUnits = new Models.UnitCollection();
+            UnitCollection myUnits = new UnitCollection();
             myUnits.AddRandomDifferentUnitTypes(22, 120);
 
             for (int i=0; i < myUnits.Count(); i++)

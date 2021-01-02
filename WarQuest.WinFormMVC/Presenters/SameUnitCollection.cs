@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using WarQuest.WinFormMVC.Presenters;
+
 
 namespace WarQuest.WinFormMVC.Models
 {

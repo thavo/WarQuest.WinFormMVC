@@ -5,6 +5,11 @@ namespace WarQuest.WinFormMVC.Models
 {
     public class SameUnitCollection: UnitCollection
     {
+        /// <summary>
+        /// Returns the number of units added.
+        /// </summary>
+        /// <param name="unit"></param>
+        /// <returns></returns>
         public int AddSameUnit(Unit unit)
         {
             // If first Add, then no check
@@ -24,7 +29,7 @@ namespace WarQuest.WinFormMVC.Models
                 throw new System.InvalidOperationException();
             }
 
-            return this.MoneyBalance;
+            return this.Count();
         }
     }
 }

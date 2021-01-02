@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Drawing;
+
 using System.Collections.Generic;
+using System.Windows.Forms;
 using WarQuest.WinFormMVC.Models;
 using WarQuest.WinFormMVC.Views;
 
@@ -45,7 +48,7 @@ namespace WarQuest.WinFormMVC.Presenters
         {
             for (int i=0; i<numberOfUnits; i++)
             {
-                this.AddUnit(new Unit(20*i, 30*i, 40*i, 50*i, costPerUnit));
+                this.AddUnit(new Unit(20*i, 30*i, 40*i, 50*i, costPerUnit, null));
             }
             return this.Count();
         }
@@ -54,18 +57,32 @@ namespace WarQuest.WinFormMVC.Presenters
         {
             for (int i = 0; i < orderOfMagnitude*2; i++)
             {
-                this.AddUnit(new UnitBuilder(20 * i, 320 * i, 40 * i, 50 * i, costPerUnit + i*2));
-                this.AddUnit(new UnitBuilder(30 * i, 390 * i, 40 * i, 50 * i, costPerUnit + i*3));
-                this.AddUnit(new UnitBuilder(40 * i, 360 * i, 40 * i, 50 * i, costPerUnit + i*4));
-                this.AddUnit(new UnitMonster(50 * i, 410 * i, 40 * i, 50 * i, costPerUnit + i*6));
-                this.AddUnit(new UnitMonster(60 * i, 520 * i, 40 * i, 50 * i, costPerUnit + i*7));
-                this.AddUnit(new UnitVehicle(70 * i, 600 * i, 40 * i, 50 * i, costPerUnit + i*9));
-                this.AddUnit(new UnitVehicle(80 * i, 400 * i, 40 * i, 50 * i, costPerUnit + i*10));
-                this.AddUnit(new UnitHuman(90 * i, 500 * i, 40 * i, 50 * i, costPerUnit + i * 20));
-                this.AddUnit(new UnitHuman(100 * i, 120 * i, 40 * i, 50 * i, costPerUnit + i * 30));
+                this.AddUnit(new UnitBuilder(20 * i, 320 * i, 40 * i, 50 * i, costPerUnit + i*2, null));
+                this.AddUnit(new UnitBuilder(30 * i, 390 * i, 40 * i, 50 * i, costPerUnit + i*3, null));
+                this.AddUnit(new UnitBuilder(40 * i, 360 * i, 40 * i, 50 * i, costPerUnit + i*4, null));
+                this.AddUnit(new UnitMonster(50 * i, 410 * i, 40 * i, 50 * i, costPerUnit + i*6, null));
+                this.AddUnit(new UnitMonster(60 * i, 520 * i, 40 * i, 50 * i, costPerUnit + i*7, null));
+                this.AddUnit(new UnitVehicle(70 * i, 600 * i, 40 * i, 50 * i, costPerUnit + i*9, null));
+                this.AddUnit(new UnitVehicle(80 * i, 400 * i, 40 * i, 50 * i, costPerUnit + i*10, null));
+                this.AddUnit(new UnitHuman(90 * i, 500 * i, 40 * i, 50 * i, costPerUnit + i * 20, null));
+                this.AddUnit(new UnitHuman(100 * i, 120 * i, 40 * i, 50 * i, costPerUnit + i * 30, null));
 
             }
             return this.Count();
+        }
+
+        internal void CreateRandomUnits(ImageList imageListUnits)
+        {
+            int i = 0;
+            Random rnd = new Random();
+
+            foreach (Bitmap img in imageListUnits.Images)
+            {
+                int myRnd = rnd.Next(120 * i, 200 * (i + 2*i));
+
+                this.AddUnit(new UnitBuilder(20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img));
+                i++;
+            }
         }
     }
 }

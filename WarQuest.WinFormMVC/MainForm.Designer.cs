@@ -34,6 +34,8 @@
             this.lstBxUnits = new System.Windows.Forms.ListBox();
             this.lstViewAvailableUnits = new System.Windows.Forms.ListView();
             this.imageListUnits = new System.Windows.Forms.ImageList(this.components);
+            this.lblLabel = new System.Windows.Forms.Label();
+            this.lblChosen = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // butStart
@@ -52,7 +54,7 @@
             this.lstBxUnits.ItemHeight = 15;
             this.lstBxUnits.Location = new System.Drawing.Point(54, 91);
             this.lstBxUnits.Name = "lstBxUnits";
-            this.lstBxUnits.Size = new System.Drawing.Size(739, 139);
+            this.lstBxUnits.Size = new System.Drawing.Size(540, 139);
             this.lstBxUnits.TabIndex = 1;
             this.lstBxUnits.SelectedIndexChanged += new System.EventHandler(this.lstBxUnits_SelectedIndexChanged);
             // 
@@ -60,11 +62,12 @@
             // 
             this.lstViewAvailableUnits.HideSelection = false;
             this.lstViewAvailableUnits.LargeImageList = this.imageListUnits;
-            this.lstViewAvailableUnits.Location = new System.Drawing.Point(54, 236);
+            this.lstViewAvailableUnits.Location = new System.Drawing.Point(54, 247);
             this.lstViewAvailableUnits.Name = "lstViewAvailableUnits";
-            this.lstViewAvailableUnits.Size = new System.Drawing.Size(739, 299);
+            this.lstViewAvailableUnits.Size = new System.Drawing.Size(1218, 633);
             this.lstViewAvailableUnits.TabIndex = 2;
             this.lstViewAvailableUnits.UseCompatibleStateImageBehavior = false;
+            this.lstViewAvailableUnits.SelectedIndexChanged += new System.EventHandler(this.lstViewAvailableUnits_SelectedIndexChanged);
             // 
             // imageListUnits
             // 
@@ -93,11 +96,31 @@
             this.imageListUnits.Images.SetKeyName(19, "Veh-SmallTank.jpg");
             this.imageListUnits.Images.SetKeyName(20, "Veh-SpaceTowerBoss.jpg");
             // 
+            // lblLabel
+            // 
+            this.lblLabel.AutoSize = true;
+            this.lblLabel.Location = new System.Drawing.Point(814, 47);
+            this.lblLabel.Name = "lblLabel";
+            this.lblLabel.Size = new System.Drawing.Size(44, 15);
+            this.lblLabel.TabIndex = 3;
+            this.lblLabel.Text = "Money";
+            // 
+            // lblChosen
+            // 
+            this.lblChosen.AutoSize = true;
+            this.lblChosen.Location = new System.Drawing.Point(814, 71);
+            this.lblChosen.Name = "lblChosen";
+            this.lblChosen.Size = new System.Drawing.Size(98, 15);
+            this.lblChosen.TabIndex = 3;
+            this.lblChosen.Text = "Chosen Elements";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(846, 560);
+            this.ClientSize = new System.Drawing.Size(1284, 961);
+            this.Controls.Add(this.lblChosen);
+            this.Controls.Add(this.lblLabel);
             this.Controls.Add(this.lstViewAvailableUnits);
             this.Controls.Add(this.lstBxUnits);
             this.Controls.Add(this.butStart);
@@ -105,6 +128,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -114,6 +138,8 @@
         private System.Windows.Forms.ListBox lstBxUnits;
         private System.Windows.Forms.ListView lstViewAvailableUnits;
         private System.Windows.Forms.ImageList imageListUnits;
+        private System.Windows.Forms.Label lblLabel;
+        private System.Windows.Forms.Label lblChosen;
     }
 }
 

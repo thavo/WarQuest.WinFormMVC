@@ -59,13 +59,73 @@ namespace WarQuest.WinFormMVC
         private void MainForm_Load(object sender, EventArgs e)
         {
             lstViewAvailableUnits.Items.Add("BBB", 1);
+            
+            UnitCollection myUnits = new UnitCollection();
+            myUnits.CreateRandomUnits(imageListUnits);
+
 
             int index = 0;
-            foreach (Bitmap img in imageListUnits.Images)
+            foreach (Unit unit in myUnits.Units())
             {
-                img.MakeTransparent();
 
-                lstViewAvailableUnits.Items.Add(img.ToString(), index++);
+                // speedPower, int jumpPower, int lifeLevel, int attackLevel, int cost
+                lstViewAvailableUnits.Items.Add(
+                    String.Format("{0}: S={1}, Jmp={2}, PV={3}, Attack={4}, ${5}",
+                    unit.GetType().ToString().Replace("WarQuest.WinFormMVC.Models.Unit", String.Empty),
+                    unit.SpeedPower,
+                    unit.JumpPower,
+                    unit.LifeLevel,
+                    unit.AttackLevel,
+                    unit.Cost
+                    ), 
+                    index++
+                 );
+
+                // img.MakeTransparent();
+
+                // lstViewAvailableUnits.Items.Add(unit.ToString(), index++);
+                // lstViewAvailableUnits.Items.Add(img.ToString(), index++);
+            }
+
+
+
+        }
+
+        private void lstViewAvailableUnits_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lstBxUnits.Items.Clear();
+
+            if (lstViewAvailableUnits.SelectedItems.Count >= 1)
+            {
+                // 
+                // lblChoiceText.Text += lstViewAvailableUnits.SelectedItems
+
+                string str = "";
+                lblChosen.Text = "";
+
+                ListViewItem item = lstViewAvailableUnits.SelectedItems[lstViewAvailableUnits.SelectedItems.Count - 1];
+                if (item != null)
+                {
+                    foreach (ListViewItem lv in lstViewAvailableUnits.SelectedItems)
+                    {
+                        lstBxUnits.Items.Add(lv.SubItems[0].Text);
+                        str += lv.SubItems[0].Text;
+
+                        lblChosen.Text += lv.Index + " " ;
+                    }
+                    // lblChosen.Text = "\r\n S:" + str + Environment.NewLine ;
+
+                }
+                else if (lstViewAvailableUnits.SelectedItems.Count > 1)
+                {
+
+                }
+                else
+                {
+                    throw (new Exception("Impossible case"));
+                }
+                this.Text = "";
+
             }
         }
     }

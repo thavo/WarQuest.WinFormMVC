@@ -33,6 +33,7 @@
             this.picBxToPlace = new System.Windows.Forms.PictureBox();
             this.picbxHuman = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.picBxToPlace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbxHuman)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,7 +64,7 @@
             // picbxHuman
             // 
             this.picbxHuman.Image = ((System.Drawing.Image)(resources.GetObject("picbxHuman.Image")));
-            this.picbxHuman.Location = new System.Drawing.Point(510, 945);
+            this.picbxHuman.Location = new System.Drawing.Point(510, 988);
             this.picbxHuman.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.picbxHuman.Name = "picbxHuman";
             this.picbxHuman.Size = new System.Drawing.Size(230, 265);
@@ -80,15 +81,23 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // flowLayoutPanel
+            // 
+            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(252, 144);
+            this.flowLayoutPanel.TabIndex = 7;
+            // 
             // frmBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1452, 1061);
+            this.Controls.Add(this.picbxHuman);
+            this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.picBxToPlace);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.picbxHuman);
             this.Controls.Add(this.panelBoard);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmBoard";
@@ -107,5 +116,6 @@
         private System.Windows.Forms.PictureBox picbxHuman;
         private System.Windows.Forms.PictureBox picBxToPlace;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
     }
 }

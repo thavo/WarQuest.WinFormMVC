@@ -5,7 +5,33 @@ VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WarQuest.WinFormMVC", "WarQuest.WinFormMVC\WarQuest.WinFormMVC.csproj", "{5182F161-5999-4A5E-8AD5-EC4977F47383}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WarQuest.Tests", "WarQuest.Tests\WarQuest.Tests.csproj", "{40A0CE5F-2CA7-4697-8D3E-FBB6DE52B80E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WarQuest.Tests", "WarQuest.Tests\WarQuest.Tests.csproj", "{40A0CE5F-2CA7-4697-8D3E-FBB6DE52B80E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D247B76A-5075-4B12-9BF8-5CE8B72EF40C}"
+	ProjectSection(SolutionItems) = preProject
+		Resources\Big-all.jpg = Resources\Big-all.jpg
+		Resources\Builder.jpg = Resources\Builder.jpg
+		Resources\Destroyer.jpg = Resources\Destroyer.jpg
+		Resources\Hum-Arches.jpg = Resources\Hum-Arches.jpg
+		Resources\Hum-Boss.jpg = Resources\Hum-Boss.jpg
+		Resources\Hum-GunArches.jpg = Resources\Hum-GunArches.jpg
+		Resources\Hum-Knight.jpg = Resources\Hum-Knight.jpg
+		Resources\Hum-Magician.jpg = Resources\Hum-Magician.jpg
+		Resources\Hum-Sword.jpg = Resources\Hum-Sword.jpg
+		Resources\Mon-2Ceratops.jpg = Resources\Mon-2Ceratops.jpg
+		Resources\Mon-DraculaFace.jpg = Resources\Mon-DraculaFace.jpg
+		Resources\Mon-DragonBoss.jpg = Resources\Mon-DragonBoss.jpg
+		Resources\Mon-Fog.jpg = Resources\Mon-Fog.jpg
+		Resources\Mon-NoFace.jpg = Resources\Mon-NoFace.jpg
+		Resources\Veh-BigSpider.jpg = Resources\Veh-BigSpider.jpg
+		Resources\Veh-BigTank.jpg = Resources\Veh-BigTank.jpg
+		Resources\Veh-Gun.jpg = Resources\Veh-Gun.jpg
+		Resources\Veh-GunBullet.jpg = Resources\Veh-GunBullet.jpg
+		Resources\Veh-GunFog.jpg = Resources\Veh-GunFog.jpg
+		Resources\Veh-SmallSpider.jpg = Resources\Veh-SmallSpider.jpg
+		Resources\Veh-SmallTank.jpg = Resources\Veh-SmallTank.jpg
+		Resources\Veh-SpaceTowerBoss.jpg = Resources\Veh-SpaceTowerBoss.jpg
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

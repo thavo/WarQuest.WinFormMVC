@@ -18,11 +18,14 @@ namespace WarQuest.WinFormMVC
         public frmBoard()
         {
             InitializeComponent();
-
         }
 
         private void frmBoard_Load(object sender, EventArgs e)
         {
+            // Create Units
+            Presenters.UnitCollection units = new Presenters.UnitCollection();
+            units.AddRandomDifferentUnitTypes(10, 250);
+
         }
 
         private void panelBoard_Paint(object sender, PaintEventArgs e)

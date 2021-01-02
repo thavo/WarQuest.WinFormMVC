@@ -55,5 +55,18 @@ namespace WarQuest.WinFormMVC
 
             myForm.Show();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            lstViewAvailableUnits.Items.Add("BBB", 1);
+
+            int index = 0;
+            foreach (Bitmap img in imageListUnits.Images)
+            {
+                img.MakeTransparent();
+
+                lstViewAvailableUnits.Items.Add(img.ToString(), index++);
+            }
+        }
     }
 }

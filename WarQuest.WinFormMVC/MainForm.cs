@@ -19,7 +19,31 @@ namespace WarQuest.WinFormMVC
 
         private void butStart_Click(object sender, EventArgs e)
         {
+            Models.UnitCollection myUnits = new Models.UnitCollection();
+            myUnits.AddRandomDifferentUnitTypes(22, 120);
 
+            for (int i=0; i < myUnits.Count(); i++)
+            {
+                var myItem = myUnits.Units()[i];
+
+                // speedPower, int jumpPower, int lifeLevel, int attackLevel, int cost
+                lstBxUnits.Items.Add( String.Format("Unit type {0}, Speed={1}, Jump={2}, Life={3}, Attack={4}, Cost {5}", 
+                    myItem.GetType().ToString().Replace("WarQuest.WinFormMVC.Models.", ""),
+                    myItem.SpeedPower,
+                    myItem.JumpPower,
+                    myItem.LifeLevel,
+                    myItem.AttackLevel,
+                    myItem.Cost
+
+                    )
+                 );
+
+            }
+        }
+
+        private void lstBxUnits_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show("Vous avez choisi : " + lstBxUnits.SelectedItem.ToString() );
         }
     }
 }

@@ -3,7 +3,7 @@ using System;
 
 namespace WarQuest.Tests
 {
-    public class utCreateUnit
+    public class   utCreateUnit
     {
         [SetUp]
         public void Setup()

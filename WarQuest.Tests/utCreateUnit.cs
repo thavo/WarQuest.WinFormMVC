@@ -18,10 +18,11 @@ namespace WarQuest.Tests
             // Adding Same Unit type should be OK and count == 2
             myUnitCollection.AddSameUnit(new WinFormMVC.Models.UnitBuilder(1, 0, 0, 0, 0, 0, null));
 
-            Assert.AreEqual(myUnitCollection.Count(), 2);
+            Assert.AreEqual(2, myUnitCollection.Count());
 
             // Adding a different Unit Type should crash, because should be the same type
-            Assert.Throws<System.InvalidOperationException>(() => myUnitCollection.AddSameUnit(new WinFormMVC.Models.UnitHuman(2, 0, 0, 0, 0, 0, null)));
+            Assert.Throws<System.InvalidOperationException>(
+                () => myUnitCollection.AddSameUnit(new WinFormMVC.Models.UnitHuman(2, 0, 0, 0, 0, 0, null)));
 
         }
 
@@ -35,7 +36,46 @@ namespace WarQuest.Tests
             myUnitCollection.AddUnit(new WinFormMVC.Models.UnitHuman(1, 0, 0, 0, 0, 0, null));
 
             int countUnits = myUnitCollection.Count();
-            Assert.AreEqual(countUnits, NUMBER_OF_UNITS);
+            Assert.AreEqual(NUMBER_OF_UNITS, countUnits);
+        }
+
+        [Test]
+        public void GIVEN_3_selected_units_out_of_21_WHEN_I_deleted_all_unselected_THEN_only_2_selection_remains()
+        {
+            const int NUMBER_OF_UNITS = 21;
+
+            const int NUMBER_OF_SELECTED_ITEMS = 3;
+            const int INDEX_OF_SELECTED_ITEM_1 = 2;
+            const int INDEX_OF_SELECTED_ITEM_2 = 11;
+            const int INDEX_OF_SELECTED_ITEM_3 = 15;
+
+            WinFormMVC.Presenters.UnitCollection myUnitCollection = new WinFormMVC.Presenters.UnitCollection();
+            WinFormMVC.Models.Unit myUnit = null;
+
+            for (int i = 0; i < NUMBER_OF_UNITS; i++)
+            {
+                myUnit = new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 0, 0, null);
+
+                // Choose Units 2 and 5 that are marked as selected items
+                if (i== INDEX_OF_SELECTED_ITEM_1 || i== INDEX_OF_SELECTED_ITEM_2 || i == INDEX_OF_SELECTED_ITEM_3)
+                {
+                    myUnit.IsSelected  = true;
+                }
+                myUnitCollection.AddUnit(myUnit);
+            }
+
+            // Check we have the proper number of Items
+            int countUnits = myUnitCollection.Count();
+            Assert.AreEqual(NUMBER_OF_UNITS, countUnits);
+
+            int countSelected = myUnitCollection.GetTotalUnitSelected();
+            Assert.AreEqual(NUMBER_OF_SELECTED_ITEMS, countSelected);
+
+            // Delete All UNSelected. Should leave with NUMBER_OF_SELECTED_ITEMS remaining items
+            myUnitCollection.DeleteUnselectedUnits();
+            int countRemainingUnits = myUnitCollection.Count();
+
+            Assert.AreEqual(NUMBER_OF_SELECTED_ITEMS, countRemainingUnits);
         }
 
         [Test]
@@ -51,7 +91,7 @@ namespace WarQuest.Tests
             myUnitCollection.AddUnit(new WinFormMVC.Models.UnitVehicle(4, 0, 0, 0, 0, 0, null));
 
             int countUnits = myUnitCollection.Count();
-            Assert.AreEqual(countUnits, NUMBER_OF_UNITS);
+            Assert.AreEqual(NUMBER_OF_UNITS, countUnits);
         }
 
         [Test]
@@ -63,7 +103,7 @@ namespace WarQuest.Tests
             myUnitCollection.AddUnit(new WinFormMVC.Models.UnitBuilder(1, 0, 0, 0, 0, 257, null));
 
             int cost = myUnitCollection.TotalCost();
-            Assert.AreEqual(cost, 757);
+            Assert.AreEqual(757, cost);
 
         }
 
@@ -75,7 +115,7 @@ namespace WarQuest.Tests
             myUnitCollection.AddRandomUnit(20, 1000);
 
             int cost = myUnitCollection.TotalCost();
-            Assert.AreEqual(cost, 20000);
+            Assert.AreEqual(20000, cost);
 
         }
     }

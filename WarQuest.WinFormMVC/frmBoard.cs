@@ -19,17 +19,53 @@ namespace WarQuest.WinFormMVC
             this.Text = UnitsWithChoices.Count().ToString() + " ; total cost" + UnitsWithChoices.TotalCost();
             lblSummary.Text = UnitsWithChoices.GetTotalMoneySelected().ToString();
 
+            // FillInWithImagesDynamic();
+            FillInWithImagesStatic();
+        }
+
+        /// <summary>
+        /// We have 20 static images place holder. Not great for evolutions, but easier to code !
+        /// </summary>
+        private void FillInWithImagesStatic()
+        {
+            UnitsWithChoices.DeleteUnselectedUnits();
+            int countSelectedUnits = UnitsWithChoices.GetTotalUnitSelected();
+
+            // Ugly but : Fills in the 20 static picture boxes
+            if (countSelectedUnits>= 20) { pxBxUnit20.Image = UnitsWithChoices.Units()[19].Image; }
+            if (countSelectedUnits>= 19) { pxBxUnit19.Image = UnitsWithChoices.Units()[18].Image; }
+            if (countSelectedUnits>= 18) { pxBxUnit18.Image = UnitsWithChoices.Units()[17].Image; }
+            if (countSelectedUnits>= 17) { pxBxUnit17.Image = UnitsWithChoices.Units()[16].Image; }
+            if (countSelectedUnits>= 16) { pxBxUnit16.Image = UnitsWithChoices.Units()[15].Image; }
+            if (countSelectedUnits>= 15) { pxBxUnit15.Image = UnitsWithChoices.Units()[14].Image; }
+            if (countSelectedUnits>= 14) { pxBxUnit14.Image = UnitsWithChoices.Units()[13].Image; }
+            if (countSelectedUnits>= 13) { pxBxUnit13.Image = UnitsWithChoices.Units()[12].Image; }
+            if (countSelectedUnits>= 12) { pxBxUnit12.Image = UnitsWithChoices.Units()[11].Image; }
+            if (countSelectedUnits>= 11) { pxBxUnit11.Image = UnitsWithChoices.Units()[10].Image; }
+            if (countSelectedUnits>= 10) { pxBxUnit10.Image = UnitsWithChoices.Units()[ 9].Image; }
+            if (countSelectedUnits>=  9) { pxBxUnit09.Image = UnitsWithChoices.Units()[ 8].Image; }
+            if (countSelectedUnits>=  8) { pxBxUnit08.Image = UnitsWithChoices.Units()[ 7].Image; }
+            if (countSelectedUnits>=  7) { pxBxUnit07.Image = UnitsWithChoices.Units()[ 6].Image; }
+            if (countSelectedUnits>=  6) { pxBxUnit06.Image = UnitsWithChoices.Units()[ 5].Image; }
+            if (countSelectedUnits>=  5) { pxBxUnit05.Image = UnitsWithChoices.Units()[ 4].Image; }
+            if (countSelectedUnits>=  4) { pxBxUnit04.Image = UnitsWithChoices.Units()[ 3].Image; }
+            if (countSelectedUnits>=  3) { pxBxUnit03.Image = UnitsWithChoices.Units()[ 2].Image; }
+            if (countSelectedUnits>=  2) { pxBxUnit02.Image = UnitsWithChoices.Units()[ 1].Image; }
+            if (countSelectedUnits>=  1) { pxBxUnit01.Image = UnitsWithChoices.Units()[ 0].Image; }
+        }
+
+        private void FillInWithImagesDynamic()
+        {
             PictureBox picbxTest = null;
-            // picbxTarget.Image = 
-            // flLayPanChosenUnits.Controls.Add(picbxTarget);
+            int HIEGHT_ICON_SIZE = 100;
 
             for (int i = 0; i < 19; i++)
             {
                 picbxTest = new PictureBox();
                 picbxTest.Image = UnitsWithChoices.Units()[i].Image;
                 picbxTest.Name = "Name_" + i.ToString();
-                picbxTest.Height = 150;
-                flLayPanChosenUnits.Controls.Add(picbxTest);
+                picbxTest.Height = HIEGHT_ICON_SIZE;
+//                 flLayPanChosenUnits.Controls.Add(picbxTest);
             }
         }
 
@@ -70,5 +106,36 @@ namespace WarQuest.WinFormMVC
             // unregister this.panelBoard.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBoard_MouseMove);
             this.panelBoard.MouseMove -= this.panelBoard_MouseMove;
         }
+
+        private void pxBxUnit01_DragEnter(object sender, DragEventArgs e)
+        {
+        }
+
+        private void pxBxUnit01_Click(object sender, EventArgs e)
+        {
+            picBxToPlace.Image = UnitsWithChoices.Units()[0].Image;
+        }
+
+        private void pxBxUnit02_Click(object sender, EventArgs e)
+        {
+            picBxToPlace.Image = UnitsWithChoices.Units()[1].Image;
+        }
+
+        private void pxBxUnit03_Click(object sender, EventArgs e)
+        {
+            picBxToPlace.Image = UnitsWithChoices.Units()[2].Image;
+        }
+
+        //private void flLayPanChosenUnits_MouseDoubleClick(object sender, MouseEventArgs e)
+        //{
+        //    var element = sender;
+        //    int count =  ((System.Windows.Forms.Control)sender).Controls.Count;
+
+        //    var img = ((System.Windows.Forms.Control)sender).Controls[count-2];
+
+        //    panelDebug.Controls.Add(img);
+
+        //    lblSummary.Text += "";
+        //}
     }
 }

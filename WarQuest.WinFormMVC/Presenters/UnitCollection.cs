@@ -102,6 +102,27 @@ namespace WarQuest.WinFormMVC.Presenters
             return totalCleared;
         }
 
+        public void DeleteUnselectedUnits()
+        {
+            int i = 0;
+            // Delete ALL UnSelected until no more
+            while (i < _unitCollection.Count)
+            {
+                var myUnit = _unitCollection[i];
+
+                // Check if Unselected, so we can remove them
+                if (!myUnit.IsSelected)
+                {
+                    _unitCollection.RemoveAt(i);
+                }
+                else
+                {   
+                    // Only if NOT removed, then iterate to the next item
+                    i++; 
+                }
+            }
+        }
+
         internal int GetTotalMoneySelected()
         {
             int CountTotalMoney = 0;
@@ -116,6 +137,22 @@ namespace WarQuest.WinFormMVC.Presenters
             }
 
             return CountTotalMoney;
+        }
+
+        public int GetTotalUnitSelected()
+        {
+            int CountTotal = 0;
+
+            for (int i = 0; i < _unitCollection.Count; i++)
+            {
+                var myUnit = _unitCollection[i];
+                if (myUnit.IsSelected)
+                {
+                    CountTotal ++;
+                }
+            }
+
+            return CountTotal;
         }
     }
 }

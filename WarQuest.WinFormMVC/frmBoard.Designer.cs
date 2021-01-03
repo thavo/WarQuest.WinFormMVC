@@ -183,6 +183,7 @@
             this.pxBxUnit04.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit04.TabIndex = 11;
             this.pxBxUnit04.TabStop = false;
+            this.pxBxUnit04.Click += new System.EventHandler(this.pxBxUnit04_Click);
             // 
             // pxBxUnit05
             // 
@@ -191,6 +192,7 @@
             this.pxBxUnit05.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit05.TabIndex = 11;
             this.pxBxUnit05.TabStop = false;
+            this.pxBxUnit05.Click += new System.EventHandler(this.pxBxUnit05_Click);
             // 
             // pxBxUnit10
             // 
@@ -199,6 +201,7 @@
             this.pxBxUnit10.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit10.TabIndex = 11;
             this.pxBxUnit10.TabStop = false;
+            this.pxBxUnit10.Click += new System.EventHandler(this.pxBxUnit10_Click);
             // 
             // pxBxUnit09
             // 
@@ -207,6 +210,7 @@
             this.pxBxUnit09.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit09.TabIndex = 11;
             this.pxBxUnit09.TabStop = false;
+            this.pxBxUnit09.Click += new System.EventHandler(this.pxBxUnit09_Click);
             // 
             // pxBxUnit08
             // 
@@ -215,6 +219,7 @@
             this.pxBxUnit08.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit08.TabIndex = 11;
             this.pxBxUnit08.TabStop = false;
+            this.pxBxUnit08.Click += new System.EventHandler(this.pxBxUnit08_Click);
             // 
             // pxBxUnit07
             // 
@@ -223,6 +228,7 @@
             this.pxBxUnit07.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit07.TabIndex = 11;
             this.pxBxUnit07.TabStop = false;
+            this.pxBxUnit07.Click += new System.EventHandler(this.pxBxUnit07_Click);
             // 
             // pxBxUnit06
             // 
@@ -231,6 +237,7 @@
             this.pxBxUnit06.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit06.TabIndex = 11;
             this.pxBxUnit06.TabStop = false;
+            this.pxBxUnit06.Click += new System.EventHandler(this.pxBxUnit06_Click);
             // 
             // pxBxUnit16
             // 
@@ -239,6 +246,7 @@
             this.pxBxUnit16.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit16.TabIndex = 11;
             this.pxBxUnit16.TabStop = false;
+            this.pxBxUnit16.Click += new System.EventHandler(this.pxBxUnit16_Click);
             // 
             // pxBxUnit17
             // 
@@ -247,6 +255,7 @@
             this.pxBxUnit17.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit17.TabIndex = 11;
             this.pxBxUnit17.TabStop = false;
+            this.pxBxUnit17.Click += new System.EventHandler(this.pxBxUnit17_Click);
             // 
             // pxBxUnit18
             // 
@@ -255,6 +264,7 @@
             this.pxBxUnit18.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit18.TabIndex = 11;
             this.pxBxUnit18.TabStop = false;
+            this.pxBxUnit18.Click += new System.EventHandler(this.pxBxUnit18_Click);
             // 
             // pxBxUnit19
             // 
@@ -263,6 +273,7 @@
             this.pxBxUnit19.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit19.TabIndex = 11;
             this.pxBxUnit19.TabStop = false;
+            this.pxBxUnit19.Click += new System.EventHandler(this.pxBxUnit19_Click);
             // 
             // pxBxUnit20
             // 
@@ -271,6 +282,7 @@
             this.pxBxUnit20.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit20.TabIndex = 11;
             this.pxBxUnit20.TabStop = false;
+            this.pxBxUnit20.Click += new System.EventHandler(this.pxBxUnit20_Click);
             // 
             // pxBxUnit15
             // 
@@ -279,6 +291,7 @@
             this.pxBxUnit15.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit15.TabIndex = 11;
             this.pxBxUnit15.TabStop = false;
+            this.pxBxUnit15.Click += new System.EventHandler(this.pxBxUnit15_Click);
             // 
             // pxBxUnit14
             // 
@@ -287,6 +300,7 @@
             this.pxBxUnit14.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit14.TabIndex = 11;
             this.pxBxUnit14.TabStop = false;
+            this.pxBxUnit14.Click += new System.EventHandler(this.pxBxUnit14_Click);
             // 
             // pxBxUnit13
             // 
@@ -295,6 +309,7 @@
             this.pxBxUnit13.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit13.TabIndex = 11;
             this.pxBxUnit13.TabStop = false;
+            this.pxBxUnit13.Click += new System.EventHandler(this.pxBxUnit13_Click);
             // 
             // pxBxUnit12
             // 
@@ -303,6 +318,7 @@
             this.pxBxUnit12.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit12.TabIndex = 11;
             this.pxBxUnit12.TabStop = false;
+            this.pxBxUnit12.Click += new System.EventHandler(this.pxBxUnit12_Click);
             // 
             // pxBxUnit11
             // 
@@ -311,6 +327,7 @@
             this.pxBxUnit11.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit11.TabIndex = 11;
             this.pxBxUnit11.TabStop = false;
+            this.pxBxUnit11.Click += new System.EventHandler(this.pxBxUnit11_Click);
             // 
             // frmBoard
             // 

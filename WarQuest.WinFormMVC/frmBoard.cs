@@ -111,20 +111,50 @@ namespace WarQuest.WinFormMVC
         {
         }
 
-        private void pxBxUnit01_Click(object sender, EventArgs e)
+        private void pxBxUnit01_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(0); }
+
+        private void SetPictureBoxWithChosenUnit(int index)
         {
-            picBxToPlace.Image = UnitsWithChoices.Units()[0].Image;
+            picBxToPlace.Image = UnitsWithChoices.Units()[index].Image;
         }
 
-        private void pxBxUnit02_Click(object sender, EventArgs e)
-        {
-            picBxToPlace.Image = UnitsWithChoices.Units()[1].Image;
-        }
+        private void pxBxUnit02_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(1); }
 
-        private void pxBxUnit03_Click(object sender, EventArgs e)
-        {
-            picBxToPlace.Image = UnitsWithChoices.Units()[2].Image;
-        }
+        private void pxBxUnit03_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(2); }
+
+        private void pxBxUnit04_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(3); }
+
+        private void pxBxUnit05_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(4); }
+
+        private void pxBxUnit06_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(5); }
+
+        private void pxBxUnit07_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(6); }
+
+        private void pxBxUnit08_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(7); }
+
+        private void pxBxUnit09_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(8); }
+
+        private void pxBxUnit10_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(9); }
+
+        private void pxBxUnit11_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(10); }
+
+        private void pxBxUnit12_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(11); }
+
+        private void pxBxUnit13_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(12); }
+
+        private void pxBxUnit14_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(13); }
+
+        private void pxBxUnit15_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(14); }
+
+        private void pxBxUnit16_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(15); }
+
+        private void pxBxUnit17_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(16); }
+
+        private void pxBxUnit18_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(17); }
+
+        private void pxBxUnit19_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(18); }
+
+        private void pxBxUnit20_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(19); }
 
         //private void flLayPanChosenUnits_MouseDoubleClick(object sender, MouseEventArgs e)
         //{

@@ -71,16 +71,35 @@ namespace WarQuest.WinFormMVC.Presenters
             return this.Count();
         }
 
+        /// <summary>
+        /// Creates random units of many types
+        /// </summary>
+        /// <param name="imageListUnits"></param>
         internal void CreateRandomUnits(ImageList imageListUnits)
         {
+
+            String fileName = String.Empty;
+
             int i = 0;
             Random rnd = new Random();
 
             foreach (Bitmap img in imageListUnits.Images)
             {
+                // Retrieves the FileName, via Keys[]
+                fileName = imageListUnits.Images.Keys[i];
+                
                 int myRnd = rnd.Next(120 * i, 200 * (i + 2 * i));
 
-                this.AddUnit(new UnitBuilder(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img));
+                // fileName
+                switch (fileName.Substring(0,4))
+                {
+                    case ("Buil") : this.AddUnit(new UnitBuilder(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); break;
+                    case ("Dest"): this.AddUnit(new  UnitDestroyer(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); break;
+                    case ("Hum-"): this.AddUnit(new  UnitHuman(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); break;
+                    case ("Mon-"): this.AddUnit(new UnitMonster(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); break;
+                    case ("Veh-"): this.AddUnit(new UnitVehicle(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); break;
+                }
+
                 i++;
             }
         }

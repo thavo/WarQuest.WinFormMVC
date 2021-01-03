@@ -37,20 +37,40 @@ namespace WarQuest.WinFormMVC
             int index = 0;
             foreach (Unit unit in this._myUnits.Units())
             {
+                // Retrieves the FileName, via Keys[]
+                unit.FileName = this.imageListUnits.Images.Keys[index];
+
                 // Retrieves the various Unit's properties to the list view
                 lstViewAvailableUnits.Items.Add(
                     String.Format("{0}_{1}: S={2}, Jmp={3}, PV={4}, Attack={5}, ${6}",
                     unit.Index,
-                    // Retrieves the FileName, via Keys[]
-                    this.imageListUnits.Images.Keys[index],
+                    unit.FileName,
                     unit.SpeedPower,
                     unit.JumpPower,
                     unit.LifeLevel,
                     unit.AttackLevel,
                     unit.Cost
                     ),
-                    index++
+                    index
                  );
+
+                System.Drawing.Color BUILDER_COLOR = System.Drawing.Color.FromArgb(133, 220, 123);
+                System.Drawing.Color DESTROYER_COLOR = System.Drawing.Color.FromArgb(200, 255, 153);
+                System.Drawing.Color HUMAN_COLOR = System.Drawing.Color.FromArgb(223, 100, 223);
+                System.Drawing.Color MONSTER_COLOR = System.Drawing.Color.FromArgb(100, 210, 223);
+                System.Drawing.Color VEHICLE_COLOR = System.Drawing.Color.FromArgb(223, 200, 123); 
+
+                // fileName
+                switch (unit.FileName.Substring(0, 4))
+                {
+                    case ("Buil"): lstViewAvailableUnits.Items[index].BackColor = BUILDER_COLOR; break;
+                    case ("Dest"):lstViewAvailableUnits.Items[index].BackColor =DESTROYER_COLOR; break;
+                    case ("Hum-"):lstViewAvailableUnits.Items[index].BackColor =HUMAN_COLOR ; break;
+                    case ("Mon-"):lstViewAvailableUnits.Items[index].BackColor = MONSTER_COLOR;  break;
+                    case ("Veh-"):lstViewAvailableUnits.Items[index].BackColor = VEHICLE_COLOR; break;
+                }
+
+                index++;
             }
         }
 

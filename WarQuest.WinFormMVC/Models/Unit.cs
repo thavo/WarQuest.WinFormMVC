@@ -23,5 +23,6 @@ namespace WarQuest.WinFormMVC.Models
         public int Cost { get; set; }
         public bool IsSelected { get; set; }
         public Bitmap Image { get; internal set; }
+        public string FileName { get; internal set; }
     }
 }

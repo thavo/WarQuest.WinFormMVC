@@ -102,6 +102,19 @@ namespace WarQuest.WinFormMVC.Presenters
             return totalCleared;
         }
 
+        public UnitCollection GetSelectedUnits()
+        {
+            UnitCollection myCollection = new UnitCollection();
+            foreach (var item in _unitCollection)
+            {
+                if( item.IsSelected)
+                {
+                    myCollection.AddUnit(item);
+                }
+            }
+            return myCollection;
+        }
+
         public void DeleteUnselectedUnits()
         {
             int i = 0;

@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using WarQuest.WinFormMVC.Presenters;
 
 namespace WarQuest.Tests
 {
@@ -40,7 +41,42 @@ namespace WarQuest.Tests
         }
 
         [Test]
-        public void GIVEN_3_selected_units_out_of_21_WHEN_I_deleted_all_unselected_THEN_only_2_selection_remains()
+        public void GIVEN_I_create_45_Units_WHEN_I_count_THEN_I_have_45_items()
+        {
+            const int NUMBER_OF_UNITS = 21;
+            const int DUMMY_INDEX = 0;
+
+            UnitCollection myUnitCollection = CreateUnitCollection(NUMBER_OF_UNITS, DUMMY_INDEX, DUMMY_INDEX, DUMMY_INDEX);
+
+            Assert.AreEqual(NUMBER_OF_UNITS, myUnitCollection.Count());
+        }
+
+        [Test]
+        public void GIVEN_a_collection_of_159_units_with_3_Selected_Units_WHEN_Extract_selected_ones_THEN_I_have_a_collection_of_3_Units()
+        {
+            const int NUMBER_OF_UNITS = 159;
+
+            const int NUMBER_OF_SELECTED_ITEMS = 3;
+            const int INDEX_OF_SELECTED_ITEM_1 = 3;
+            const int INDEX_OF_SELECTED_ITEM_2 = 12;
+            const int INDEX_OF_SELECTED_ITEM_3 = 18;
+
+            UnitCollection myUnitCollection = CreateUnitCollection(NUMBER_OF_UNITS, INDEX_OF_SELECTED_ITEM_1, INDEX_OF_SELECTED_ITEM_2, INDEX_OF_SELECTED_ITEM_3);
+
+            // Check #selected Items on original list
+            int countSelected = myUnitCollection.GetTotalUnitSelected();
+            Assert.AreEqual(NUMBER_OF_SELECTED_ITEMS, countSelected);
+
+            UnitCollection myUnitCollectionWithOnlySelectedUnits = new UnitCollection();
+            myUnitCollectionWithOnlySelectedUnits = myUnitCollection.GetSelectedUnits();
+
+            // Check #selected Items on NEW list
+            int countAllItems = myUnitCollectionWithOnlySelectedUnits.Count();
+            Assert.AreEqual(NUMBER_OF_SELECTED_ITEMS, countAllItems);
+        }
+
+        [Test]
+        public void GIVEN_3_selected_units_out_of_21_WHEN_I_deleted_all_unselected_THEN_only_3_selection_remains()
         {
             const int NUMBER_OF_UNITS = 21;
 
@@ -49,24 +85,7 @@ namespace WarQuest.Tests
             const int INDEX_OF_SELECTED_ITEM_2 = 11;
             const int INDEX_OF_SELECTED_ITEM_3 = 15;
 
-            WinFormMVC.Presenters.UnitCollection myUnitCollection = new WinFormMVC.Presenters.UnitCollection();
-            WinFormMVC.Models.Unit myUnit = null;
-
-            for (int i = 0; i < NUMBER_OF_UNITS; i++)
-            {
-                myUnit = new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 0, 0, null);
-
-                // Choose Units 2 and 5 that are marked as selected items
-                if (i== INDEX_OF_SELECTED_ITEM_1 || i== INDEX_OF_SELECTED_ITEM_2 || i == INDEX_OF_SELECTED_ITEM_3)
-                {
-                    myUnit.IsSelected  = true;
-                }
-                myUnitCollection.AddUnit(myUnit);
-            }
-
-            // Check we have the proper number of Items
-            int countUnits = myUnitCollection.Count();
-            Assert.AreEqual(NUMBER_OF_UNITS, countUnits);
+            UnitCollection myUnitCollection = CreateUnitCollection(NUMBER_OF_UNITS, INDEX_OF_SELECTED_ITEM_1, INDEX_OF_SELECTED_ITEM_2, INDEX_OF_SELECTED_ITEM_3);
 
             int countSelected = myUnitCollection.GetTotalUnitSelected();
             Assert.AreEqual(NUMBER_OF_SELECTED_ITEMS, countSelected);
@@ -76,6 +95,26 @@ namespace WarQuest.Tests
             int countRemainingUnits = myUnitCollection.Count();
 
             Assert.AreEqual(NUMBER_OF_SELECTED_ITEMS, countRemainingUnits);
+        }
+
+        private static UnitCollection CreateUnitCollection(int NUMBER_OF_UNITS, int INDEX_OF_SELECTED_ITEM_1, int INDEX_OF_SELECTED_ITEM_2, int INDEX_OF_SELECTED_ITEM_3)
+        {
+            WinFormMVC.Presenters.UnitCollection myUnitCollection = new WinFormMVC.Presenters.UnitCollection();
+            WinFormMVC.Models.Unit myUnit = null;
+
+            for (int i = 0; i < NUMBER_OF_UNITS; i++)
+            {
+                myUnit = new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 0, 0, null);
+
+                // Choose Units that are marked as selected items
+                if (i == INDEX_OF_SELECTED_ITEM_1 || i == INDEX_OF_SELECTED_ITEM_2 || i == INDEX_OF_SELECTED_ITEM_3)
+                {
+                    myUnit.IsSelected = true;
+                }
+                myUnitCollection.AddUnit(myUnit);
+            }
+
+            return myUnitCollection;
         }
 
         [Test]

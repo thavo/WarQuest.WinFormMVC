@@ -7,7 +7,8 @@ namespace WarQuest.WinFormMVC
 {
     public partial class frmBoard : Form
     {
-        public UnitCollection UnitsWithChoices { get; internal set; }
+        // Internal, so that the main form FROM WITHIN THE SAME PROJECT could access it
+        internal UnitCollection UnitsWithChoices { get; set; }
 
         public frmBoard()
         {
@@ -28,30 +29,33 @@ namespace WarQuest.WinFormMVC
         /// </summary>
         private void FillInWithImagesStatic()
         {
-            UnitsWithChoices.DeleteUnselectedUnits();
-            int countSelectedUnits = UnitsWithChoices.GetTotalUnitSelected();
+            // UnitsWithChoices.DeleteUnselectedUnits();
+            UnitCollection myChosenUnits = new UnitCollection();
+            myChosenUnits = UnitsWithChoices.GetSelectedUnits();
+
+            int countSelectedUnits = myChosenUnits.Count();
 
             // Ugly but : Fills in the 20 static picture boxes
-            if (countSelectedUnits>= 20) { pxBxUnit20.Image = UnitsWithChoices.Units()[19].Image; }
-            if (countSelectedUnits>= 19) { pxBxUnit19.Image = UnitsWithChoices.Units()[18].Image; }
-            if (countSelectedUnits>= 18) { pxBxUnit18.Image = UnitsWithChoices.Units()[17].Image; }
-            if (countSelectedUnits>= 17) { pxBxUnit17.Image = UnitsWithChoices.Units()[16].Image; }
-            if (countSelectedUnits>= 16) { pxBxUnit16.Image = UnitsWithChoices.Units()[15].Image; }
-            if (countSelectedUnits>= 15) { pxBxUnit15.Image = UnitsWithChoices.Units()[14].Image; }
-            if (countSelectedUnits>= 14) { pxBxUnit14.Image = UnitsWithChoices.Units()[13].Image; }
-            if (countSelectedUnits>= 13) { pxBxUnit13.Image = UnitsWithChoices.Units()[12].Image; }
-            if (countSelectedUnits>= 12) { pxBxUnit12.Image = UnitsWithChoices.Units()[11].Image; }
-            if (countSelectedUnits>= 11) { pxBxUnit11.Image = UnitsWithChoices.Units()[10].Image; }
-            if (countSelectedUnits>= 10) { pxBxUnit10.Image = UnitsWithChoices.Units()[ 9].Image; }
-            if (countSelectedUnits>=  9) { pxBxUnit09.Image = UnitsWithChoices.Units()[ 8].Image; }
-            if (countSelectedUnits>=  8) { pxBxUnit08.Image = UnitsWithChoices.Units()[ 7].Image; }
-            if (countSelectedUnits>=  7) { pxBxUnit07.Image = UnitsWithChoices.Units()[ 6].Image; }
-            if (countSelectedUnits>=  6) { pxBxUnit06.Image = UnitsWithChoices.Units()[ 5].Image; }
-            if (countSelectedUnits>=  5) { pxBxUnit05.Image = UnitsWithChoices.Units()[ 4].Image; }
-            if (countSelectedUnits>=  4) { pxBxUnit04.Image = UnitsWithChoices.Units()[ 3].Image; }
-            if (countSelectedUnits>=  3) { pxBxUnit03.Image = UnitsWithChoices.Units()[ 2].Image; }
-            if (countSelectedUnits>=  2) { pxBxUnit02.Image = UnitsWithChoices.Units()[ 1].Image; }
-            if (countSelectedUnits>=  1) { pxBxUnit01.Image = UnitsWithChoices.Units()[ 0].Image; }
+            if (countSelectedUnits>= 20) { pxBxUnit20.Image = myChosenUnits.Units()[19].Image; }
+            if (countSelectedUnits>= 19) { pxBxUnit19.Image = myChosenUnits.Units()[18].Image; }
+            if (countSelectedUnits>= 18) { pxBxUnit18.Image = myChosenUnits.Units()[17].Image; }
+            if (countSelectedUnits>= 17) { pxBxUnit17.Image = myChosenUnits.Units()[16].Image; }
+            if (countSelectedUnits>= 16) { pxBxUnit16.Image = myChosenUnits.Units()[15].Image; }
+            if (countSelectedUnits>= 15) { pxBxUnit15.Image = myChosenUnits.Units()[14].Image; }
+            if (countSelectedUnits>= 14) { pxBxUnit14.Image = myChosenUnits.Units()[13].Image; }
+            if (countSelectedUnits>= 13) { pxBxUnit13.Image = myChosenUnits.Units()[12].Image; }
+            if (countSelectedUnits>= 12) { pxBxUnit12.Image = myChosenUnits.Units()[11].Image; }
+            if (countSelectedUnits>= 11) { pxBxUnit11.Image = myChosenUnits.Units()[10].Image; }
+            if (countSelectedUnits>= 10) { pxBxUnit10.Image = myChosenUnits.Units()[ 9].Image; }
+            if (countSelectedUnits>=  9) { pxBxUnit09.Image = myChosenUnits.Units()[ 8].Image; }
+            if (countSelectedUnits>=  8) { pxBxUnit08.Image = myChosenUnits.Units()[ 7].Image; }
+            if (countSelectedUnits>=  7) { pxBxUnit07.Image = myChosenUnits.Units()[ 6].Image; }
+            if (countSelectedUnits>=  6) { pxBxUnit06.Image = myChosenUnits.Units()[ 5].Image; }
+            if (countSelectedUnits>=  5) { pxBxUnit05.Image = myChosenUnits.Units()[ 4].Image; }
+            if (countSelectedUnits>=  4) { pxBxUnit04.Image = myChosenUnits.Units()[ 3].Image; }
+            if (countSelectedUnits>=  3) { pxBxUnit03.Image = myChosenUnits.Units()[ 2].Image; }
+            if (countSelectedUnits>=  2) { pxBxUnit02.Image = myChosenUnits.Units()[ 1].Image; }
+            if (countSelectedUnits>=  1) { pxBxUnit01.Image = myChosenUnits.Units()[ 0].Image; }
         }
 
         private void FillInWithImagesDynamic()
@@ -115,7 +119,8 @@ namespace WarQuest.WinFormMVC
 
         private void SetPictureBoxWithChosenUnit(int index)
         {
-            picBxToPlace.Image = UnitsWithChoices.Units()[index].Image;
+            Bitmap imgCloned = (Bitmap) UnitsWithChoices.Units()[index].Image.Clone();
+            picBxToPlace.Image = imgCloned;
         }
 
         private void pxBxUnit02_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(1); }

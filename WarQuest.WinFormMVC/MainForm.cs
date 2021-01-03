@@ -11,7 +11,6 @@ namespace WarQuest.WinFormMVC
     {
         UnitCollection _myUnits = new UnitCollection();
 
-
         public MainForm()
         {
             InitializeComponent();
@@ -24,7 +23,7 @@ namespace WarQuest.WinFormMVC
         private void butStart_Click(object sender, EventArgs e)
         {
             var myForm = new frmBoard();
-            myForm.UnitsWithChoices = _myUnits;
+            myForm.UnitsWithChoices = _myUnits.GetSelectedUnits();
             myForm.Show();
         }
 
@@ -96,7 +95,6 @@ namespace WarQuest.WinFormMVC
 
                 lblTotalMoneySpent.Text += "+" + unitSelected.Cost.ToString();
             }
-
         }
 
         private String DisplayIntoListTheChosenUnits(ListBox mylstBxUnits)

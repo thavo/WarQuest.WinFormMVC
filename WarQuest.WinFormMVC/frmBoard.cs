@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WarQuest.WinFormMVC.Presenters;
 
@@ -57,7 +51,7 @@ namespace WarQuest.WinFormMVC
 
         private void btnPlace_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void panelBoard_MouseMove(object sender, MouseEventArgs e)
@@ -65,7 +59,7 @@ namespace WarQuest.WinFormMVC
             const int POS_SHIFT = 10;
 
             picBxToPlace.Visible = true;
-            picBxToPlace.Location = new Point(POS_SHIFT+e.X, POS_SHIFT+e.Y);
+            picBxToPlace.Location = new Point(POS_SHIFT + e.X, POS_SHIFT + e.Y);
 
         }
 

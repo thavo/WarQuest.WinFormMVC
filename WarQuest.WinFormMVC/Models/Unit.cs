@@ -1,7 +1,4 @@
-﻿using System;
-using System.Drawing;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Drawing;
 
 namespace WarQuest.WinFormMVC.Models
 {
@@ -18,8 +15,8 @@ namespace WarQuest.WinFormMVC.Models
             Image = image;
         }
 
-        public int Index { get ; set; }
-        public int SpeedPower { get ; set; }
+        public int Index { get; set; }
+        public int SpeedPower { get; set; }
         public int JumpPower { get; set; }
         public int LifeLevel { get; set; }
         public int AttackLevel { get; set; }

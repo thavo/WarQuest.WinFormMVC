@@ -1,11 +1,11 @@
-﻿using WarQuest.WinFormMVC.Views;
-using System.Drawing;
+﻿using System.Drawing;
+using WarQuest.WinFormMVC.Views;
 
-    namespace WarQuest.WinFormMVC.Models
+namespace WarQuest.WinFormMVC.Models
 {
     public class UnitBuilder : Unit, IUnitBuilder
     {
-        public UnitBuilder(int index, int speedPower, int jumpPower, int lifeLevel, int attackLevel, int cost, Bitmap myImage)  
+        public UnitBuilder(int index, int speedPower, int jumpPower, int lifeLevel, int attackLevel, int cost, Bitmap myImage)
             : base(index, speedPower, jumpPower, lifeLevel, attackLevel, cost, myImage)
         {
         }

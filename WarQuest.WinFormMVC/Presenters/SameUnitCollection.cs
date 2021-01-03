@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using WarQuest.WinFormMVC.Presenters;
+﻿using WarQuest.WinFormMVC.Presenters;
 
 
 namespace WarQuest.WinFormMVC.Models
 {
-    public class SameUnitCollection: UnitCollection
+    public class SameUnitCollection : UnitCollection
     {
         /// <summary>
         /// Returns the number of units added.
@@ -24,8 +22,8 @@ namespace WarQuest.WinFormMVC.Models
                 // Can add because same type
                 this._unitCollection.Add(unit);
             }
-            else 
-            { 
+            else
+            {
                 // Cannot Add. Note : this Exception is catched OK by Unit Test.
                 throw new System.InvalidOperationException();
             }

@@ -4,7 +4,7 @@ namespace WarQuest.WinFormMVC.Models
 {
     public class UnitDestroyer : Unit, IUnitDestroyer
     {
-        public UnitDestroyer(int index, int speedPower, int jumpPower, int lifeLevel, int attackLevel, int cost, Bitmap myImage) 
+        public UnitDestroyer(int index, int speedPower, int jumpPower, int lifeLevel, int attackLevel, int cost, Bitmap myImage)
             : base(index, speedPower, jumpPower, lifeLevel, attackLevel, cost, myImage)
         {
         }

@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WarQuest.WinFormMVC.Models;
 using WarQuest.WinFormMVC.Presenters;
@@ -22,7 +15,7 @@ namespace WarQuest.WinFormMVC
         public MainForm()
         {
             InitializeComponent();
-            this.Text =  string.Format("{0} ; Board size {1} x {2} ", Models.Board.GAME_CODE_NAME, Models.Board.WIDTH_SIZE, Models.Board.HEIGHT_SIZE);
+            this.Text = string.Format("{0} ; Board size {1} x {2} ", Models.Board.GAME_CODE_NAME, Models.Board.WIDTH_SIZE, Models.Board.HEIGHT_SIZE);
 
             this._myUnits.CreateRandomUnits(imageListUnits);
             lblCheckMaxSpendingMoney.Text = String.Empty;
@@ -73,7 +66,7 @@ namespace WarQuest.WinFormMVC
 
             lblChosen.Text = listOfChosenIndex = DisplayIntoListTheChosenUnits(lstBxUnits);
             // totalMoneySpent = 
-                
+
             TagChosenUnitAsSelected(listOfChosenIndex, totalMoneySpent);
 
             int totalSelectedMoney = this._myUnits.GetTotalMoneySelected();
@@ -82,10 +75,10 @@ namespace WarQuest.WinFormMVC
             if (totalSelectedMoney > Models.PlayerOneGame.MAX_SPENDING_MONEY)
             {
                 lblCheckMaxSpendingMoney.Text = String.Format(
-                    "NOT ENOUGH MONEY ({0} MAX = {1})", 
+                    "NOT ENOUGH MONEY ({0} MAX = {1})",
                     totalSelectedMoney.ToString(),
                     Models.PlayerOneGame.MAX_SPENDING_MONEY.ToString()
-                    ) ;
+                    );
             }
         }
 

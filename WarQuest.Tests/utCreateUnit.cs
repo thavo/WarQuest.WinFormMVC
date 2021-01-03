@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using System;
 
 namespace WarQuest.Tests
 {
@@ -15,14 +14,14 @@ namespace WarQuest.Tests
         {
             WarQuest.WinFormMVC.Models.SameUnitCollection myUnitCollection = new WinFormMVC.Models.SameUnitCollection();
             myUnitCollection.AddSameUnit(new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 0, 0, null));
-            
+
             // Adding Same Unit type should be OK and count == 2
             myUnitCollection.AddSameUnit(new WinFormMVC.Models.UnitBuilder(1, 0, 0, 0, 0, 0, null));
 
             Assert.AreEqual(myUnitCollection.Count(), 2);
-   
+
             // Adding a different Unit Type should crash, because should be the same type
-            Assert.Throws<System.InvalidOperationException>(() => myUnitCollection.AddSameUnit(new WinFormMVC.Models.UnitHuman(2, 0, 0, 0, 0, 0, null)) );
+            Assert.Throws<System.InvalidOperationException>(() => myUnitCollection.AddSameUnit(new WinFormMVC.Models.UnitHuman(2, 0, 0, 0, 0, 0, null)));
 
         }
 

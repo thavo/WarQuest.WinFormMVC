@@ -51,26 +51,21 @@ namespace WarQuest.WinFormMVC
             var myForm = new frmBoard();
             myForm.ChosenUnit = lstBxUnits.SelectedItem.ToString();
 
-            // MessageBox.Show("Vous avez choisi : " + myForm.ChosenUnit);
-
             myForm.Show();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            lstViewAvailableUnits.Items.Add("BBB", 1);
-            
             UnitCollection myUnits = new UnitCollection();
             myUnits.CreateRandomUnits(imageListUnits);
-
 
             int index = 0;
             foreach (Unit unit in myUnits.Units())
             {
-
                 // speedPower, int jumpPower, int lifeLevel, int attackLevel, int cost
                 lstViewAvailableUnits.Items.Add(
-                    String.Format("{0}: S={1}, Jmp={2}, PV={3}, Attack={4}, ${5}",
+                    String.Format("{0}_{1}: S={2}, Jmp={3}, PV={4}, Attack={5}, ${6}",
+                    unit.Index,
                     unit.GetType().ToString().Replace("WarQuest.WinFormMVC.Models.Unit", String.Empty),
                     unit.SpeedPower,
                     unit.JumpPower,
@@ -80,26 +75,20 @@ namespace WarQuest.WinFormMVC
                     ), 
                     index++
                  );
-
-                // img.MakeTransparent();
-
-                // lstViewAvailableUnits.Items.Add(unit.ToString(), index++);
-                // lstViewAvailableUnits.Items.Add(img.ToString(), index++);
             }
-
-
-
         }
 
         private void lstViewAvailableUnits_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DisplayIntoListTheChosenUnits();
+        }
+
+        private void DisplayIntoListTheChosenUnits()
         {
             lstBxUnits.Items.Clear();
 
             if (lstViewAvailableUnits.SelectedItems.Count >= 1)
             {
-                // 
-                // lblChoiceText.Text += lstViewAvailableUnits.SelectedItems
-
                 string str = "";
                 lblChosen.Text = "";
 
@@ -111,10 +100,8 @@ namespace WarQuest.WinFormMVC
                         lstBxUnits.Items.Add(lv.SubItems[0].Text);
                         str += lv.SubItems[0].Text;
 
-                        lblChosen.Text += lv.Index + " " ;
+                        lblChosen.Text += lv.Index + " ";
                     }
-                    // lblChosen.Text = "\r\n S:" + str + Environment.NewLine ;
-
                 }
                 else if (lstViewAvailableUnits.SelectedItems.Count > 1)
                 {
@@ -125,7 +112,6 @@ namespace WarQuest.WinFormMVC
                     throw (new Exception("Impossible case"));
                 }
                 this.Text = "";
-
             }
         }
     }

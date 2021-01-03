@@ -5,7 +5,8 @@ using System.Drawing;
 {
     public class UnitBuilder : Unit, IUnitBuilder
     {
-        public UnitBuilder(int speedPower, int jumpPower, int lifeLevel, int attackLevel, int cost, Bitmap myImage)  : base(speedPower, jumpPower, lifeLevel, attackLevel, cost, myImage)
+        public UnitBuilder(int index, int speedPower, int jumpPower, int lifeLevel, int attackLevel, int cost, Bitmap myImage)  
+            : base(index, speedPower, jumpPower, lifeLevel, attackLevel, cost, myImage)
         {
         }
 

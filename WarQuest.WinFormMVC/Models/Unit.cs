@@ -13,21 +13,23 @@ namespace WarQuest.WinFormMVC.Models
         {
         }
 
-        public Unit(int speedPower, int jumpPower, int lifeLevel, int attackLevel, int cost, Bitmap myImage)
+        public Unit(int index, int speedPower, int jumpPower, int lifeLevel, int attackLevel, int cost, Bitmap myImage)
         {
+            Index = index;
             SpeedPower = speedPower;
             JumpPower = jumpPower;
             LifeLevel = lifeLevel;
             AttackLevel = attackLevel;
             Cost = cost;
-            MyImage = myImage;
+            // MyImage = myImage;
         }
 
+        public int Index { get ; set; }
         public int SpeedPower { get ; set; }
         public int JumpPower { get; set; }
         public int LifeLevel { get; set; }
         public int AttackLevel { get; set; }
         public int Cost { get; set; }
-        public Bitmap MyImage { get; set; }
+        // public Bitmap MyImage { get; set; }
     }
 }

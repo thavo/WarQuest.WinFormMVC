@@ -14,15 +14,15 @@ namespace WarQuest.Tests
         public void GIVEN_a_collectionOfSameUnit_WHEN_add_2_different_unit_types_THEN_addition_fails()
         {
             WarQuest.WinFormMVC.Models.SameUnitCollection myUnitCollection = new WinFormMVC.Models.SameUnitCollection();
-            myUnitCollection.AddSameUnit(new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 0, null));
+            myUnitCollection.AddSameUnit(new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 0, 0, null));
             
             // Adding Same Unit type should be OK and count == 2
-            myUnitCollection.AddSameUnit(new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 0, null));
+            myUnitCollection.AddSameUnit(new WinFormMVC.Models.UnitBuilder(1, 0, 0, 0, 0, 0, null));
 
             Assert.AreEqual(myUnitCollection.Count(), 2);
    
             // Adding a different Unit Type should crash, because should be the same type
-            Assert.Throws<System.InvalidOperationException>(() => myUnitCollection.AddSameUnit(new WinFormMVC.Models.UnitHuman(0, 0, 0, 0, 0, null)) );
+            Assert.Throws<System.InvalidOperationException>(() => myUnitCollection.AddSameUnit(new WinFormMVC.Models.UnitHuman(2, 0, 0, 0, 0, 0, null)) );
 
         }
 
@@ -32,8 +32,8 @@ namespace WarQuest.Tests
             const int NUMBER_OF_UNITS = 2;
 
             WarQuest.WinFormMVC.Presenters.UnitCollection myUnitCollection = new WinFormMVC.Presenters.UnitCollection();
-            myUnitCollection.AddUnit(new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 0, null));
-            myUnitCollection.AddUnit(new WinFormMVC.Models.UnitHuman(0, 0, 0, 0, 0, null));
+            myUnitCollection.AddUnit(new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 0, 0, null));
+            myUnitCollection.AddUnit(new WinFormMVC.Models.UnitHuman(1, 0, 0, 0, 0, 0, null));
 
             int countUnits = myUnitCollection.Count();
             Assert.AreEqual(countUnits, NUMBER_OF_UNITS);
@@ -45,11 +45,11 @@ namespace WarQuest.Tests
             const int NUMBER_OF_UNITS = 5;
 
             WarQuest.WinFormMVC.Presenters.UnitCollection myUnitCollection = new WinFormMVC.Presenters.UnitCollection();
-            myUnitCollection.AddUnit(new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 0, null));
-            myUnitCollection.AddUnit(new WinFormMVC.Models.UnitDestroyer(0, 0, 0, 0, 0, null));
-            myUnitCollection.AddUnit(new WinFormMVC.Models.UnitHuman(0, 0, 0, 0, 0, null));
-            myUnitCollection.AddUnit(new WinFormMVC.Models.UnitMonster(0, 0, 0, 0, 0, null));
-            myUnitCollection.AddUnit(new WinFormMVC.Models.UnitVehicle(0, 0, 0, 0, 0, null));
+            myUnitCollection.AddUnit(new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 0, 0, null));
+            myUnitCollection.AddUnit(new WinFormMVC.Models.UnitDestroyer(1, 0, 0, 0, 0, 0, null));
+            myUnitCollection.AddUnit(new WinFormMVC.Models.UnitHuman(2, 0, 0, 0, 0, 0, null));
+            myUnitCollection.AddUnit(new WinFormMVC.Models.UnitMonster(3, 0, 0, 0, 0, 0, null));
+            myUnitCollection.AddUnit(new WinFormMVC.Models.UnitVehicle(4, 0, 0, 0, 0, 0, null));
 
             int countUnits = myUnitCollection.Count();
             Assert.AreEqual(countUnits, NUMBER_OF_UNITS);
@@ -60,8 +60,8 @@ namespace WarQuest.Tests
         {
             WarQuest.WinFormMVC.Presenters.UnitCollection myUnitCollection = new WinFormMVC.Presenters.UnitCollection();
 
-            myUnitCollection.AddUnit(new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 500, null));
-            myUnitCollection.AddUnit(new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 257, null));
+            myUnitCollection.AddUnit(new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 0, 500, null));
+            myUnitCollection.AddUnit(new WinFormMVC.Models.UnitBuilder(1, 0, 0, 0, 0, 257, null));
 
             int cost = myUnitCollection.TotalCost();
             Assert.AreEqual(cost, 757);

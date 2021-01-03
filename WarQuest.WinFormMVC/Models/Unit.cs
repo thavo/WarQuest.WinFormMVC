@@ -7,7 +7,7 @@ namespace WarQuest.WinFormMVC.Models
 {
     public class Unit
     {
-        public Unit(int index, int speedPower, int jumpPower, int lifeLevel, int attackLevel, int cost, Bitmap myImage)
+        public Unit(int index, int speedPower, int jumpPower, int lifeLevel, int attackLevel, int cost, Bitmap image)
         {
             Index = index;
             SpeedPower = speedPower;
@@ -15,6 +15,7 @@ namespace WarQuest.WinFormMVC.Models
             LifeLevel = lifeLevel;
             AttackLevel = attackLevel;
             Cost = cost;
+            Image = image;
         }
 
         public int Index { get ; set; }
@@ -24,5 +25,6 @@ namespace WarQuest.WinFormMVC.Models
         public int AttackLevel { get; set; }
         public int Cost { get; set; }
         public bool IsSelected { get; internal set; }
+        public Bitmap Image { get; internal set; }
     }
 }

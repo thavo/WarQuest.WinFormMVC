@@ -20,7 +20,7 @@ namespace WarQuest.WinFormMVC
         public MainForm()
         {
             InitializeComponent();
-            this.Text += string.Format(" Size {0} x {1} ", Models.Board.WIDTH_SIZE, Models.Board.HEIGHT_SIZE);
+            this.Text =  string.Format("{0} ; Board size {1} x {2} ", Models.Board.GAME_CODE_NAME, Models.Board.WIDTH_SIZE, Models.Board.HEIGHT_SIZE);
 
             this._myUnits.CreateRandomUnits(imageListUnits);
             lblCheckMaxSpendingMoney.Text = String.Empty;
@@ -30,7 +30,6 @@ namespace WarQuest.WinFormMVC
         {
             var myForm = new frmBoard();
             myForm.UnitsWithChoices = _myUnits;
-
             myForm.Show();
         }
 
@@ -44,11 +43,12 @@ namespace WarQuest.WinFormMVC
             int index = 0;
             foreach (Unit unit in this._myUnits.Units())
             {
-                // speedPower, int jumpPower, int lifeLevel, int attackLevel, int cost
+                // Retrieves the various Unit's properties to the list view
                 lstViewAvailableUnits.Items.Add(
                     String.Format("{0}_{1}: S={2}, Jmp={3}, PV={4}, Attack={5}, ${6}",
                     unit.Index,
-                    unit.GetType().ToString().Replace("WarQuest.WinFormMVC.Models.Unit", String.Empty),
+                    // Retrieves the FileName, via Keys[]
+                    this.imageListUnits.Images.Keys[index],
                     unit.SpeedPower,
                     unit.JumpPower,
                     unit.LifeLevel,

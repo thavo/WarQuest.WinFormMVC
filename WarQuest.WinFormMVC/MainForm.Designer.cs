@@ -146,6 +146,7 @@
             this.Controls.Add(this.lstViewAvailableUnits);
             this.Controls.Add(this.lstBxUnits);
             this.Controls.Add(this.butStart);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);

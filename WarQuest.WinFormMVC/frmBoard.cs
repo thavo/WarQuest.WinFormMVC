@@ -24,6 +24,19 @@ namespace WarQuest.WinFormMVC
         {
             this.Text = UnitsWithChoices.Count().ToString() + " ; total cost" + UnitsWithChoices.TotalCost();
             lblSummary.Text = UnitsWithChoices.GetTotalMoneySelected().ToString();
+
+            PictureBox picbxTest = null;
+            // picbxTarget.Image = 
+            // flLayPanChosenUnits.Controls.Add(picbxTarget);
+
+            for (int i = 0; i < 19; i++)
+            {
+                picbxTest = new PictureBox();
+                picbxTest.Image = UnitsWithChoices.Units()[i].Image;
+                picbxTest.Name = "Name_" + i.ToString();
+                picbxTest.Height = 150;
+                flLayPanChosenUnits.Controls.Add(picbxTest);
+            }
         }
 
         private void panelBoard_Paint(object sender, PaintEventArgs e)

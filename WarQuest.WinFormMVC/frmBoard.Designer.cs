@@ -32,13 +32,14 @@
             this.panelBoard = new System.Windows.Forms.Panel();
             this.picBxToPlace = new System.Windows.Forms.PictureBox();
             this.picbxHuman = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picbxTarget = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.lblSummary = new System.Windows.Forms.Label();
+            this.flLayPanChosenUnits = new System.Windows.Forms.FlowLayoutPanel();
             this.panelBoard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBxToPlace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbxHuman)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbxTarget)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBoard
@@ -47,7 +48,7 @@
             this.panelBoard.Location = new System.Drawing.Point(248, 269);
             this.panelBoard.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelBoard.Name = "panelBoard";
-            this.panelBoard.Size = new System.Drawing.Size(719, 713);
+            this.panelBoard.Size = new System.Drawing.Size(719, 288);
             this.panelBoard.TabIndex = 0;
             this.panelBoard.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBoard_Paint);
             this.panelBoard.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelBoard_MouseClick);
@@ -67,22 +68,22 @@
             // picbxHuman
             // 
             this.picbxHuman.Image = ((System.Drawing.Image)(resources.GetObject("picbxHuman.Image")));
-            this.picbxHuman.Location = new System.Drawing.Point(510, 988);
+            this.picbxHuman.Location = new System.Drawing.Point(975, 818);
             this.picbxHuman.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.picbxHuman.Name = "picbxHuman";
             this.picbxHuman.Size = new System.Drawing.Size(230, 265);
             this.picbxHuman.TabIndex = 5;
             this.picbxHuman.TabStop = false;
             // 
-            // pictureBox1
+            // picbxTarget
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(510, -3);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(230, 265);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.picbxTarget.Image = ((System.Drawing.Image)(resources.GetObject("picbxTarget.Image")));
+            this.picbxTarget.Location = new System.Drawing.Point(510, -3);
+            this.picbxTarget.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.picbxTarget.Name = "picbxTarget";
+            this.picbxTarget.Size = new System.Drawing.Size(230, 265);
+            this.picbxTarget.TabIndex = 6;
+            this.picbxTarget.TabStop = false;
             // 
             // flowLayoutPanel
             // 
@@ -100,16 +101,25 @@
             this.lblSummary.TabIndex = 8;
             this.lblSummary.Text = "label1";
             // 
+            // flLayPanChosenUnits
+            // 
+            this.flLayPanChosenUnits.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.flLayPanChosenUnits.Location = new System.Drawing.Point(75, 581);
+            this.flLayPanChosenUnits.Name = "flLayPanChosenUnits";
+            this.flLayPanChosenUnits.Size = new System.Drawing.Size(875, 468);
+            this.flLayPanChosenUnits.TabIndex = 9;
+            // 
             // frmBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1452, 1061);
+            this.Controls.Add(this.flLayPanChosenUnits);
             this.Controls.Add(this.lblSummary);
             this.Controls.Add(this.picbxHuman);
             this.Controls.Add(this.flowLayoutPanel);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.picbxTarget);
             this.Controls.Add(this.panelBoard);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmBoard";
@@ -118,7 +128,7 @@
             this.panelBoard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBxToPlace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbxHuman)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picbxTarget)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,8 +139,9 @@
         private System.Windows.Forms.Panel panelBoard;
         private System.Windows.Forms.PictureBox picbxHuman;
         private System.Windows.Forms.PictureBox picBxToPlace;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picbxTarget;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
         private System.Windows.Forms.Label lblSummary;
+        private System.Windows.Forms.FlowLayoutPanel flLayPanChosenUnits;
     }
 }

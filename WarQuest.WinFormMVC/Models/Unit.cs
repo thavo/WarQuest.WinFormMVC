@@ -7,12 +7,6 @@ namespace WarQuest.WinFormMVC.Models
 {
     public class Unit
     {
-      // public enum UnitType = new (UnitHuman, UnitBuilder);
-
-        public Unit()
-        {
-        }
-
         public Unit(int index, int speedPower, int jumpPower, int lifeLevel, int attackLevel, int cost, Bitmap myImage)
         {
             Index = index;
@@ -21,7 +15,6 @@ namespace WarQuest.WinFormMVC.Models
             LifeLevel = lifeLevel;
             AttackLevel = attackLevel;
             Cost = cost;
-            // MyImage = myImage;
         }
 
         public int Index { get ; set; }
@@ -31,6 +24,5 @@ namespace WarQuest.WinFormMVC.Models
         public int AttackLevel { get; set; }
         public int Cost { get; set; }
         public bool IsSelected { get; internal set; }
-        // public Bitmap MyImage { get; set; }
     }
 }

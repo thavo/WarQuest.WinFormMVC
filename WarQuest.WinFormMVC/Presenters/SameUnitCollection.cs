@@ -26,8 +26,7 @@ namespace WarQuest.WinFormMVC.Models
             }
             else 
             { 
-                // Cannot Add. 
-                // Also, this Exception is catched by Unit Test.
+                // Cannot Add. Note : this Exception is catched OK by Unit Test.
                 throw new System.InvalidOperationException();
             }
 

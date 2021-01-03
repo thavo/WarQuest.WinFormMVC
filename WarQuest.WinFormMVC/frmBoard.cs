@@ -62,7 +62,6 @@ namespace WarQuest.WinFormMVC
 
             // unregister this.panelBoard.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBoard_MouseMove);
             this.panelBoard.MouseMove -= this.panelBoard_MouseMove;
-
         }
     }
 }

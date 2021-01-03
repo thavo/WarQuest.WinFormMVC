@@ -35,6 +35,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.lblSummary = new System.Windows.Forms.Label();
+            this.panelBoard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBxToPlace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbxHuman)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -42,6 +43,7 @@
             // 
             // panelBoard
             // 
+            this.panelBoard.Controls.Add(this.picBxToPlace);
             this.panelBoard.Location = new System.Drawing.Point(248, 269);
             this.panelBoard.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelBoard.Name = "panelBoard";
@@ -54,7 +56,7 @@
             // picBxToPlace
             // 
             this.picBxToPlace.Image = ((System.Drawing.Image)(resources.GetObject("picBxToPlace.Image")));
-            this.picBxToPlace.Location = new System.Drawing.Point(101, 178);
+            this.picBxToPlace.Location = new System.Drawing.Point(0, 0);
             this.picBxToPlace.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.picBxToPlace.Name = "picBxToPlace";
             this.picBxToPlace.Size = new System.Drawing.Size(121, 119);
@@ -107,13 +109,13 @@
             this.Controls.Add(this.lblSummary);
             this.Controls.Add(this.picbxHuman);
             this.Controls.Add(this.flowLayoutPanel);
-            this.Controls.Add(this.picBxToPlace);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelBoard);
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmBoard";
             this.Text = "War Quest - by Sanouch (C)2021 - ";
             this.Load += new System.EventHandler(this.frmBoard_Load);
+            this.panelBoard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picBxToPlace)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbxHuman)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

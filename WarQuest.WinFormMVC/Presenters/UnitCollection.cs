@@ -68,8 +68,8 @@ namespace WarQuest.WinFormMVC.Presenters
                 this.AddUnit(new UnitVehicle(i, 80 * i, 400 * i, 40 * i, 50 * i, costPerUnit + i*10, null));
                 this.AddUnit(new UnitHuman(i, 90 * i, 500 * i, 40 * i, 50 * i, costPerUnit + i * 20, null));
                 this.AddUnit(new UnitHuman(i, 100 * i, 120 * i, 40 * i, 50 * i, costPerUnit + i * 30, null));
-
             }
+
             return this.Count();
         }
 
@@ -116,6 +116,7 @@ namespace WarQuest.WinFormMVC.Presenters
                     CountTotalMoney += myUnit.Cost;
                 }
             }
+
             return CountTotalMoney;
         }
     }

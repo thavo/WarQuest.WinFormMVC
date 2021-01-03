@@ -24,12 +24,10 @@ namespace WarQuest.WinFormMVC
 
             this._myUnits.CreateRandomUnits(imageListUnits);
             lblCheckMaxSpendingMoney.Text = String.Empty;
-
         }
 
         private void butStart_Click(object sender, EventArgs e)
         {
-
             var myForm = new frmBoard();
             myForm.UnitsWithChoices = _myUnits;
 

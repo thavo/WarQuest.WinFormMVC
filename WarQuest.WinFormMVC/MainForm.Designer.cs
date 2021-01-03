@@ -36,15 +36,17 @@
             this.imageListUnits = new System.Windows.Forms.ImageList(this.components);
             this.lblLabel = new System.Windows.Forms.Label();
             this.lblChosen = new System.Windows.Forms.Label();
+            this.lblTotalMoneySpent = new System.Windows.Forms.Label();
+            this.lblCheckMaxSpendingMoney = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // butStart
             // 
-            this.butStart.Location = new System.Drawing.Point(54, 39);
+            this.butStart.Location = new System.Drawing.Point(814, 207);
             this.butStart.Name = "butStart";
             this.butStart.Size = new System.Drawing.Size(222, 23);
             this.butStart.TabIndex = 0;
-            this.butStart.Text = "Generate 20 Random Units";
+            this.butStart.Text = "Validate choice";
             this.butStart.UseVisualStyleBackColor = true;
             this.butStart.Click += new System.EventHandler(this.butStart_Click);
             // 
@@ -56,7 +58,6 @@
             this.lstBxUnits.Name = "lstBxUnits";
             this.lstBxUnits.Size = new System.Drawing.Size(540, 139);
             this.lstBxUnits.TabIndex = 1;
-            this.lstBxUnits.SelectedIndexChanged += new System.EventHandler(this.lstBxUnits_SelectedIndexChanged);
             // 
             // lstViewAvailableUnits
             // 
@@ -64,7 +65,7 @@
             this.lstViewAvailableUnits.LargeImageList = this.imageListUnits;
             this.lstViewAvailableUnits.Location = new System.Drawing.Point(54, 247);
             this.lstViewAvailableUnits.Name = "lstViewAvailableUnits";
-            this.lstViewAvailableUnits.Size = new System.Drawing.Size(1218, 633);
+            this.lstViewAvailableUnits.Size = new System.Drawing.Size(1370, 633);
             this.lstViewAvailableUnits.TabIndex = 2;
             this.lstViewAvailableUnits.UseCompatibleStateImageBehavior = false;
             this.lstViewAvailableUnits.SelectedIndexChanged += new System.EventHandler(this.lstViewAvailableUnits_SelectedIndexChanged);
@@ -114,11 +115,32 @@
             this.lblChosen.TabIndex = 3;
             this.lblChosen.Text = "Chosen Elements";
             // 
+            // lblTotalMoneySpent
+            // 
+            this.lblTotalMoneySpent.AutoSize = true;
+            this.lblTotalMoneySpent.Location = new System.Drawing.Point(814, 116);
+            this.lblTotalMoneySpent.Name = "lblTotalMoneySpent";
+            this.lblTotalMoneySpent.Size = new System.Drawing.Size(105, 15);
+            this.lblTotalMoneySpent.TabIndex = 4;
+            this.lblTotalMoneySpent.Text = "Total Money Spent";
+            // 
+            // lblCheckMaxSpendingMoney
+            // 
+            this.lblCheckMaxSpendingMoney.AutoSize = true;
+            this.lblCheckMaxSpendingMoney.ForeColor = System.Drawing.Color.Red;
+            this.lblCheckMaxSpendingMoney.Location = new System.Drawing.Point(814, 167);
+            this.lblCheckMaxSpendingMoney.Name = "lblCheckMaxSpendingMoney";
+            this.lblCheckMaxSpendingMoney.Size = new System.Drawing.Size(38, 15);
+            this.lblCheckMaxSpendingMoney.TabIndex = 5;
+            this.lblCheckMaxSpendingMoney.Text = "label1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 961);
+            this.ClientSize = new System.Drawing.Size(1453, 961);
+            this.Controls.Add(this.lblCheckMaxSpendingMoney);
+            this.Controls.Add(this.lblTotalMoneySpent);
             this.Controls.Add(this.lblChosen);
             this.Controls.Add(this.lblLabel);
             this.Controls.Add(this.lstViewAvailableUnits);
@@ -140,6 +162,8 @@
         private System.Windows.Forms.ImageList imageListUnits;
         private System.Windows.Forms.Label lblLabel;
         private System.Windows.Forms.Label lblChosen;
+        private System.Windows.Forms.Label lblTotalMoneySpent;
+        private System.Windows.Forms.Label lblCheckMaxSpendingMoney;
     }
 }
 

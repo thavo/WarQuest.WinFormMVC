@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using WarQuest.WinFormMVC.Presenters;
 
 namespace WarQuest.WinFormMVC
 {
     public partial class frmBoard : Form
     {
-        public String ChosenUnit { get; internal set; }
+        public UnitCollection UnitsWithChoices { get; internal set; }
 
         public frmBoard()
         {
@@ -22,16 +22,12 @@ namespace WarQuest.WinFormMVC
 
         private void frmBoard_Load(object sender, EventArgs e)
         {
-            // Create Units
-            Presenters.UnitCollection units = new Presenters.UnitCollection();
-            units.AddRandomDifferentUnitTypes(10, 250);
-
+            this.Text = UnitsWithChoices.Count().ToString() + " ; total cost" + UnitsWithChoices.TotalCost();
+            lblSummary.Text = UnitsWithChoices.GetTotalMoneySelected().ToString();
         }
 
         private void panelBoard_Paint(object sender, PaintEventArgs e)
         {
-            this.Text = ChosenUnit;
-
             Graphics g = e.Graphics;
 
             for (int i = 0; i < Models.Board.SQUARE_SIZE * Models.Board.HEIGHT_SIZE; i = i + Models.Board.SQUARE_SIZE)
@@ -44,7 +40,6 @@ namespace WarQuest.WinFormMVC
                     g.DrawRectangle(Pens.Red, PointX1, PointX2, Models.Board.SQUARE_SIZE, Models.Board.SQUARE_SIZE);
                 }
             }
-
         }
 
         private void btnPlace_Click(object sender, EventArgs e)

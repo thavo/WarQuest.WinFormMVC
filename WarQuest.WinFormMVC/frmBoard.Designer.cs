@@ -34,6 +34,7 @@
             this.picbxHuman = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblSummary = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBxToPlace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbxHuman)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -88,12 +89,22 @@
             this.flowLayoutPanel.Size = new System.Drawing.Size(252, 144);
             this.flowLayoutPanel.TabIndex = 7;
             // 
+            // lblSummary
+            // 
+            this.lblSummary.AutoSize = true;
+            this.lblSummary.Location = new System.Drawing.Point(793, 51);
+            this.lblSummary.Name = "lblSummary";
+            this.lblSummary.Size = new System.Drawing.Size(38, 15);
+            this.lblSummary.TabIndex = 8;
+            this.lblSummary.Text = "label1";
+            // 
             // frmBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1452, 1061);
+            this.Controls.Add(this.lblSummary);
             this.Controls.Add(this.picbxHuman);
             this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.picBxToPlace);
@@ -107,6 +118,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picbxHuman)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -117,5 +129,6 @@
         private System.Windows.Forms.PictureBox picBxToPlace;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
+        private System.Windows.Forms.Label lblSummary;
     }
 }

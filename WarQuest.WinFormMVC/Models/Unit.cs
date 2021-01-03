@@ -30,6 +30,7 @@ namespace WarQuest.WinFormMVC.Models
         public int LifeLevel { get; set; }
         public int AttackLevel { get; set; }
         public int Cost { get; set; }
+        public bool IsSelected { get; internal set; }
         // public Bitmap MyImage { get; set; }
     }
 }

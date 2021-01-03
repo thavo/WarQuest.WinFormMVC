@@ -15,6 +15,8 @@ namespace WarQuest.WinFormMVC.Presenters
         // Here Create a list of parts.
         protected List<Unit> _unitCollection = new List<Unit>();
 
+        public object myUnit { get; private set; }
+
         public List<Unit> Units()
         {
             return _unitCollection;
@@ -83,6 +85,38 @@ namespace WarQuest.WinFormMVC.Presenters
                 this.AddUnit(new UnitBuilder(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img));
                 i++;
             }
+        }
+
+        internal int ClearAllSelectedUnits()
+        {
+            int totalCleared = 0;
+
+            for (int i = 0; i < _unitCollection.Count; i++)
+            {
+                var myUnit = _unitCollection[i];
+                if (myUnit.IsSelected)
+                {
+                    myUnit.IsSelected = false;
+                    totalCleared += 1;
+                }
+            }
+
+            return totalCleared;
+        }
+
+        internal int GetTotalMoneySelected()
+        {
+            int CountTotalMoney = 0;
+
+            for (int i=0; i< _unitCollection.Count; i++)
+            {
+                var myUnit = _unitCollection[i];
+                if (myUnit.IsSelected)
+                {
+                    CountTotalMoney += myUnit.Cost;
+                }
+            }
+            return CountTotalMoney;
         }
     }
 }

@@ -14,53 +14,37 @@ namespace WarQuest.WinFormMVC
 {
     public partial class MainForm : Form
     {
+        UnitCollection _myUnits = new UnitCollection();
+
+
         public MainForm()
         {
             InitializeComponent();
             this.Text += string.Format(" Size {0} x {1} ", Models.Board.WIDTH_SIZE, Models.Board.HEIGHT_SIZE);
 
+            this._myUnits.CreateRandomUnits(imageListUnits);
+            lblCheckMaxSpendingMoney.Text = String.Empty;
+
         }
 
         private void butStart_Click(object sender, EventArgs e)
         {
-            UnitCollection myUnits = new UnitCollection();
-            myUnits.AddRandomDifferentUnitTypes(22, 120);
 
-            for (int i=0; i < myUnits.Count(); i++)
-            {
-                var myItem = myUnits.Units()[i];
-
-                // speedPower, int jumpPower, int lifeLevel, int attackLevel, int cost
-                lstBxUnits.Items.Add( String.Format("Unit type {0}, Speed={1}, Jump={2}, Life={3}, Attack={4}, Cost {5}", 
-                    myItem.GetType().ToString().Replace("WarQuest.WinFormMVC.Models.", ""),
-                    myItem.SpeedPower,
-                    myItem.JumpPower,
-                    myItem.LifeLevel,
-                    myItem.AttackLevel,
-                    myItem.Cost
-
-                    )
-                 );
-
-            }
-        }
-
-        private void lstBxUnits_SelectedIndexChanged(object sender, EventArgs e)
-        {
-                            
             var myForm = new frmBoard();
-            myForm.ChosenUnit = lstBxUnits.SelectedItem.ToString();
+            myForm.UnitsWithChoices = _myUnits;
 
             myForm.Show();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            UnitCollection myUnits = new UnitCollection();
-            myUnits.CreateRandomUnits(imageListUnits);
+            DisplayListOfAllUnits();
+        }
 
+        private void DisplayListOfAllUnits()
+        {
             int index = 0;
-            foreach (Unit unit in myUnits.Units())
+            foreach (Unit unit in this._myUnits.Units())
             {
                 // speedPower, int jumpPower, int lifeLevel, int attackLevel, int cost
                 lstViewAvailableUnits.Items.Add(
@@ -72,7 +56,7 @@ namespace WarQuest.WinFormMVC
                     unit.LifeLevel,
                     unit.AttackLevel,
                     unit.Cost
-                    ), 
+                    ),
                     index++
                  );
             }
@@ -80,16 +64,56 @@ namespace WarQuest.WinFormMVC
 
         private void lstViewAvailableUnits_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DisplayIntoListTheChosenUnits();
+            string listOfChosenIndex = String.Empty;
+            lblTotalMoneySpent.Text = String.Empty;
+            lblCheckMaxSpendingMoney.Text = String.Empty;
+
+            int totalMoneySpent = 0;
+            this._myUnits.ClearAllSelectedUnits();
+
+            lblChosen.Text = listOfChosenIndex = DisplayIntoListTheChosenUnits(lstBxUnits);
+            // totalMoneySpent = 
+                
+            TagChosenUnitAsSelected(listOfChosenIndex, totalMoneySpent);
+
+            int totalSelectedMoney = this._myUnits.GetTotalMoneySelected();
+            lblTotalMoneySpent.Text += "; Total=" + totalSelectedMoney.ToString();
+
+            if (totalSelectedMoney > Models.PlayerOneGame.MAX_SPENDING_MONEY)
+            {
+                lblCheckMaxSpendingMoney.Text = String.Format(
+                    "NOT ENOUGH MONEY ({0} MAX = {1})", 
+                    totalSelectedMoney.ToString(),
+                    Models.PlayerOneGame.MAX_SPENDING_MONEY.ToString()
+                    ) ;
+            }
         }
 
-        private void DisplayIntoListTheChosenUnits()
+        private void TagChosenUnitAsSelected(string listOfChosenIndex, int totalMoneySpent)
         {
-            lstBxUnits.Items.Clear();
+            // From the list of chosen Items, extract the Index and find the corresponding Money of the corresponding Units
+            Array arr = listOfChosenIndex.Split(' ');
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                int chosenIndex = 0;
+                int.TryParse(arr.GetValue(i).ToString(), out chosenIndex);
+
+                var unitSelected = this._myUnits.Units()[chosenIndex];
+                unitSelected.IsSelected = true;
+
+                lblTotalMoneySpent.Text += "+" + unitSelected.Cost.ToString();
+            }
+
+        }
+
+        private String DisplayIntoListTheChosenUnits(ListBox mylstBxUnits)
+        {
+            string strChosenIndex = "";
+
+            mylstBxUnits.Items.Clear();
 
             if (lstViewAvailableUnits.SelectedItems.Count >= 1)
             {
-                string str = "";
                 lblChosen.Text = "";
 
                 ListViewItem item = lstViewAvailableUnits.SelectedItems[lstViewAvailableUnits.SelectedItems.Count - 1];
@@ -97,22 +121,17 @@ namespace WarQuest.WinFormMVC
                 {
                     foreach (ListViewItem lv in lstViewAvailableUnits.SelectedItems)
                     {
-                        lstBxUnits.Items.Add(lv.SubItems[0].Text);
-                        str += lv.SubItems[0].Text;
-
-                        lblChosen.Text += lv.Index + " ";
+                        mylstBxUnits.Items.Add(lv.SubItems[0].Text);
+                        strChosenIndex += lv.Index + " ";
                     }
-                }
-                else if (lstViewAvailableUnits.SelectedItems.Count > 1)
-                {
-
                 }
                 else
                 {
                     throw (new Exception("Impossible case"));
                 }
-                this.Text = "";
             }
+
+            return strChosenIndex;
         }
     }
 }

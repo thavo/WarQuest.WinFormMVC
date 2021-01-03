@@ -121,6 +121,7 @@
             this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.picbxTarget);
             this.Controls.Add(this.panelBoard);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "frmBoard";
             this.Text = "War Quest - by Sanouch (C)2021 - ";

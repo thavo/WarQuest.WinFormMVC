@@ -38,6 +38,12 @@
             this.lblChosen = new System.Windows.Forms.Label();
             this.lblTotalMoneySpent = new System.Windows.Forms.Label();
             this.lblCheckMaxSpendingMoney = new System.Windows.Forms.Label();
+            this.menuStripMain = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStripMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // butStart
@@ -134,6 +140,45 @@
             this.lblCheckMaxSpendingMoney.TabIndex = 5;
             this.lblCheckMaxSpendingMoney.Text = "label1";
             // 
+            // menuStripMain
+            // 
+            this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem2,
+            this.toolStripComboBox2});
+            this.menuStripMain.Location = new System.Drawing.Point(0, 0);
+            this.menuStripMain.Name = "menuStripMain";
+            this.menuStripMain.Size = new System.Drawing.Size(1453, 27);
+            this.menuStripMain.TabIndex = 6;
+            this.menuStripMain.Text = "Menu";
+            this.menuStripMain.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStripMain_ItemClicked);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(99, 23);
+            this.toolStripMenuItem2.Text = "About (Github)";
+            // 
+            // toolStripComboBox2
+            // 
+            this.toolStripComboBox2.Items.AddRange(new object[] {
+            "Board Size 16 x 16 (Default)",
+            "Other (not yet implemented)"});
+            this.toolStripComboBox2.Name = "toolStripComboBox2";
+            this.toolStripComboBox2.Size = new System.Drawing.Size(221, 23);
+            // 
+            // toolStripComboBox1
+            // 
+            this.toolStripComboBox1.Items.AddRange(new object[] {
+            "Board size 16x16 (Default)"});
+            this.toolStripComboBox1.Name = "toolStripComboBox1";
+            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.toolStripMenuItem1.Text = "Open Github";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -146,10 +191,13 @@
             this.Controls.Add(this.lstViewAvailableUnits);
             this.Controls.Add(this.lstBxUnits);
             this.Controls.Add(this.butStart);
+            this.Controls.Add(this.menuStripMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "WarQuest (C) 2021 CC by Sanouche";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.menuStripMain.ResumeLayout(false);
+            this.menuStripMain.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,6 +213,11 @@
         private System.Windows.Forms.Label lblChosen;
         private System.Windows.Forms.Label lblTotalMoneySpent;
         private System.Windows.Forms.Label lblCheckMaxSpendingMoney;
+        private System.Windows.Forms.MenuStrip menuStripMain;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
+        private System.Windows.Forms.ToolStripComboBox toolStripComboBox2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 

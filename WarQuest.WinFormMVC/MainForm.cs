@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using WarQuest.WinFormMVC.Models;
@@ -14,7 +15,7 @@ namespace WarQuest.WinFormMVC
         public MainForm()
         {
             InitializeComponent();
-            this.Text = string.Format("{0} ; Board size {1} x {2} ", Models.Board.GAME_CODE_NAME, Models.Board.WIDTH_SIZE, Models.Board.HEIGHT_SIZE);
+            this.Text = string.Format(CultureInfo.InvariantCulture, "{0} ; Board size {1} x {2} ", Models.Board.GAME_CODE_NAME, Models.Board.WIDTH_SIZE, Models.Board.HEIGHT_SIZE);
 
             this._myUnits.CreateRandomUnits(imageListUnits);
             lblCheckMaxSpendingMoney.Text = String.Empty;
@@ -42,15 +43,17 @@ namespace WarQuest.WinFormMVC
 
                 // Retrieves the various Unit's properties to the list view
                 lstViewAvailableUnits.Items.Add(
-                    String.Format("{0}_{1}: S={2}, Jmp={3}, PV={4}, Attack={5}, ${6}",
-                    unit.Index,
-                    unit.FileName,
-                    unit.SpeedPower,
-                    unit.JumpPower,
-                    unit.LifeLevel,
-                    unit.AttackLevel,
-                    unit.Cost
-                    ),
+                    String.Format(
+                        CultureInfo.InvariantCulture,
+                        "{0}_{1}: S={2}, Jmp={3}, PV={4}, Attack={5}, ${6}",
+                        unit.Index,
+                        unit.FileName,
+                        unit.SpeedPower,
+                        unit.JumpPower,
+                        unit.LifeLevel,
+                        unit.AttackLevel,
+                        unit.Cost
+                        ),
                     index
                  );
 
@@ -84,24 +87,24 @@ namespace WarQuest.WinFormMVC
             this._myUnits.ClearAllSelectedUnits();
 
             lblChosen.Text = listOfChosenIndex = DisplayIntoListTheChosenUnits(lstBxUnits);
-            // totalMoneySpent = 
 
-            TagChosenUnitAsSelected(listOfChosenIndex, totalMoneySpent);
+            TagChosenUnitAsSelected(listOfChosenIndex);
 
             int totalSelectedMoney = this._myUnits.GetTotalMoneySelected();
-            lblTotalMoneySpent.Text += "; Total=" + totalSelectedMoney.ToString();
+            lblTotalMoneySpent.Text += "; Total=" + totalSelectedMoney.ToString(CultureInfo.InvariantCulture);
 
             if (totalSelectedMoney > Models.PlayerOneGame.MAX_SPENDING_MONEY)
             {
                 lblCheckMaxSpendingMoney.Text = String.Format(
+                    CultureInfo.InvariantCulture,
                     "NOT ENOUGH MONEY ({0} MAX = {1})",
-                    totalSelectedMoney.ToString(),
-                    Models.PlayerOneGame.MAX_SPENDING_MONEY.ToString()
+                    totalSelectedMoney.ToString(CultureInfo.InvariantCulture),
+                    Models.PlayerOneGame.MAX_SPENDING_MONEY.ToString(CultureInfo.InvariantCulture)
                     );
             }
         }
 
-        private void TagChosenUnitAsSelected(string listOfChosenIndex, int totalMoneySpent)
+        private void TagChosenUnitAsSelected(string listOfChosenIndex)
         {
             // From the list of chosen Items, extract the Index and find the corresponding Money of the corresponding Units
             Array arr = listOfChosenIndex.Split(' ');
@@ -113,7 +116,7 @@ namespace WarQuest.WinFormMVC
                 var unitSelected = this._myUnits.Units()[chosenIndex];
                 unitSelected.IsSelected = true;
 
-                lblTotalMoneySpent.Text += "+" + unitSelected.Cost.ToString();
+                lblTotalMoneySpent.Text += "+" + unitSelected.Cost.ToString(CultureInfo.InvariantCulture);
             }
         }
 

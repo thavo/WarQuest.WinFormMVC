@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
 using WarQuest.WinFormMVC.Presenters;
 
@@ -17,8 +18,8 @@ namespace WarQuest.WinFormMVC
 
         private void frmBoard_Load(object sender, EventArgs e)
         {
-            this.Text = UnitsWithChoices.Count().ToString() + " ; total cost" + UnitsWithChoices.TotalCost();
-            lblSummary.Text = UnitsWithChoices.GetTotalMoneySelected().ToString();
+            this.Text = UnitsWithChoices.Count().ToString(CultureInfo.InvariantCulture) + " ; total cost" + UnitsWithChoices.TotalCost();
+            lblSummary.Text = UnitsWithChoices.GetTotalMoneySelected().ToString(CultureInfo.InvariantCulture);
 
             // FillInWithImagesDynamic();
             FillInWithImagesStatic();
@@ -67,9 +68,10 @@ namespace WarQuest.WinFormMVC
             {
                 picbxTest = new PictureBox();
                 picbxTest.Image = UnitsWithChoices.Units()[i].Image;
-                picbxTest.Name = "Name_" + i.ToString();
+                picbxTest.Name = "Name_" + i.ToString(CultureInfo.InvariantCulture);
                 picbxTest.Height = HIEGHT_ICON_SIZE;
-//                 flLayPanChosenUnits.Controls.Add(picbxTest);
+
+                picbxTest.Dispose();
             }
         }
 

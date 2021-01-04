@@ -93,9 +93,9 @@ namespace WarQuest.WinFormMVC.Presenters
                 // fileName
                 switch (fileName.Substring(0,4))
                 {
-                    case ("Buil") : this.AddUnit(new UnitBuilder(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); break;
-                    case ("Dest"): this.AddUnit(new  UnitDestroyer(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); break;
-                    case ("Hum-"): this.AddUnit(new  UnitHuman(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); break;
+                    case ("Buil"): this.AddUnit(new UnitBuilder(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); break;
+                    case ("Dest"): this.AddUnit(new UnitDestroyer(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); break;
+                    case ("Hum-"): this.AddUnit(new UnitHuman(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); break;
                     case ("Mon-"): this.AddUnit(new UnitMonster(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); break;
                     case ("Veh-"): this.AddUnit(new UnitVehicle(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); break;
                 }

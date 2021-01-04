@@ -38,6 +38,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EnterpriseArchitecure", "EnterpriseArchitecure", "{7AC9F487-3012-42FE-961E-DAA8F0CC0B6D}"
 	ProjectSection(SolutionItems) = preProject
 		EnterpriseArchitecture\CodeMapMVP.dgml = EnterpriseArchitecture\CodeMapMVP.dgml
+		EnterpriseArchitecture\CodeMapMVP.png = EnterpriseArchitecture\CodeMapMVP.png
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{83BD804D-4DAC-4CB7-B81D-816F134580C4}"

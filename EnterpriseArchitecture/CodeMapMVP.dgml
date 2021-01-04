@@ -1,84 +1,134 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph DataVirtualized="True" Layout="Sugiyama" ZoomLevel="-1" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-    <Node Id="(@1 @4 Type=Board)" Category="CodeSchema_Class" Bounds="-487.181146019793,-84.872417597586,92.2566666666667,25" CodeSchemaProperty_IsInternal="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Board" />
-    <Node Id="@10" Category="CodeSchema_Class" Bounds="-364.924479353126,-84.5440249422069,146.056666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="PlayerOneGame" />
-    <Node Id="@11" Category="CodeSchema_Class" Bounds="-91.5180911172924,-306.274165570464,164.986666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" Group="Collapsed" Label="SameUnitCollection" UseManualLocation="True" />
-    <Node Id="@12" Category="CodeSchema_Class" Bounds="-49.9987028498282,-196.274165570464,83.0066666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Unit" UseManualLocation="True" />
-    <Node Id="@13" Category="CodeSchema_Class" Bounds="-375.982935086666,-251.274165570464,120.006666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="UnitBuilder" />
-    <Node Id="@14" Category="CodeSchema_Class" Bounds="471.107564913335,-303.780545329829,135.893333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="UnitCollection" />
-    <Node Id="@15" Category="CodeSchema_Class" Bounds="233.184131580001,-251.274165570464,134.316666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="UnitDestroyer" />
-    <Node Id="@16" Category="CodeSchema_Class" Bounds="81.6340315800012,-251.274165570464,121.55,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="UnitHuman" />
-    <Node Id="@17" Category="CodeSchema_Class" Bounds="-225.976168419999,-251.274165570464,127.213333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="UnitMonster" />
-    <Node Id="@18" Category="CodeSchema_Class" Bounds="-68.7627350866659,-251.274165570464,120.396666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="UnitVehicle" />
-    <Node Id="@19" Category="CodeSchema_Method" Bounds="-86.3922016005173,-326.095644336613,108.973333333333,25.96" CodeSchemaProperty_IsPublic="True" DelayedCrossGroupLinksState="Fetched" Label="AddSameUnit" UseManualLocation="True" />
-    <Node Id="@2" Category="CodeSchema_Assembly" Bounds="-527.181146019793,-441.274645210821,1207.78871093313,536.731140628257" CodeSchemaProperty_StrongName="WarQuest.WinFormMVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="4" FilePath="$(5182f161-5999-4a5e-8ad5-ec4977f47383.OutputPath)" Group="Expanded" Label="WarQuest.WinFormMVC.dll" UseManualLocation="True" />
-    <Node Id="@20" Category="CodeSchema_Method" Bounds="-86.3922016005173,-270.135644336613,139.986666666667,25.96" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" DelayedCrossGroupLinksState="Fetched" Label="SameUnitCollection" UseManualLocation="True" />
-    <Node Id="@3" Category="CodeSchema_Namespace" Bounds="133.426705477034,-401.274165570464,185.566666666667,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="WarQuest‎.WinFormMVC" />
-    <Node Id="@5" Category="CodeSchema_Namespace" Bounds="-507.181146019793,-346.274165570464,894.681944266461,306.730140628257" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="10" Group="Expanded" Label="WarQuest‎.WinFormMVC‎.Models" UseManualLocation="True" />
-    <Node Id="@6" Category="CodeSchema_Namespace" Bounds="417.500898246668,-343.780645329829,243.106666666667,85.0002000000001" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="1" Group="Expanded" Label="WarQuest‎.WinFormMVC‎.Presenters" UseManualLocation="True" />
-    <Node Id="@7" Category="CodeSchema_Namespace" Bounds="-128.15489521645,-9.54402494220724,218.57,85.0002" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="1" Group="Expanded" Label="WarQuest‎.WinFormMVC‎.Views" UseManualLocation="True" />
-    <Node Id="@8" Category="CodeSchema_Interface" Bounds="-80.4698952164501,30.4556768573222,123.2,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="IUnitBuilder" />
-    <Node Id="@9" Category="CodeSchema_Interface" Bounds="222.577776631859,-170.975187480377,137.51,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="IUnitDestroyer" UseManualLocation="True" />
+    <Node Id="(@1 @8 Type=Board)" Category="CodeSchema_Class" Bounds="-364.16438742505,397.775143648337,92.2566666666667,25" CodeSchemaProperty_IsInternal="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Board" />
+    <Node Id="(@3 Namespace=::)" Category="CodeSchema_Namespace" Bounds="264.643673894902,-224.370267118729,62.2,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="::" />
+    <Node Id="@10" Category="CodeSchema_Namespace" Bounds="281.747916277224,55.557570213081,243.106666666667,85.0002" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="1" Group="Expanded" Label="WarQuest‎.WinFormMVC‎.Presenters" UseManualLocation="True" />
+    <Node Id="@11" Category="CodeSchema_Namespace" Bounds="812.363325417838,265.586768299117,218.57,85.0002" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="1" Group="Expanded" Label="WarQuest‎.WinFormMVC‎.Views" />
+    <Node Id="@12" Category="CodeSchema_Class" Bounds="103.702816277223,95.5576702130808,110.523333333334,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="frmBoard" />
+    <Node Id="@13" Category="CodeSchema_Interface" Bounds="860.048325417838,305.586868299117,123.2,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="IUnitBuilder" />
+    <Node Id="@14" Category="CodeSchema_Interface" Bounds="-334.958616447943,265.557770213082,137.51,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="IUnitDestroyer" />
+    <Node Id="@15" Category="CodeSchema_Class" Bounds="101.47448294389,40.5575702130808,114.98,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="MainForm" />
+    <Node Id="@16" Category="CodeSchema_Class" Bounds="-40.8782780894842,515.340372744412,146.056666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="PlayerOneGame" />
+    <Node Id="@17" Category="CodeSchema_Class" Bounds="105.661149610557,-14.4425297869192,106.606666666667,25" CodeSchemaProperty_IsAbstract="True" CodeSchemaProperty_IsFinal="True" CodeSchemaProperty_IsInternal="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Program" />
+    <Node Id="@18" Category="CodeSchema_Class" Bounds="475.870145213634,210.607874066706,164.986666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" Group="Collapsed" Label="SameUnitCollection" />
+    <Node Id="@2" Category="CodeSchema_Assembly" Bounds="-404.16438742505,-94.4639355545082,1475.09771284289,674.833672206219" CodeSchemaProperty_StrongName="WarQuest.WinFormMVC, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="Incomplete" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="4" FilePath="$(5182f161-5999-4a5e-8ad5-ec4977f47383.OutputPath)" Group="Expanded" Label="WarQuest.WinFormMVC.dll" />
+    <Node Id="@20" Category="CodeSchema_Class" Bounds="-167.448516447942,265.586768299117,949.811741865781,219.782668352594" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="10" Group="Expanded" Label="Unit" UseManualLocation="True" />
+    <Node Id="@21" Category="CodeSchema_Class" Bounds="670.858687287501,210.607874066706,120.006666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="UnitBuilder" />
+    <Node Id="@22" Category="CodeSchema_Class" Bounds="335.354582943891,95.557670213081,135.893333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="UnitCollection" />
+    <Node Id="@23" Category="CodeSchema_Class" Bounds="-147.611112481833,210.607874066706,134.316666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="UnitDestroyer" />
+    <Node Id="@24" Category="CodeSchema_Class" Bounds="16.7058890320341,210.607874066705,121.55,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="UnitHuman" />
+    <Node Id="@25" Category="CodeSchema_Class" Bounds="168.258170159235,210.607874066706,127.213333333333,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="UnitMonster" />
+    <Node Id="@26" Category="CodeSchema_Class" Bounds="325.472291099767,210.607874066706,120.396666666667,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="UnitVehicle" />
+    <Node Id="@27" Category="CodeSchema_Method" Bounds="-86.3922016005173,-326.095644336613,108.973333333333,25.96" CodeSchemaProperty_IsPublic="True" DelayedCrossGroupLinksState="Fetched" Label="AddSameUnit" UseManualLocation="True" />
+    <Node Id="@31" Category="CodeSchema_Method" Bounds="269.348237266345,305.557770213082,58.0066666666667,25.96" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" DelayedCrossGroupLinksState="Fetched" Label="Unit" />
+    <Node Id="@32" Category="CodeSchema_Method" Bounds="-86.3922016005173,-270.135644336613,139.986666666667,25.96" CodeSchemaProperty_IsConstructor="True" CodeSchemaProperty_IsPublic="True" CodeSchemaProperty_IsSpecialName="True" DelayedCrossGroupLinksState="Fetched" Label="SameUnitCollection" UseManualLocation="True" />
+    <Node Id="@33" Category="CodeSchema_Property" Bounds="253.072201247536,364.872814290977,118.792394787382,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="AttackLevel" UseManualLocation="True" />
+    <Node Id="@34" Category="CodeSchema_Property" Bounds="526.368335843076,361.54687300927,82.0690614540481,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Cost" />
+    <Node Id="@35" Category="CodeSchema_Property" Bounds="-145.91132696345,440.340233855524,108.095728120715,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="FileName" />
+    <Node Id="@36" Category="CodeSchema_Property" Bounds="404.939174389028,361.54687300927,91.4290614540482,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Image" />
+    <Node Id="@37" Category="CodeSchema_Property" Bounds="-147.448516447942,361.54687300927,87.2823947873815,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="Index" />
+    <Node Id="@38" Category="CodeSchema_Property" Bounds="-7.8155988427348,440.340233855524,111.522394787381,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="IsSelected" />
+    <Node Id="@39" Category="CodeSchema_Property" Bounds="103.729806460154,361.54687300927,119.342394787382,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="JumpPower" />
+    <Node Id="@4" Category="CodeSchema_Assembly" Bounds="244.589716202616,-264.395769459766,177.54,140.0003" CodeSchemaProperty_StrongName="WarQuest.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="2" FilePath="$(40a0ce5f-2ca7-4697-8d3e-fbb6de52b80e.OutputPath)" Group="Expanded" Label="WarQuest.Tests.dll" UseManualLocation="True" />
+    <Node Id="@40" Category="CodeSchema_Property" Bounds="-30.1660216605607,361.54687300927,103.895728120715,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="LifeLevel" />
+    <Node Id="@41" Category="CodeSchema_Property" Bounds="638.437497297124,361.54687300927,123.925728120715,25" CodeSchemaProperty_IsPublic="True" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="SpeedPower" />
+    <Node Id="@5" Category="CodeSchema_Namespace" Bounds="264.589716202616,-169.420971800803,137.54,25" DelayedChildNodesState="NotFetched" DelayedCrossGroupLinksState="Fetched" Group="Collapsed" Label="WarQuest‎.Tests" />
+    <Node Id="@7" Category="CodeSchema_Namespace" Bounds="66.181149610557,-54.4426297869193,185.566666666667,195.0004" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="3" Group="Expanded" Label="WarQuest‎.WinFormMVC" UseManualLocation="True" />
+    <Node Id="@9" Category="CodeSchema_Namespace" Bounds="-384.16438742505,170.586568299117,1435.09771284289,389.783068352594" DelayedChildNodesState="Fetched" DelayedCrossGroupLinksState="Fetched" FetchedChildrenCount="10" Group="Expanded" Label="WarQuest‎.WinFormMVC‎.Models" />
   </Nodes>
   <Links>
-    <Link Source="@10" Target="@14" Category="References" Bounds="-123.483213622575,-370.609606115917,573.661229393923,318.307604935673" IsSourceVirtualized="True" Weight="4">
+    <Link Source="@10" Target="@22" Category="Contains" FetchingParent="@10" />
+    <Link Source="@11" Target="@13" Category="Contains" FetchingParent="@11" />
+    <Link Source="@12" Target="@20" Category="References" Bounds="165.906217936101,120.557670213081,76.1547890288439,137.132123875164" IsSourceVirtualized="True" Weight="3" />
+    <Link Source="@12" Target="@36" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="22" />
+    <Link Source="@15" Target="@12" Category="CodeSchema_Calls" Bounds="158.96448294389,65.5363644454919,3.41060513164848E-13,21.0001" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
+    <Link Source="@15" Target="@20" Category="References" Bounds="164.721955925068,65.5575702130808,88.3545514413186,191.825805631578" IsSourceVirtualized="True" Weight="4" />
+    <Link Source="@15" Target="@33" Category="CodeSchema_Calls" Bounds="164.880558510268,65.5363644454919,137.82163311906,291.201556616178" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@15" Target="@34" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
+    <Link Source="@15" Target="@35" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3" />
+    <Link Source="@15" Target="@37" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@15" Target="@38" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@15" Target="@39" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@15" Target="@40" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@15" Target="@41" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@16" Target="@22" Category="References" Bounds="-123.483213622575,-370.609606115917,573.661229393923,318.307604935673" IsSourceVirtualized="True" Weight="4">
       <Category Ref="CodeSchema_ReturnTypeLink" />
     </Link>
-    <Link Source="@11" Target="@14" Category="InheritsFrom" Bounds="73.5944650661494,-324.311333138199,401.461413728027,23.8330143422471" Weight="1" />
-    <Link Source="@11" Target="@19" Category="Contains" FetchingParent="@11" />
-    <Link Source="@11" Target="@20" Category="Contains" FetchingParent="@11" />
-    <Link Source="@13" Target="@12" Category="InheritsFrom" Bounds="-257.012361736817,-228.226634798342,197.662082159626,35.3560196047228" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@13" Target="@8" Category="Implements" Weight="1" />
-    <Link Source="@14" Target="@12" Category="References" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="11">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@14" Target="@13" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4" />
-    <Link Source="@14" Target="@16" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
-    <Link Source="@14" Target="@17" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
-    <Link Source="@14" Target="@18" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
-    <Link Source="@15" Target="@12" Category="InheritsFrom" Bounds="42.3608087315748,-227.190720434257,192.937932784745,34.3597482183465" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@15" Target="@9" Category="Implements" Bounds="293.794568945963,-226.274165570464,5.14537371619127,45.8582182195158" Weight="1" />
-    <Link Source="@16" Target="@12" Category="InheritsFrom" Bounds="34.7267199900215,-226.274165570464,73.3858694910179,26.7468959605432" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@17" Target="@12" Category="InheritsFrom" Bounds="-127.398121008684,-226.274165570464,74.9856510370636,26.8025058778021" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@18" Target="@12" Category="InheritsFrom" Bounds="-8.54871263712229,-226.274245210821,0.0257302854896047,20.5001074829015" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@19" Target="@12" Category="References" Weight="4" />
-    <Link Source="@19" Target="@14" Category="CodeSchema_Calls" IsTargetVirtualized="True" Weight="5">
+    <Link Source="@17" Target="@15" Category="CodeSchema_Calls" Bounds="158.96448294389,10.5362644454919,5.6843418860808E-14,21.0001" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@18" Target="@22" Category="InheritsFrom" Bounds="73.5944650661494,-324.311333138199,401.461413728027,23.8330143422471" Weight="1" />
+    <Link Source="@18" Target="@27" Category="Contains" FetchingParent="@18" />
+    <Link Source="@18" Target="@32" Category="Contains" FetchingParent="@18" />
+    <Link Source="@2" Target="@10" Category="Contains" FetchingParent="@2" />
+    <Link Source="@2" Target="@7" Category="Contains" FetchingParent="@2" />
+    <Link Source="@2" Target="@9" Category="Contains" FetchingParent="@2" />
+    <Link Source="@20" Target="@31" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="@33" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="@34" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="@35" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="@36" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="@37" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="@38" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="@39" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="@40" Category="Contains" FetchingParent="@20" />
+    <Link Source="@20" Target="@41" Category="Contains" FetchingParent="@20" />
+    <Link Source="@21" Target="@13" Category="Implements" Weight="1" />
+    <Link Source="@21" Target="@20" Category="InheritsFrom" Weight="1" />
+    <Link Source="@21" Target="@31" Category="CodeSchema_Calls" Bounds="336.143310845213,235.468076899053,338.632856197454,74.7559587748892" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@22" Target="@21" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="4" />
+    <Link Source="@22" Target="@24" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
+    <Link Source="@22" Target="@25" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
+    <Link Source="@22" Target="@26" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="2" />
+    <Link Source="@23" Target="@14" Category="Implements" Bounds="-214.855858569027,235.586668299117,92.1647872015169,27.2752466895537" Weight="1" />
+    <Link Source="@23" Target="@20" Category="InheritsFrom" Weight="1" />
+    <Link Source="@23" Target="@31" Category="CodeSchema_Calls" Bounds="-30.8607751378134,235.586668299117,291.481976807131,73.470003537345" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@24" Target="@20" Category="InheritsFrom" Weight="1" />
+    <Link Source="@24" Target="@31" Category="CodeSchema_Calls" Bounds="106.396660145673,235.586668299117,155.609219794018,67.2683166491028" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@25" Target="@20" Category="InheritsFrom" Weight="1" />
+    <Link Source="@25" Target="@31" Category="CodeSchema_Calls" Bounds="240.56909447996,235.586668299117,43.6009758236914,62.6144376070923" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@26" Target="@20" Category="InheritsFrom" Weight="1" />
+    <Link Source="@26" Target="@31" Category="CodeSchema_Calls" Bounds="316.295903538406,235.586668299117,57.9431561993031,63.3587327536443" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@27" Target="@20" Category="References" Weight="4" />
+    <Link Source="@27" Target="@22" Category="CodeSchema_Calls" IsTargetVirtualized="True" Weight="5">
       <Category Ref="CodeSchema_FieldRead" />
     </Link>
-    <Link Source="@2" Target="@3" Category="Contains" FetchingParent="@2" />
-    <Link Source="@2" Target="@5" Category="Contains" FetchingParent="@2" />
-    <Link Source="@2" Target="@6" Category="Contains" FetchingParent="@2" />
-    <Link Source="@2" Target="@7" Category="Contains" FetchingParent="@2" />
-    <Link Source="@20" Target="@14" Category="CodeSchema_Calls" IsTargetVirtualized="True" Weight="1" />
-    <Link Source="@3" Target="@12" Category="References" Bounds="56.8814141081242,-190.105156032675,126.762041451271,65.8512499291468" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="9">
-      <Category Ref="CodeSchema_Calls" />
-    </Link>
-    <Link Source="@3" Target="@14" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="9" />
-    <Link Source="@5" Target="(@1 @4 Type=Board)" Category="Contains" FetchingParent="@5" />
-    <Link Source="@5" Target="@10" Category="Contains" FetchingParent="@5" />
-    <Link Source="@5" Target="@11" Category="Contains" FetchingParent="@5" />
-    <Link Source="@5" Target="@12" Category="Contains" FetchingParent="@5" />
-    <Link Source="@5" Target="@13" Category="Contains" FetchingParent="@5" />
-    <Link Source="@5" Target="@15" Category="Contains" FetchingParent="@5" />
-    <Link Source="@5" Target="@16" Category="Contains" FetchingParent="@5" />
-    <Link Source="@5" Target="@17" Category="Contains" FetchingParent="@5" />
-    <Link Source="@5" Target="@18" Category="Contains" FetchingParent="@5" />
-    <Link Source="@5" Target="@9" Category="Contains" FetchingParent="@5" />
-    <Link Source="@6" Target="@14" Category="Contains" FetchingParent="@6" />
-    <Link Source="@7" Target="@8" Category="Contains" FetchingParent="@7" />
+    <Link Source="@31" Target="@33" Category="CodeSchema_Calls" Bounds="301.467526868415,331.546868299117,5.89931623894557,24.5745749007783" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@31" Target="@34" Category="CodeSchema_Calls" Bounds="327.354911092122,324.547531231648,190.288617543126,39.23866503009" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@31" Target="@36" Category="CodeSchema_Calls" Bounds="327.301107987486,329.112486415648,80.5815511192147,29.3539224515123" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@31" Target="@37" Category="CodeSchema_Calls" Bounds="-57.9297485351563,321.980041503906,327.277984619141,38.5149536132813" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@31" Target="@39" Category="CodeSchema_Calls" Bounds="202.130241519383,330.267508988925,67.7604847237235,27.8572510131183" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@31" Target="@40" Category="CodeSchema_Calls" Bounds="81.7265715038166,324.384949109206,187.621672921639,37.6369861435051" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@31" Target="@41" Category="CodeSchema_Calls" Bounds="327.354911092122,322.569131545733,302.275471436738,41.7119644759656" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@32" Target="@22" Category="CodeSchema_Calls" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@4" Target="(@3 Namespace=::)" Category="Contains" FetchingParent="@4" />
+    <Link Source="@4" Target="@2" Category="CodeMap_ProjectReference" />
+    <Link Source="@4" Target="@5" Category="Contains" FetchingParent="@4" />
+    <Link Source="@5" Target="@18" Category="References" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@5" Target="@21" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="7" />
+    <Link Source="@5" Target="@23" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@5" Target="@24" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="3" />
+    <Link Source="@5" Target="@25" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@5" Target="@26" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@5" Target="@27" Category="CodeSchema_Calls" IsSourceVirtualized="True" Weight="3" />
+    <Link Source="@5" Target="@32" Category="CodeSchema_Calls" IsSourceVirtualized="True" Weight="1" />
+    <Link Source="@5" Target="@38" Category="CodeSchema_Calls" IsSourceVirtualized="True" IsTargetVirtualized="True" Weight="1" />
+    <Link Source="@7" Target="@12" Category="Contains" FetchingParent="@7" />
+    <Link Source="@7" Target="@15" Category="Contains" FetchingParent="@7" />
+    <Link Source="@7" Target="@17" Category="Contains" FetchingParent="@7" />
+    <Link Source="@9" Target="(@1 @8 Type=Board)" Category="Contains" FetchingParent="@9" />
+    <Link Source="@9" Target="@11" Category="Contains" />
+    <Link Source="@9" Target="@14" Category="Contains" FetchingParent="@9" />
+    <Link Source="@9" Target="@16" Category="Contains" FetchingParent="@9" />
+    <Link Source="@9" Target="@18" Category="Contains" FetchingParent="@9" />
+    <Link Source="@9" Target="@20" Category="Contains" FetchingParent="@9" />
+    <Link Source="@9" Target="@21" Category="Contains" FetchingParent="@9" />
+    <Link Source="@9" Target="@23" Category="Contains" FetchingParent="@9" />
+    <Link Source="@9" Target="@24" Category="Contains" FetchingParent="@9" />
+    <Link Source="@9" Target="@25" Category="Contains" FetchingParent="@9" />
+    <Link Source="@9" Target="@26" Category="Contains" FetchingParent="@9" />
   </Links>
   <Categories>
+    <Category Id="CodeMap_ProjectReference" Label="Project Reference" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Referenced By" OutgoingActionLabel="References" />
     <Category Id="CodeSchema_Assembly" Label="Assembly" BasedOn="File" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Assembly" NavigationActionLabel="Assemblies" />
     <Category Id="CodeSchema_Calls" Label="Calls" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Called By" OutgoingActionLabel="Calls" />
     <Category Id="CodeSchema_Class" Label="Class" BasedOn="CodeSchema_Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Classes" />
@@ -88,6 +138,7 @@
     <Category Id="CodeSchema_Member" Label="Member" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Field" NavigationActionLabel="Members" />
     <Category Id="CodeSchema_Method" Label="Method" BasedOn="CodeSchema_Member" CanBeDataDriven="True" DefaultAction="Link:Forward:CodeSchema_Calls" Icon="CodeSchema_Method" NavigationActionLabel="Methods" />
     <Category Id="CodeSchema_Namespace" Label="Namespace" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Type" Icon="CodeSchema_Namespace" NavigationActionLabel="Namespaces" />
+    <Category Id="CodeSchema_Property" Label="Property" BasedOn="CodeSchema_Member" CanBeDataDriven="True" DefaultAction="Microsoft.Contains" Icon="CodeSchema_Property" NavigationActionLabel="Properties" />
     <Category Id="CodeSchema_ReturnTypeLink" Label="Return" CanBeDataDriven="True" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Return types" OutgoingActionLabel="Return types" />
     <Category Id="CodeSchema_Type" Label="Type" CanBeDataDriven="True" DefaultAction="Node:Both:CodeSchema_Member" Icon="CodeSchema_Class" NavigationActionLabel="Types" />
     <Category Id="Contains" Label="Contains" Description="Whether the source of the link contains the target object" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Contained By" IsContainment="True" OutgoingActionLabel="Contains" />
@@ -102,6 +153,7 @@
     <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
     <Property Id="CodeSchemaProperty_IsAbstract" Label="Is Abstract" Description="Flag to indicate member is 'Abstract' does not provide a full implementation" DataType="System.Boolean" />
     <Property Id="CodeSchemaProperty_IsConstructor" Label="Is Constructor" Description="Flag to indicate the method is a constructor" DataType="System.Boolean" />
+    <Property Id="CodeSchemaProperty_IsFinal" Label="Is Final" Description="Flag to indicate the member is 'Final' and cannot be derived from" DataType="System.Boolean" />
     <Property Id="CodeSchemaProperty_IsInternal" Label="Is Internal" Description="Flag to indicate the method is 'Internal'" DataType="System.Boolean" />
     <Property Id="CodeSchemaProperty_IsPublic" Label="Is Public" Description="Flag to indicate the scope is Public" DataType="System.Boolean" />
     <Property Id="CodeSchemaProperty_IsSpecialName" Label="Is Special Name" Description="Flag to indicate the method is treated in a special way by some compilers" DataType="System.Boolean" />
@@ -145,26 +197,51 @@
   <IdentifierAliases>
     <Alias n="1" Uri="Assembly=$(5182f161-5999-4a5e-8ad5-ec4977f47383.OutputPathUri)" />
     <Alias n="2" Id="(@1)" />
-    <Alias n="3" Id="(@1 Namespace=WarQuest.WinFormMVC)" />
-    <Alias n="4" Id="Namespace=WarQuest.WinFormMVC.Models" />
-    <Alias n="5" Id="(@1 @4)" />
-    <Alias n="6" Id="(@1 Namespace=WarQuest.WinFormMVC.Presenters)" />
-    <Alias n="7" Id="(@1 Namespace=WarQuest.WinFormMVC.Views)" />
-    <Alias n="8" Id="(@1 Namespace=WarQuest.WinFormMVC.Views Type=IUnitBuilder)" />
-    <Alias n="9" Id="(@1 @4 Type=IUnitDestroyer)" />
-    <Alias n="10" Id="(@1 @4 Type=PlayerOneGame)" />
-    <Alias n="11" Id="(@1 @4 Type=SameUnitCollection)" />
-    <Alias n="12" Id="(@1 @4 Type=Unit)" />
-    <Alias n="13" Id="(@1 @4 Type=UnitBuilder)" />
-    <Alias n="14" Id="(@1 Namespace=WarQuest.WinFormMVC.Presenters Type=UnitCollection)" />
-    <Alias n="15" Id="(@1 @4 Type=UnitDestroyer)" />
-    <Alias n="16" Id="(@1 @4 Type=UnitHuman)" />
-    <Alias n="17" Id="(@1 @4 Type=UnitMonster)" />
-    <Alias n="18" Id="(@1 @4 Type=UnitVehicle)" />
-    <Alias n="19" Id="(@1 @4 Type=SameUnitCollection Member=(Name=AddSameUnit OverloadingParameters=[@12]))" />
-    <Alias n="20" Id="(@1 @4 Type=SameUnitCollection Member=.ctor)" />
+    <Alias n="3" Uri="Assembly=$(40a0ce5f-2ca7-4697-8d3e-fbb6de52b80e.OutputPathUri)" />
+    <Alias n="4" Id="(@3)" />
+    <Alias n="5" Id="(@3 Namespace=WarQuest.Tests)" />
+    <Alias n="6" Id="Namespace=WarQuest.WinFormMVC" />
+    <Alias n="7" Id="(@1 @6)" />
+    <Alias n="8" Id="Namespace=WarQuest.WinFormMVC.Models" />
+    <Alias n="9" Id="(@1 @8)" />
+    <Alias n="10" Id="(@1 Namespace=WarQuest.WinFormMVC.Presenters)" />
+    <Alias n="11" Id="(@1 Namespace=WarQuest.WinFormMVC.Views)" />
+    <Alias n="12" Id="(@1 @6 Type=frmBoard)" />
+    <Alias n="13" Id="(@1 Namespace=WarQuest.WinFormMVC.Views Type=IUnitBuilder)" />
+    <Alias n="14" Id="(@1 @8 Type=IUnitDestroyer)" />
+    <Alias n="15" Id="(@1 @6 Type=MainForm)" />
+    <Alias n="16" Id="(@1 @8 Type=PlayerOneGame)" />
+    <Alias n="17" Id="(@1 @6 Type=Program)" />
+    <Alias n="18" Id="(@1 @8 Type=SameUnitCollection)" />
+    <Alias n="19" Id="Type=Unit" />
+    <Alias n="20" Id="(@1 @8 @19)" />
+    <Alias n="21" Id="(@1 @8 Type=UnitBuilder)" />
+    <Alias n="22" Id="(@1 Namespace=WarQuest.WinFormMVC.Presenters Type=UnitCollection)" />
+    <Alias n="23" Id="(@1 @8 Type=UnitDestroyer)" />
+    <Alias n="24" Id="(@1 @8 Type=UnitHuman)" />
+    <Alias n="25" Id="(@1 @8 Type=UnitMonster)" />
+    <Alias n="26" Id="(@1 @8 Type=UnitVehicle)" />
+    <Alias n="27" Id="(@1 @8 Type=SameUnitCollection Member=(Name=AddSameUnit OverloadingParameters=[@20]))" />
+    <Alias n="28" Uri="Assembly=file:///C:/Program Files/dotnet/packs/Microsoft.NETCore.App.Ref/3.1.0/ref/netcoreapp3.1/System.Runtime.dll" />
+    <Alias n="29" Id="(@28 Namespace=System Type=Int32)" />
+    <Alias n="30" Uri="Assembly=file:///C:/Program Files/dotnet/packs/Microsoft.WindowsDesktop.App.Ref/3.1.0/ref/netcoreapp3.1/System.Drawing.Common.dll" />
+    <Alias n="31" Id="(@1 @8 @19 Member=(Name=.ctor OverloadingParameters=[@29,@29,@29,@29,@29,@29,(@30 Namespace=System.Drawing Type=Bitmap)]))" />
+    <Alias n="32" Id="(@1 @8 Type=SameUnitCollection Member=.ctor)" />
+    <Alias n="33" Id="(@1 @8 @19 Member=AttackLevel)" />
+    <Alias n="34" Id="(@1 @8 @19 Member=Cost)" />
+    <Alias n="35" Id="(@1 @8 @19 Member=FileName)" />
+    <Alias n="36" Id="(@1 @8 @19 Member=Image)" />
+    <Alias n="37" Id="(@1 @8 @19 Member=Index)" />
+    <Alias n="38" Id="(@1 @8 @19 Member=IsSelected)" />
+    <Alias n="39" Id="(@1 @8 @19 Member=JumpPower)" />
+    <Alias n="40" Id="(@1 @8 @19 Member=LifeLevel)" />
+    <Alias n="41" Id="(@1 @8 @19 Member=SpeedPower)" />
   </IdentifierAliases>
   <Styles>
+    <Style TargetType="Node" GroupLabel="Error" ValueLabel="Error Level">
+      <Condition Expression="HasValue('ErrorLevel')" />
+      <Setter Property="Icon" Value="Node.Error" />
+    </Style>
     <Style TargetType="Node" GroupLabel="Results" ValueLabel="True">
       <Condition Expression="HasCategory('QueryResult')" />
       <Setter Property="Background" Value="#FFBCFFBE" />
@@ -382,6 +459,8 @@
     </Style>
   </Styles>
   <Paths>
+    <Path Id="40a0ce5f-2ca7-4697-8d3e-fbb6de52b80e.OutputPath" Value="C:\Users\imgth\source\repos\WarQuest.WinFormMVC\WarQuest.Tests\bin\Debug\netcoreapp3.1\WarQuest.Tests.dll" />
+    <Path Id="40a0ce5f-2ca7-4697-8d3e-fbb6de52b80e.OutputPathUri" Value="file:///C:/Users/imgth/source/repos/WarQuest.WinFormMVC/WarQuest.Tests/bin/Debug/netcoreapp3.1/WarQuest.Tests.dll" />
     <Path Id="5182f161-5999-4a5e-8ad5-ec4977f47383.OutputPath" Value="C:\Users\imgth\source\repos\WarQuest.WinFormMVC\WarQuest.WinFormMVC\bin\Debug\netcoreapp3.1\WarQuest.WinFormMVC.dll" />
     <Path Id="5182f161-5999-4a5e-8ad5-ec4977f47383.OutputPathUri" Value="file:///C:/Users/imgth/source/repos/WarQuest.WinFormMVC/WarQuest.WinFormMVC/bin/Debug/netcoreapp3.1/WarQuest.WinFormMVC.dll" />
   </Paths>

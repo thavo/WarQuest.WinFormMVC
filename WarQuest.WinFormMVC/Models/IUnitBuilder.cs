@@ -15,7 +15,7 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 /// ////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace WarQuest.WinFormMVC.Views
+namespace WarQuest.WinFormMVC.Models
 {
     /// <summary>
     /// A Builder can ONLY Build and cannot destroy.

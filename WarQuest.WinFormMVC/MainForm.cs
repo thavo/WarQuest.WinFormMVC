@@ -1,36 +1,53 @@
-﻿using System;
+﻿/// /////////////////////////////////////////////////////////////////////////////////////////////////////
+/// FileName: MainForm.cs
+/// FileType: Visual C# Source file
+/// Author : Sanouche
+/// Application codename : WarQuest
+/// Audience : Dev by Kids, for Kids !
+/// Created On : 01/01/2021
+/// Copy Rights : MIT License
+/// Description : Class for defining database related functions
+/// License : MIT License, https://opensource.org/licenses/MIT
+/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+/// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
+/// PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
+/// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+/// ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
 using System.Diagnostics;
 using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using WarQuest.WinFormMVC.Models;
-using WarQuest.WinFormMVC.Presenters;
 
 namespace WarQuest.WinFormMVC
 {
     public partial class MainForm : Form
     {
+        const string IMPOSSIBLECASE = "Impossible case";
         UnitCollection _myUnits = new UnitCollection();
 
         public MainForm()
         {
-            InitializeComponent();
+            this.InitializeComponent();
             this.Text = string.Format(CultureInfo.InvariantCulture, "{0} ; Board size {1} x {2} ", Models.Board.GAME_CODE_NAME, Models.Board.WIDTH_SIZE, Models.Board.HEIGHT_SIZE);
 
-            this._myUnits.CreateRandomUnits(imageListUnits);
-            lblCheckMaxSpendingMoney.Text = String.Empty;
+            this._myUnits.CreateRandomUnits(this.imageListUnits);
+            lblCheckMaxSpendingMoney.Text = string.Empty;
         }
 
         private void butStart_Click(object sender, EventArgs e)
         {
             var myForm = new frmBoard();
-            myForm.UnitsWithChoices = _myUnits.GetSelectedUnits();
+            myForm.UnitsWithChoices = this._myUnits.GetSelectedUnits();
             myForm.Show();
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            DisplayListOfAllUnits();
+            this.DisplayListOfAllUnits();
         }
 
         private void DisplayListOfAllUnits()
@@ -43,7 +60,7 @@ namespace WarQuest.WinFormMVC
 
                 // Retrieves the various Unit's properties to the list view
                 lstViewAvailableUnits.Items.Add(
-                    String.Format(
+                    string.Format(
                         CultureInfo.InvariantCulture,
                         "{0}_{1}: S={2}, Jmp={3}, PV={4}, Attack={5}, ${6}",
                         unit.Index,
@@ -52,10 +69,8 @@ namespace WarQuest.WinFormMVC
                         unit.JumpPower,
                         unit.LifeLevel,
                         unit.AttackLevel,
-                        unit.Cost
-                        ),
-                    index
-                 );
+                        unit.Cost),
+                    index);
 
                 System.Drawing.Color BUILDER_COLOR = System.Drawing.Color.FromArgb(133, 220, 123);
                 System.Drawing.Color DESTROYER_COLOR = System.Drawing.Color.FromArgb(200, 255, 153);
@@ -66,11 +81,16 @@ namespace WarQuest.WinFormMVC
                 // fileName
                 switch (unit.FileName.Substring(0, 4))
                 {
-                    case ("Buil"): lstViewAvailableUnits.Items[index].BackColor = BUILDER_COLOR; break;
-                    case ("Dest"):lstViewAvailableUnits.Items[index].BackColor =DESTROYER_COLOR; break;
-                    case ("Hum-"):lstViewAvailableUnits.Items[index].BackColor =HUMAN_COLOR ; break;
-                    case ("Mon-"):lstViewAvailableUnits.Items[index].BackColor = MONSTER_COLOR;  break;
-                    case ("Veh-"):lstViewAvailableUnits.Items[index].BackColor = VEHICLE_COLOR; break;
+                    case ("Buil"): this.lstViewAvailableUnits.Items[index].BackColor = BUILDER_COLOR; 
+                        break;
+                    case ("Dest"): this.lstViewAvailableUnits.Items[index].BackColor = DESTROYER_COLOR; 
+                        break;
+                    case ("Hum-"): this.lstViewAvailableUnits.Items[index].BackColor = HUMAN_COLOR; 
+                        break;
+                    case ("Mon-"): this.lstViewAvailableUnits.Items[index].BackColor = MONSTER_COLOR; 
+                        break;
+                    case ("Veh-"): this.lstViewAvailableUnits.Items[index].BackColor = VEHICLE_COLOR; 
+                        break;
                 }
 
                 index++;
@@ -79,28 +99,26 @@ namespace WarQuest.WinFormMVC
 
         private void lstViewAvailableUnits_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string listOfChosenIndex = String.Empty;
-            lblTotalMoneySpent.Text = String.Empty;
-            lblCheckMaxSpendingMoney.Text = String.Empty;
+            string listOfChosenIndex = string.Empty;
+            this.lblTotalMoneySpent.Text = string.Empty;
+            this.lblCheckMaxSpendingMoney.Text = string.Empty;
 
-            int totalMoneySpent = 0;
             this._myUnits.ClearAllSelectedUnits();
 
-            lblChosen.Text = listOfChosenIndex = DisplayIntoListTheChosenUnits(lstBxUnits);
+            this.lblChosen.Text = listOfChosenIndex = this.DisplayIntoListTheChosenUnits(this.lstBxUnits);
 
-            TagChosenUnitAsSelected(listOfChosenIndex);
+            this.TagChosenUnitAsSelected(listOfChosenIndex);
 
             int totalSelectedMoney = this._myUnits.GetTotalMoneySelected();
-            lblTotalMoneySpent.Text += "; Total=" + totalSelectedMoney.ToString(CultureInfo.InvariantCulture);
+            this.lblTotalMoneySpent.Text += "; Total=" + totalSelectedMoney.ToString(CultureInfo.InvariantCulture);
 
-            if (totalSelectedMoney > Models.PlayerOneGame.MAX_SPENDING_MONEY)
+            if (totalSelectedMoney > Models.PlayerOneGame.MAXSPENDINGMONEY)
             {
-                lblCheckMaxSpendingMoney.Text = String.Format(
+                this.lblCheckMaxSpendingMoney.Text = string.Format(
                     CultureInfo.InvariantCulture,
                     "NOT ENOUGH MONEY ({0} MAX = {1})",
                     totalSelectedMoney.ToString(CultureInfo.InvariantCulture),
-                    Models.PlayerOneGame.MAX_SPENDING_MONEY.ToString(CultureInfo.InvariantCulture)
-                    );
+                    Models.PlayerOneGame.MAXSPENDINGMONEY.ToString(CultureInfo.InvariantCulture));
             }
         }
 
@@ -111,24 +129,27 @@ namespace WarQuest.WinFormMVC
             for (int i = 0; i < arr.Length - 1; i++)
             {
                 int chosenIndex = 0;
-                int.TryParse(arr.GetValue(i).ToString(), out chosenIndex);
+                bool success = int.TryParse(arr.GetValue(i).ToString(), out chosenIndex);
 
-                var unitSelected = this._myUnits.Units()[chosenIndex];
-                unitSelected.IsSelected = true;
+                if (success)
+                {
+                    var unitSelected = this._myUnits.Units()[chosenIndex];
+                    unitSelected.IsSelected = true;
 
-                lblTotalMoneySpent.Text += "+" + unitSelected.Cost.ToString(CultureInfo.InvariantCulture);
+                    lblTotalMoneySpent.Text += "+" + unitSelected.Cost.ToString(CultureInfo.InvariantCulture);
+                }
             }
         }
 
-        private String DisplayIntoListTheChosenUnits(ListBox mylstBxUnits)
+        private string DisplayIntoListTheChosenUnits(ListBox mylstBxUnits)
         {
-            string strChosenIndex = "";
+            string strChosenIndex = string.Empty;
 
             mylstBxUnits.Items.Clear();
 
             if (lstViewAvailableUnits.SelectedItems.Count >= 1)
             {
-                lblChosen.Text = "";
+                lblChosen.Text = string.Empty;
 
                 ListViewItem item = lstViewAvailableUnits.SelectedItems[lstViewAvailableUnits.SelectedItems.Count - 1];
                 if (item != null)
@@ -141,7 +162,7 @@ namespace WarQuest.WinFormMVC
                 }
                 else
                 {
-                    throw (new Exception("Impossible case"));
+                    throw new Exception(IMPOSSIBLECASE);
                 }
             }
 

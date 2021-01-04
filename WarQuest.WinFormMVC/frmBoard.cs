@@ -1,8 +1,25 @@
-﻿using System;
+﻿/// /////////////////////////////////////////////////////////////////////////////////////////////////////
+/// FileName: frmBoard.cs
+/// FileType: Visual C# Source file
+/// Author : Sanouche
+/// Application codename : WarQuest
+/// Audience : Dev by Kids, for Kids !
+/// Created On : 01/01/2021
+/// Copy Rights : MIT License
+/// Description : Class for defining database related functions
+/// License : MIT License, https://opensource.org/licenses/MIT
+/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+/// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
+/// PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
+/// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+/// ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
 using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
-using WarQuest.WinFormMVC.Presenters;
+using WarQuest.WinFormMVC.Models;
 
 namespace WarQuest.WinFormMVC
 {
@@ -13,16 +30,16 @@ namespace WarQuest.WinFormMVC
 
         public frmBoard()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         private void frmBoard_Load(object sender, EventArgs e)
         {
-            this.Text = UnitsWithChoices.Count().ToString(CultureInfo.InvariantCulture) + " ; total cost" + UnitsWithChoices.TotalCost();
-            lblSummary.Text = UnitsWithChoices.GetTotalMoneySelected().ToString(CultureInfo.InvariantCulture);
+            this.Text = this.UnitsWithChoices.Count().ToString(CultureInfo.InvariantCulture) + " ; total cost" + this.UnitsWithChoices.TotalCost();
+            this.lblSummary.Text = this.UnitsWithChoices.GetTotalMoneySelected().ToString(CultureInfo.InvariantCulture);
 
             // FillInWithImagesDynamic();
-            FillInWithImagesStatic();
+            this.FillInWithImagesStatic();
         }
 
         /// <summary>
@@ -32,31 +49,31 @@ namespace WarQuest.WinFormMVC
         {
             // UnitsWithChoices.DeleteUnselectedUnits();
             UnitCollection myChosenUnits = new UnitCollection();
-            myChosenUnits = UnitsWithChoices.GetSelectedUnits();
+            myChosenUnits = this.UnitsWithChoices.GetSelectedUnits();
 
             int countSelectedUnits = myChosenUnits.Count();
 
             // Ugly but : Fills in the 20 static picture boxes
-            if (countSelectedUnits>= 20) { pxBxUnit20.Image = myChosenUnits.Units()[19].Image; }
-            if (countSelectedUnits>= 19) { pxBxUnit19.Image = myChosenUnits.Units()[18].Image; }
-            if (countSelectedUnits>= 18) { pxBxUnit18.Image = myChosenUnits.Units()[17].Image; }
-            if (countSelectedUnits>= 17) { pxBxUnit17.Image = myChosenUnits.Units()[16].Image; }
-            if (countSelectedUnits>= 16) { pxBxUnit16.Image = myChosenUnits.Units()[15].Image; }
-            if (countSelectedUnits>= 15) { pxBxUnit15.Image = myChosenUnits.Units()[14].Image; }
-            if (countSelectedUnits>= 14) { pxBxUnit14.Image = myChosenUnits.Units()[13].Image; }
-            if (countSelectedUnits>= 13) { pxBxUnit13.Image = myChosenUnits.Units()[12].Image; }
-            if (countSelectedUnits>= 12) { pxBxUnit12.Image = myChosenUnits.Units()[11].Image; }
-            if (countSelectedUnits>= 11) { pxBxUnit11.Image = myChosenUnits.Units()[10].Image; }
-            if (countSelectedUnits>= 10) { pxBxUnit10.Image = myChosenUnits.Units()[ 9].Image; }
-            if (countSelectedUnits>=  9) { pxBxUnit09.Image = myChosenUnits.Units()[ 8].Image; }
-            if (countSelectedUnits>=  8) { pxBxUnit08.Image = myChosenUnits.Units()[ 7].Image; }
-            if (countSelectedUnits>=  7) { pxBxUnit07.Image = myChosenUnits.Units()[ 6].Image; }
-            if (countSelectedUnits>=  6) { pxBxUnit06.Image = myChosenUnits.Units()[ 5].Image; }
-            if (countSelectedUnits>=  5) { pxBxUnit05.Image = myChosenUnits.Units()[ 4].Image; }
-            if (countSelectedUnits>=  4) { pxBxUnit04.Image = myChosenUnits.Units()[ 3].Image; }
-            if (countSelectedUnits>=  3) { pxBxUnit03.Image = myChosenUnits.Units()[ 2].Image; }
-            if (countSelectedUnits>=  2) { pxBxUnit02.Image = myChosenUnits.Units()[ 1].Image; }
-            if (countSelectedUnits>=  1) { pxBxUnit01.Image = myChosenUnits.Units()[ 0].Image; }
+            if (countSelectedUnits >= 20) { this.pxBxUnit20.Image = myChosenUnits.Units()[19].Image; }
+            if (countSelectedUnits >= 19) { this.pxBxUnit19.Image = myChosenUnits.Units()[18].Image; }
+            if (countSelectedUnits >= 18) { this.pxBxUnit18.Image = myChosenUnits.Units()[17].Image; }
+            if (countSelectedUnits >= 17) { this.pxBxUnit17.Image = myChosenUnits.Units()[16].Image; }
+            if (countSelectedUnits >= 16) { this.pxBxUnit16.Image = myChosenUnits.Units()[15].Image; }
+            if (countSelectedUnits >= 15) { this.pxBxUnit15.Image = myChosenUnits.Units()[14].Image; }
+            if (countSelectedUnits >= 14) { this.pxBxUnit14.Image = myChosenUnits.Units()[13].Image; }
+            if (countSelectedUnits >= 13) { this.pxBxUnit13.Image = myChosenUnits.Units()[12].Image; }
+            if (countSelectedUnits >= 12) { this.pxBxUnit12.Image = myChosenUnits.Units()[11].Image; }
+            if (countSelectedUnits >= 11) { this.pxBxUnit11.Image = myChosenUnits.Units()[10].Image; }
+            if (countSelectedUnits >= 10) { this.pxBxUnit10.Image = myChosenUnits.Units()[9].Image; }
+            if (countSelectedUnits >= 9) { this.pxBxUnit09.Image = myChosenUnits.Units()[8].Image; }
+            if (countSelectedUnits >= 8) { this.pxBxUnit08.Image = myChosenUnits.Units()[7].Image; }
+            if (countSelectedUnits >= 7) { this.pxBxUnit07.Image = myChosenUnits.Units()[6].Image; }
+            if (countSelectedUnits >= 6) { this.pxBxUnit06.Image = myChosenUnits.Units()[5].Image; }
+            if (countSelectedUnits >= 5) { this.pxBxUnit05.Image = myChosenUnits.Units()[4].Image; }
+            if (countSelectedUnits >= 4) { this.pxBxUnit04.Image = myChosenUnits.Units()[3].Image; }
+            if (countSelectedUnits >= 3) { this.pxBxUnit03.Image = myChosenUnits.Units()[2].Image; }
+            if (countSelectedUnits >= 2) { this.pxBxUnit02.Image = myChosenUnits.Units()[1].Image; }
+            if (countSelectedUnits >= 1) { this.pxBxUnit01.Image = myChosenUnits.Units()[0].Image; }
         }
 
         private void FillInWithImagesDynamic()
@@ -67,7 +84,7 @@ namespace WarQuest.WinFormMVC
             for (int i = 0; i < 19; i++)
             {
                 picbxTest = new PictureBox();
-                picbxTest.Image = UnitsWithChoices.Units()[i].Image;
+                picbxTest.Image = this.UnitsWithChoices.Units()[i].Image;
                 picbxTest.Name = "Name_" + i.ToString(CultureInfo.InvariantCulture);
                 picbxTest.Height = HIEGHT_ICON_SIZE;
 
@@ -100,14 +117,14 @@ namespace WarQuest.WinFormMVC
         {
             const int POS_SHIFT = 10;
 
-            picBxToPlace.Visible = true;
-            picBxToPlace.Location = new Point(POS_SHIFT + e.X, POS_SHIFT + e.Y);
+            this.picBxToPlace.Visible = true;
+            this.picBxToPlace.Location = new Point(POS_SHIFT + e.X, POS_SHIFT + e.Y);
 
         }
 
         private void panelBoard_MouseClick(object sender, MouseEventArgs e)
         {
-            picBxToPlace.Location = new Point(e.X, e.Y);
+            this.picBxToPlace.Location = new Point(e.X, e.Y);
 
             // unregister this.panelBoard.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelBoard_MouseMove);
             this.panelBoard.MouseMove -= this.panelBoard_MouseMove;
@@ -117,62 +134,55 @@ namespace WarQuest.WinFormMVC
         {
         }
 
-        private void pxBxUnit01_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(0); }
+        private void pxBxUnit01_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(0); }
 
         private void SetPictureBoxWithChosenUnit(int index)
         {
-            Bitmap imgCloned = (Bitmap) UnitsWithChoices.Units()[index].Image.Clone();
-            picBxToPlace.Image = imgCloned;
+            Bitmap imgCloned = (Bitmap)this.UnitsWithChoices.Units()[index].Image.Clone();
+            this.picBxToPlace.Image = imgCloned;
         }
 
-        private void pxBxUnit02_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(1); }
+        private void pxBxUnit02_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(1); }
+                                                                    
+        private void pxBxUnit03_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(2); }
+                                                                    
+        private void pxBxUnit04_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(3); }
+                                                                   
+        private void pxBxUnit05_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(4); }
+                                                                   
+        private void pxBxUnit06_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(5); }
+                                                                    
+        private void pxBxUnit07_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(6); }
+                                                                   
+        private void pxBxUnit08_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(7); }
+                                                                    
+        private void pxBxUnit09_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(8); }
+                                                                    
+        private void pxBxUnit10_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(9); }
+                                                                   
+        private void pxBxUnit11_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(10); }
+                                                                  
+        private void pxBxUnit12_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(11); }
+                                                                   
+        private void pxBxUnit13_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(12); }
+                                                                   
+        private void pxBxUnit14_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(13); }
+                                                                    
+        private void pxBxUnit15_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(14); }
+                                                                   
+        private void pxBxUnit16_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(15); }
+                                                                   
+        private void pxBxUnit17_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(16); }
+                                                                   
+        private void pxBxUnit18_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(17); }
+                                                                   
+        private void pxBxUnit19_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(18); }
+                                                                    
+        private void pxBxUnit20_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(19); }
 
-        private void pxBxUnit03_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(2); }
+        private void picBxToPlace_Click(object sender, EventArgs e)
+        {
 
-        private void pxBxUnit04_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(3); }
-
-        private void pxBxUnit05_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(4); }
-
-        private void pxBxUnit06_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(5); }
-
-        private void pxBxUnit07_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(6); }
-
-        private void pxBxUnit08_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(7); }
-
-        private void pxBxUnit09_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(8); }
-
-        private void pxBxUnit10_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(9); }
-
-        private void pxBxUnit11_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(10); }
-
-        private void pxBxUnit12_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(11); }
-
-        private void pxBxUnit13_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(12); }
-
-        private void pxBxUnit14_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(13); }
-
-        private void pxBxUnit15_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(14); }
-
-        private void pxBxUnit16_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(15); }
-
-        private void pxBxUnit17_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(16); }
-
-        private void pxBxUnit18_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(17); }
-
-        private void pxBxUnit19_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(18); }
-
-        private void pxBxUnit20_Click(object sender, EventArgs e) { SetPictureBoxWithChosenUnit(19); }
-
-        //private void flLayPanChosenUnits_MouseDoubleClick(object sender, MouseEventArgs e)
-        //{
-        //    var element = sender;
-        //    int count =  ((System.Windows.Forms.Control)sender).Controls.Count;
-
-        //    var img = ((System.Windows.Forms.Control)sender).Controls[count-2];
-
-        //    panelDebug.Controls.Add(img);
-
-        //    lblSummary.Text += "";
-        //}
+        }
     }
 }

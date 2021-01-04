@@ -100,10 +100,11 @@
             this.picBxToPlace.Location = new System.Drawing.Point(0, 0);
             this.picBxToPlace.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.picBxToPlace.Name = "picBxToPlace";
-            this.picBxToPlace.Size = new System.Drawing.Size(121, 119);
+            this.picBxToPlace.Size = new System.Drawing.Size(80, 80);
             this.picBxToPlace.TabIndex = 5;
             this.picBxToPlace.TabStop = false;
             this.picBxToPlace.Visible = false;
+            this.picBxToPlace.Click += new System.EventHandler(this.picBxToPlace_Click);
             // 
             // picbxHuman
             // 

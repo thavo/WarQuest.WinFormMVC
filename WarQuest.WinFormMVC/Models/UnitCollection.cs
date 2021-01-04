@@ -1,11 +1,26 @@
-﻿using System;
+﻿/// /////////////////////////////////////////////////////////////////////////////////////////////////////
+/// FileName: UnitCollection.cs
+/// FileType: Visual C# Source file
+/// Author : Sanouche
+/// Application codename : WarQuest
+/// Audience : Dev by Kids, for Kids !
+/// Created On : 01/01/2021
+/// Copy Rights : MIT License
+/// Description : Class for defining database related functions
+/// License : MIT License, https://opensource.org/licenses/MIT
+/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+/// INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
+/// PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
+/// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+/// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+/// ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using WarQuest.WinFormMVC.Models;
 
-
-namespace WarQuest.WinFormMVC.Presenters
+namespace WarQuest.WinFormMVC.Models
 {
     public class UnitCollection
     {
@@ -13,16 +28,25 @@ namespace WarQuest.WinFormMVC.Presenters
         // Here Create a list of parts.
         protected List<Unit> _unitCollection = new List<Unit>();
 
+        public UnitCollection()
+        {
+        }
+
+        public UnitCollection(List<Unit> unitCollection)
+        {
+            this._unitCollection = unitCollection;
+        }
+
         public object myUnit { get; private set; }
 
         public List<Unit> Units()
         {
-            return _unitCollection;
+            return this._unitCollection;
         }
 
         public int AddUnit(Unit unit)
         {
-            _unitCollection.Add(unit);
+            this._unitCollection.Add(unit);
 
             return this.Count();
         }
@@ -30,18 +54,18 @@ namespace WarQuest.WinFormMVC.Presenters
 
         public int Count()
         {
-            return _unitCollection.Count;
+            return this._unitCollection.Count;
         }
 
         public int TotalCost()
         {
-            int _moneyBalance = 0;
-            foreach (Unit item in _unitCollection)
+            int moneyBalance = 0;
+            foreach (Unit item in this._unitCollection)
             {
-                _moneyBalance += item.Cost;
+                moneyBalance += item.Cost;
             }
 
-            return _moneyBalance;
+            return moneyBalance;
         }
 
         public int AddRandomUnit(int numberOfUnits, int costPerUnit)
@@ -78,7 +102,7 @@ namespace WarQuest.WinFormMVC.Presenters
         internal void CreateRandomUnits(ImageList imageListUnits)
         {
 
-            String fileName = String.Empty;
+            string fileName = string.Empty;
 
             int i = 0;
             Random rnd = new Random();
@@ -91,13 +115,18 @@ namespace WarQuest.WinFormMVC.Presenters
                 int myRnd = rnd.Next(120 * i, 200 * (i + 2 * i));
 
                 // fileName
-                switch (fileName.Substring(0,4))
+                switch (fileName.Substring(0, 4))
                 {
-                    case ("Buil"): this.AddUnit(new UnitBuilder(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); break;
-                    case ("Dest"): this.AddUnit(new UnitDestroyer(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); break;
-                    case ("Hum-"): this.AddUnit(new UnitHuman(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); break;
-                    case ("Mon-"): this.AddUnit(new UnitMonster(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); break;
-                    case ("Veh-"): this.AddUnit(new UnitVehicle(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); break;
+                    case ("Buil"): this.AddUnit(new UnitBuilder(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); 
+                        break;
+                    case ("Dest"): this.AddUnit(new UnitDestroyer(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); 
+                        break;
+                    case ("Hum-"): this.AddUnit(new UnitHuman(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); 
+                        break;
+                    case ("Mon-"): this.AddUnit(new UnitMonster(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); 
+                        break;
+                    case ("Veh-"): this.AddUnit(new UnitVehicle(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); 
+                        break;
                 }
 
                 i++;
@@ -108,9 +137,9 @@ namespace WarQuest.WinFormMVC.Presenters
         {
             int totalCleared = 0;
 
-            for (int i = 0; i < _unitCollection.Count; i++)
+            for (int i = 0; i < this._unitCollection.Count; i++)
             {
-                var myUnit = _unitCollection[i];
+                var myUnit = this._unitCollection[i];
                 if (myUnit.IsSelected)
                 {
                     myUnit.IsSelected = false;
@@ -124,9 +153,9 @@ namespace WarQuest.WinFormMVC.Presenters
         public UnitCollection GetSelectedUnits()
         {
             UnitCollection myCollection = new UnitCollection();
-            foreach (var item in _unitCollection)
+            foreach (var item in this._unitCollection)
             {
-                if( item.IsSelected)
+                if (item.IsSelected)
                 {
                     myCollection.AddUnit(item);
                 }
@@ -138,14 +167,14 @@ namespace WarQuest.WinFormMVC.Presenters
         {
             int i = 0;
             // Delete ALL UnSelected until no more
-            while (i < _unitCollection.Count)
+            while (i < this._unitCollection.Count)
             {
-                var myUnit = _unitCollection[i];
+                var myUnit = this._unitCollection[i];
 
                 // Check if Unselected, so we can remove them
                 if (!myUnit.IsSelected)
                 {
-                    _unitCollection.RemoveAt(i);
+                   this._unitCollection.RemoveAt(i);
                 }
                 else
                 {   
@@ -159,9 +188,9 @@ namespace WarQuest.WinFormMVC.Presenters
         {
             int CountTotalMoney = 0;
 
-            for (int i = 0; i < _unitCollection.Count; i++)
+            for (int i = 0; i < this._unitCollection.Count; i++)
             {
-                var myUnit = _unitCollection[i];
+                var myUnit = this._unitCollection[i];
                 if (myUnit.IsSelected)
                 {
                     CountTotalMoney += myUnit.Cost;
@@ -175,12 +204,12 @@ namespace WarQuest.WinFormMVC.Presenters
         {
             int CountTotal = 0;
 
-            for (int i = 0; i < _unitCollection.Count; i++)
+            for (int i = 0; i < this._unitCollection.Count; i++)
             {
-                var myUnit = _unitCollection[i];
+                var myUnit = this._unitCollection[i];
                 if (myUnit.IsSelected)
                 {
-                    CountTotal ++;
+                    CountTotal++;
                 }
             }
 

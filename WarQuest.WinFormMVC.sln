@@ -24,7 +24,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Resources\Mon-DragonBoss.jpg = Resources\Mon-DragonBoss.jpg
 		Resources\Mon-Fog.jpg = Resources\Mon-Fog.jpg
 		Resources\Mon-NoFace.jpg = Resources\Mon-NoFace.jpg
-		README.md = README.md
 		Resources\Splash-Screen.png = Resources\Splash-Screen.png
 		Resources\Veh-BigSpider.jpg = Resources\Veh-BigSpider.jpg
 		Resources\Veh-BigTank.jpg = Resources\Veh-BigTank.jpg
@@ -39,6 +38,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EnterpriseArchitecure", "EnterpriseArchitecure", "{7AC9F487-3012-42FE-961E-DAA8F0CC0B6D}"
 	ProjectSection(SolutionItems) = preProject
 		EnterpriseArchitecture\CodeMapMVP.dgml = EnterpriseArchitecture\CodeMapMVP.dgml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{83BD804D-4DAC-4CB7-B81D-816F134580C4}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global
@@ -61,6 +65,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7AC9F487-3012-42FE-961E-DAA8F0CC0B6D} = {D247B76A-5075-4B12-9BF8-5CE8B72EF40C}
+		{83BD804D-4DAC-4CB7-B81D-816F134580C4} = {D247B76A-5075-4B12-9BF8-5CE8B72EF40C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E8CF1FE6-0493-4D5F-AADC-04AE05A245E3}

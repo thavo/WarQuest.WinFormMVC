@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using WarQuest.WinFormMVC.Presenters;
+using WarQuest.WinFormMVC.Models;
 
 namespace WarQuest.Tests
 {
@@ -13,7 +13,7 @@ namespace WarQuest.Tests
         [Test]
         public void GIVEN_a_collectionOfSameUnit_WHEN_add_2_different_unit_types_THEN_addition_fails()
         {
-            WarQuest.WinFormMVC.Models.SameUnitCollection myUnitCollection = new WinFormMVC.Models.SameUnitCollection();
+            SameUnitCollection myUnitCollection = new SameUnitCollection();
             myUnitCollection.AddSameUnit(new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 0, 0, null));
 
             // Adding Same Unit type should be OK and count == 2
@@ -32,7 +32,7 @@ namespace WarQuest.Tests
         {
             const int NUMBER_OF_UNITS = 2;
 
-            WarQuest.WinFormMVC.Presenters.UnitCollection myUnitCollection = new WinFormMVC.Presenters.UnitCollection();
+            UnitCollection myUnitCollection = new UnitCollection();
             myUnitCollection.AddUnit(new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 0, 0, null));
             myUnitCollection.AddUnit(new WinFormMVC.Models.UnitHuman(1, 0, 0, 0, 0, 0, null));
 
@@ -99,8 +99,8 @@ namespace WarQuest.Tests
 
         private static UnitCollection CreateUnitCollection(int NUMBER_OF_UNITS, int INDEX_OF_SELECTED_ITEM_1, int INDEX_OF_SELECTED_ITEM_2, int INDEX_OF_SELECTED_ITEM_3)
         {
-            WinFormMVC.Presenters.UnitCollection myUnitCollection = new WinFormMVC.Presenters.UnitCollection();
-            WinFormMVC.Models.Unit myUnit = null;
+            UnitCollection myUnitCollection = new UnitCollection();
+            Unit myUnit = null;
 
             for (int i = 0; i < NUMBER_OF_UNITS; i++)
             {
@@ -122,7 +122,7 @@ namespace WarQuest.Tests
         {
             const int NUMBER_OF_UNITS = 5;
 
-            WarQuest.WinFormMVC.Presenters.UnitCollection myUnitCollection = new WinFormMVC.Presenters.UnitCollection();
+            UnitCollection myUnitCollection = new UnitCollection();
             myUnitCollection.AddUnit(new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 0, 0, null));
             myUnitCollection.AddUnit(new WinFormMVC.Models.UnitDestroyer(1, 0, 0, 0, 0, 0, null));
             myUnitCollection.AddUnit(new WinFormMVC.Models.UnitHuman(2, 0, 0, 0, 0, 0, null));
@@ -136,7 +136,7 @@ namespace WarQuest.Tests
         [Test]
         public void GIVEN_Units_To_Add_WHEN_I_add_units_of_cost_500_and_257_THEN_the_total_is_757()
         {
-            WarQuest.WinFormMVC.Presenters.UnitCollection myUnitCollection = new WinFormMVC.Presenters.UnitCollection();
+            UnitCollection myUnitCollection = new UnitCollection();
 
             myUnitCollection.AddUnit(new WinFormMVC.Models.UnitBuilder(0, 0, 0, 0, 0, 500, null));
             myUnitCollection.AddUnit(new WinFormMVC.Models.UnitBuilder(1, 0, 0, 0, 0, 257, null));
@@ -149,7 +149,7 @@ namespace WarQuest.Tests
         [Test]
         public void GIVEN_Units_WHEN_Generate_Random_20_Units_of_1000_Cost_THEN_TotalCost_is_20000()
         {
-            WarQuest.WinFormMVC.Presenters.UnitCollection myUnitCollection = new WinFormMVC.Presenters.UnitCollection();
+            UnitCollection myUnitCollection = new UnitCollection();
 
             myUnitCollection.AddRandomUnit(20, 1000);
 

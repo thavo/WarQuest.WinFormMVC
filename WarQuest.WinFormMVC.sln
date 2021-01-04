@@ -25,6 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Resources\Mon-Fog.jpg = Resources\Mon-Fog.jpg
 		Resources\Mon-NoFace.jpg = Resources\Mon-NoFace.jpg
 		README.md = README.md
+		Resources\Splash-Screen.png = Resources\Splash-Screen.png
 		Resources\Veh-BigSpider.jpg = Resources\Veh-BigSpider.jpg
 		Resources\Veh-BigTank.jpg = Resources\Veh-BigTank.jpg
 		Resources\Veh-Gun.jpg = Resources\Veh-Gun.jpg

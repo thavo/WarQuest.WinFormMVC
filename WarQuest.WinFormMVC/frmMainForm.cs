@@ -1,5 +1,5 @@
 ﻿/// /////////////////////////////////////////////////////////////////////////////////////////////////////
-/// FileName: MainForm.cs
+/// FileName: frmainForm.cs
 /// FileType: Visual C# Source file
 /// Author : Sanouche
 /// Application codename : WarQuest
@@ -24,7 +24,7 @@ using WarQuest.WinFormMVC.Models;
 
 namespace WarQuest.WinFormMVC
 {
-    public partial class MainForm : Form
+    public partial class frmMainForm : Form
     {
         private System.Drawing.Color BUILDER_COLOR = System.Drawing.Color.FromArgb(133, 220, 123);
         private System.Drawing.Color DESTROYER_COLOR = System.Drawing.Color.FromArgb(200, 255, 153);
@@ -38,7 +38,7 @@ namespace WarQuest.WinFormMVC
         internal UnitCollection _myUnits = null;
         public Unit.UnitTypeEnum UnitType { get; internal set; }
 
-        public MainForm()
+        public frmMainForm()
         {
             this.InitializeComponent();
             this.Text = string.Format(CultureInfo.InvariantCulture, "{0} ; Board size {1} x {2} ", Models.Board.GAME_CODE_NAME, Models.Board.WIDTH_SIZE, Models.Board.HEIGHT_SIZE);
@@ -138,8 +138,6 @@ namespace WarQuest.WinFormMVC
 
             if (lstViewAvailableUnits.SelectedItems.Count >= 1)
             {
-                lblChosen.Text = string.Empty;
-
                 ListViewItem item = lstViewAvailableUnits.SelectedItems[lstViewAvailableUnits.SelectedItems.Count - 1];
                 if (item != null)
                 {

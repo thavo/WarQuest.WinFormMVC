@@ -1,6 +1,6 @@
 ﻿namespace WarQuest.WinFormMVC
 {
-    partial class MainForm
+    partial class frmMainForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,13 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainForm));
             this.butStart = new System.Windows.Forms.Button();
             this.lstViewAvailableUnits = new System.Windows.Forms.ListView();
             this.imageListUnits = new System.Windows.Forms.ImageList(this.components);
-            this.lblChosen = new System.Windows.Forms.Label();
-            this.lblTotalMoneySpent = new System.Windows.Forms.Label();
-            this.lblCheckMaxSpendingMoney = new System.Windows.Forms.Label();
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripComboBox2 = new System.Windows.Forms.ToolStripComboBox();
@@ -46,11 +43,12 @@
             // 
             // butStart
             // 
-            this.butStart.Location = new System.Drawing.Point(1202, 329);
+            this.butStart.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.butStart.Location = new System.Drawing.Point(550, 48);
             this.butStart.Name = "butStart";
-            this.butStart.Size = new System.Drawing.Size(222, 23);
+            this.butStart.Size = new System.Drawing.Size(222, 40);
             this.butStart.TabIndex = 0;
-            this.butStart.Text = "Validate choice";
+            this.butStart.Text = "OK, play !";
             this.butStart.UseVisualStyleBackColor = true;
             this.butStart.Click += new System.EventHandler(this.butStart_Click);
             // 
@@ -58,9 +56,9 @@
             // 
             this.lstViewAvailableUnits.HideSelection = false;
             this.lstViewAvailableUnits.LargeImageList = this.imageListUnits;
-            this.lstViewAvailableUnits.Location = new System.Drawing.Point(54, 407);
+            this.lstViewAvailableUnits.Location = new System.Drawing.Point(45, 120);
             this.lstViewAvailableUnits.Name = "lstViewAvailableUnits";
-            this.lstViewAvailableUnits.Size = new System.Drawing.Size(1370, 423);
+            this.lstViewAvailableUnits.Size = new System.Drawing.Size(1266, 423);
             this.lstViewAvailableUnits.TabIndex = 2;
             this.lstViewAvailableUnits.UseCompatibleStateImageBehavior = false;
             // 
@@ -91,34 +89,6 @@
             this.imageListUnits.Images.SetKeyName(19, "Veh-SmallTank.jpg");
             this.imageListUnits.Images.SetKeyName(20, "Veh-SpaceTowerBoss.jpg");
             // 
-            // lblChosen
-            // 
-            this.lblChosen.AutoSize = true;
-            this.lblChosen.Location = new System.Drawing.Point(54, 359);
-            this.lblChosen.Name = "lblChosen";
-            this.lblChosen.Size = new System.Drawing.Size(66, 15);
-            this.lblChosen.TabIndex = 3;
-            this.lblChosen.Text = "Chosen IDs";
-            // 
-            // lblTotalMoneySpent
-            // 
-            this.lblTotalMoneySpent.AutoSize = true;
-            this.lblTotalMoneySpent.Location = new System.Drawing.Point(54, 374);
-            this.lblTotalMoneySpent.Name = "lblTotalMoneySpent";
-            this.lblTotalMoneySpent.Size = new System.Drawing.Size(105, 15);
-            this.lblTotalMoneySpent.TabIndex = 4;
-            this.lblTotalMoneySpent.Text = "Total Money Spent";
-            // 
-            // lblCheckMaxSpendingMoney
-            // 
-            this.lblCheckMaxSpendingMoney.AutoSize = true;
-            this.lblCheckMaxSpendingMoney.ForeColor = System.Drawing.Color.Red;
-            this.lblCheckMaxSpendingMoney.Location = new System.Drawing.Point(54, 389);
-            this.lblCheckMaxSpendingMoney.Name = "lblCheckMaxSpendingMoney";
-            this.lblCheckMaxSpendingMoney.Size = new System.Drawing.Size(38, 15);
-            this.lblCheckMaxSpendingMoney.TabIndex = 5;
-            this.lblCheckMaxSpendingMoney.Text = "label1";
-            // 
             // menuStripMain
             // 
             this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -126,7 +96,7 @@
             this.toolStripComboBox2});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
-            this.menuStripMain.Size = new System.Drawing.Size(1453, 27);
+            this.menuStripMain.Size = new System.Drawing.Size(1380, 27);
             this.menuStripMain.TabIndex = 6;
             this.menuStripMain.Text = "Menu";
             this.menuStripMain.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStripMain_ItemClicked);
@@ -158,19 +128,16 @@
             this.toolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
             this.toolStripMenuItem1.Text = "Open Github";
             // 
-            // MainForm
+            // frmMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1453, 830);
-            this.Controls.Add(this.lblCheckMaxSpendingMoney);
-            this.Controls.Add(this.lblTotalMoneySpent);
-            this.Controls.Add(this.lblChosen);
+            this.ClientSize = new System.Drawing.Size(1380, 556);
             this.Controls.Add(this.lstViewAvailableUnits);
             this.Controls.Add(this.butStart);
             this.Controls.Add(this.menuStripMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "MainForm";
+            this.Name = "frmMainForm";
             this.Text = "WarQuest (C) 2021 CC by Sanouche";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStripMain.ResumeLayout(false);
@@ -185,9 +152,6 @@
         private System.Windows.Forms.Button butStart;
         private System.Windows.Forms.ListView lstViewAvailableUnits;
         private System.Windows.Forms.ImageList imageListUnits;
-        private System.Windows.Forms.Label lblChosen;
-        private System.Windows.Forms.Label lblTotalMoneySpent;
-        private System.Windows.Forms.Label lblCheckMaxSpendingMoney;
         private System.Windows.Forms.MenuStrip menuStripMain;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox2;

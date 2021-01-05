@@ -218,7 +218,7 @@ namespace WarQuest.WinFormMVC.Models
             }
         }
 
-        internal int GetTotalMoneySelected()
+        internal int TotalCostOfSelectedUnits()
         {
             int CountTotalMoney = 0;
 

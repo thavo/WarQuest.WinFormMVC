@@ -19,7 +19,7 @@ namespace WarQuest.WinFormMVC.Models
 {
     public class PlayerOneGame
     {
-        public const int MAXSPENDINGMONEY = 10000;
+        public const int INTIALLYSPENDINGMONEY = 10000;
         public int MoneyInitialAmount { get; set; }
         public int MoneyCurrentAmount { get; set; }
         public UnitCollection UnitCollection { get; set; }

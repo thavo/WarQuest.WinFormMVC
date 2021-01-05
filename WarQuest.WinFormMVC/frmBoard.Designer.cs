@@ -34,7 +34,7 @@
             this.picbxHuman = new System.Windows.Forms.PictureBox();
             this.picbxTarget = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblSummary = new System.Windows.Forms.Label();
+            this.lblTotalCostInitialUnits = new System.Windows.Forms.Label();
             this.panelDebug = new System.Windows.Forms.Panel();
             this.pxBxUnit01 = new System.Windows.Forms.PictureBox();
             this.pxBxUnit02 = new System.Windows.Forms.PictureBox();
@@ -56,6 +56,16 @@
             this.pxBxUnit13 = new System.Windows.Forms.PictureBox();
             this.pxBxUnit12 = new System.Windows.Forms.PictureBox();
             this.pxBxUnit11 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblInitialSpendingMoney = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblCostOfSelected = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblPotentialRemainingMoney = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelBoard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBxToPlace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbxHuman)).BeginInit();
@@ -80,6 +90,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pxBxUnit13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pxBxUnit12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pxBxUnit11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBoard
@@ -96,7 +107,6 @@
             // 
             // picBxToPlace
             // 
-            this.picBxToPlace.Image = ((System.Drawing.Image)(resources.GetObject("picBxToPlace.Image")));
             this.picBxToPlace.Location = new System.Drawing.Point(0, 0);
             this.picBxToPlace.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.picBxToPlace.Name = "picBxToPlace";
@@ -109,10 +119,10 @@
             // picbxHuman
             // 
             this.picbxHuman.Image = ((System.Drawing.Image)(resources.GetObject("picbxHuman.Image")));
-            this.picbxHuman.Location = new System.Drawing.Point(975, 818);
+            this.picbxHuman.Location = new System.Drawing.Point(1085, 51);
             this.picbxHuman.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.picbxHuman.Name = "picbxHuman";
-            this.picbxHuman.Size = new System.Drawing.Size(230, 265);
+            this.picbxHuman.Size = new System.Drawing.Size(106, 93);
             this.picbxHuman.TabIndex = 5;
             this.picbxHuman.TabStop = false;
             // 
@@ -133,18 +143,18 @@
             this.flowLayoutPanel.Size = new System.Drawing.Size(252, 144);
             this.flowLayoutPanel.TabIndex = 7;
             // 
-            // lblSummary
+            // lblTotalCostInitialUnits
             // 
-            this.lblSummary.AutoSize = true;
-            this.lblSummary.Location = new System.Drawing.Point(793, 51);
-            this.lblSummary.Name = "lblSummary";
-            this.lblSummary.Size = new System.Drawing.Size(38, 15);
-            this.lblSummary.TabIndex = 8;
-            this.lblSummary.Text = "label1";
+            this.lblTotalCostInitialUnits.AutoSize = true;
+            this.lblTotalCostInitialUnits.Location = new System.Drawing.Point(1019, 28);
+            this.lblTotalCostInitialUnits.Name = "lblTotalCostInitialUnits";
+            this.lblTotalCostInitialUnits.Size = new System.Drawing.Size(38, 15);
+            this.lblTotalCostInitialUnits.TabIndex = 8;
+            this.lblTotalCostInitialUnits.Text = "label1";
             // 
             // panelDebug
             // 
-            this.panelDebug.Location = new System.Drawing.Point(1146, 43);
+            this.panelDebug.Location = new System.Drawing.Point(1198, 186);
             this.panelDebug.Name = "panelDebug";
             this.panelDebug.Size = new System.Drawing.Size(200, 100);
             this.panelDebug.TabIndex = 10;
@@ -242,7 +252,7 @@
             // 
             // pxBxUnit16
             // 
-            this.pxBxUnit16.Location = new System.Drawing.Point(574, 714);
+            this.pxBxUnit16.Location = new System.Drawing.Point(574, 780);
             this.pxBxUnit16.Name = "pxBxUnit16";
             this.pxBxUnit16.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit16.TabIndex = 11;
@@ -251,7 +261,7 @@
             // 
             // pxBxUnit17
             // 
-            this.pxBxUnit17.Location = new System.Drawing.Point(660, 714);
+            this.pxBxUnit17.Location = new System.Drawing.Point(660, 780);
             this.pxBxUnit17.Name = "pxBxUnit17";
             this.pxBxUnit17.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit17.TabIndex = 11;
@@ -260,7 +270,7 @@
             // 
             // pxBxUnit18
             // 
-            this.pxBxUnit18.Location = new System.Drawing.Point(746, 714);
+            this.pxBxUnit18.Location = new System.Drawing.Point(746, 780);
             this.pxBxUnit18.Name = "pxBxUnit18";
             this.pxBxUnit18.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit18.TabIndex = 11;
@@ -269,7 +279,7 @@
             // 
             // pxBxUnit19
             // 
-            this.pxBxUnit19.Location = new System.Drawing.Point(832, 714);
+            this.pxBxUnit19.Location = new System.Drawing.Point(832, 780);
             this.pxBxUnit19.Name = "pxBxUnit19";
             this.pxBxUnit19.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit19.TabIndex = 11;
@@ -278,7 +288,7 @@
             // 
             // pxBxUnit20
             // 
-            this.pxBxUnit20.Location = new System.Drawing.Point(918, 714);
+            this.pxBxUnit20.Location = new System.Drawing.Point(918, 780);
             this.pxBxUnit20.Name = "pxBxUnit20";
             this.pxBxUnit20.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit20.TabIndex = 11;
@@ -287,7 +297,7 @@
             // 
             // pxBxUnit15
             // 
-            this.pxBxUnit15.Location = new System.Drawing.Point(488, 714);
+            this.pxBxUnit15.Location = new System.Drawing.Point(488, 780);
             this.pxBxUnit15.Name = "pxBxUnit15";
             this.pxBxUnit15.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit15.TabIndex = 11;
@@ -296,7 +306,7 @@
             // 
             // pxBxUnit14
             // 
-            this.pxBxUnit14.Location = new System.Drawing.Point(402, 714);
+            this.pxBxUnit14.Location = new System.Drawing.Point(402, 780);
             this.pxBxUnit14.Name = "pxBxUnit14";
             this.pxBxUnit14.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit14.TabIndex = 11;
@@ -305,7 +315,7 @@
             // 
             // pxBxUnit13
             // 
-            this.pxBxUnit13.Location = new System.Drawing.Point(316, 714);
+            this.pxBxUnit13.Location = new System.Drawing.Point(316, 780);
             this.pxBxUnit13.Name = "pxBxUnit13";
             this.pxBxUnit13.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit13.TabIndex = 11;
@@ -314,7 +324,7 @@
             // 
             // pxBxUnit12
             // 
-            this.pxBxUnit12.Location = new System.Drawing.Point(230, 714);
+            this.pxBxUnit12.Location = new System.Drawing.Point(230, 780);
             this.pxBxUnit12.Name = "pxBxUnit12";
             this.pxBxUnit12.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit12.TabIndex = 11;
@@ -323,12 +333,103 @@
             // 
             // pxBxUnit11
             // 
-            this.pxBxUnit11.Location = new System.Drawing.Point(144, 714);
+            this.pxBxUnit11.Location = new System.Drawing.Point(144, 780);
             this.pxBxUnit11.Name = "pxBxUnit11";
             this.pxBxUnit11.Size = new System.Drawing.Size(80, 80);
             this.pxBxUnit11.TabIndex = 11;
             this.pxBxUnit11.TabStop = false;
             this.pxBxUnit11.Click += new System.EventHandler(this.pxBxUnit11_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(833, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 15);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "TOTAL COST OF INITIAL UNITS";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(835, 45);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(158, 15);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "INTIALLY SPENDING MONEY";
+            // 
+            // lblInitialSpendingMoney
+            // 
+            this.lblInitialSpendingMoney.AutoSize = true;
+            this.lblInitialSpendingMoney.Location = new System.Drawing.Point(1019, 45);
+            this.lblInitialSpendingMoney.Name = "lblInitialSpendingMoney";
+            this.lblInitialSpendingMoney.Size = new System.Drawing.Size(38, 15);
+            this.lblInitialSpendingMoney.TabIndex = 8;
+            this.lblInitialSpendingMoney.Text = "label1";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(835, 62);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(116, 15);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "REMAINING MONEY";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1019, 62);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 15);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "label1";
+            // 
+            // lblCostOfSelected
+            // 
+            this.lblCostOfSelected.AutoSize = true;
+            this.lblCostOfSelected.Location = new System.Drawing.Point(1019, 99);
+            this.lblCostOfSelected.Name = "lblCostOfSelected";
+            this.lblCostOfSelected.Size = new System.Drawing.Size(38, 15);
+            this.lblCostOfSelected.TabIndex = 8;
+            this.lblCostOfSelected.Text = "label1";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(835, 99);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(109, 15);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "COST OF SELECTED";
+            // 
+            // lblPotentialRemainingMoney
+            // 
+            this.lblPotentialRemainingMoney.AutoSize = true;
+            this.lblPotentialRemainingMoney.Location = new System.Drawing.Point(1019, 141);
+            this.lblPotentialRemainingMoney.Name = "lblPotentialRemainingMoney";
+            this.lblPotentialRemainingMoney.Size = new System.Drawing.Size(38, 15);
+            this.lblPotentialRemainingMoney.TabIndex = 8;
+            this.lblPotentialRemainingMoney.Text = "label1";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(835, 141);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(178, 15);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "POTENTIAL REMAINING MONEY";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(1032, 542);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(230, 265);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // frmBoard
             // 
@@ -336,6 +437,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1452, 1061);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pxBxUnit11);
             this.Controls.Add(this.pxBxUnit12);
             this.Controls.Add(this.pxBxUnit13);
@@ -355,11 +461,16 @@
             this.Controls.Add(this.pxBxUnit04);
             this.Controls.Add(this.pxBxUnit03);
             this.Controls.Add(this.pxBxUnit02);
+            this.Controls.Add(this.lblPotentialRemainingMoney);
             this.Controls.Add(this.pxBxUnit01);
+            this.Controls.Add(this.lblCostOfSelected);
             this.Controls.Add(this.panelDebug);
-            this.Controls.Add(this.lblSummary);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblInitialSpendingMoney);
+            this.Controls.Add(this.lblTotalCostInitialUnits);
             this.Controls.Add(this.picbxHuman);
             this.Controls.Add(this.flowLayoutPanel);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.picbxTarget);
             this.Controls.Add(this.panelBoard);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -391,6 +502,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pxBxUnit13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pxBxUnit12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pxBxUnit11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -403,7 +515,7 @@
         private System.Windows.Forms.PictureBox picBxToPlace;
         private System.Windows.Forms.PictureBox picbxTarget;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
-        private System.Windows.Forms.Label lblSummary;
+        private System.Windows.Forms.Label lblTotalCostInitialUnits;
         private System.Windows.Forms.Panel panelDebug;
         private System.Windows.Forms.PictureBox pxBxUnit01;
         private System.Windows.Forms.PictureBox pxBxUnit02;
@@ -425,5 +537,15 @@
         private System.Windows.Forms.PictureBox pxBxUnit13;
         private System.Windows.Forms.PictureBox pxBxUnit12;
         private System.Windows.Forms.PictureBox pxBxUnit11;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblInitialSpendingMoney;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblCostOfSelected;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblPotentialRemainingMoney;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -36,8 +36,9 @@ namespace WarQuest.WinFormMVC
 
         private void frmBoard_Load(object sender, EventArgs e)
         {
-            this.Text = this.UnitsWithChoices.Count().ToString(CultureInfo.InvariantCulture) + " ; total cost" + this.UnitsWithChoices.TotalCost();
-            this.lblSummary.Text = this.UnitsWithChoices.GetTotalMoneySelected().ToString(CultureInfo.InvariantCulture);
+            this.Text += this.UnitsWithChoices.Count().ToString(CultureInfo.InvariantCulture) + " ; total cost" + this.UnitsWithChoices.TotalCost().ToString(CultureInfo.InvariantCulture);
+            this.lblTotalCostInitialUnits.Text = this.UnitsWithChoices.TotalCostOfSelectedUnits().ToString(CultureInfo.InvariantCulture);
+            this.lblInitialSpendingMoney.Text = Models.PlayerOneGame.INTIALLYSPENDINGMONEY.ToString(CultureInfo.InvariantCulture);
 
             // FillInWithImagesDynamic();
             this.FillInWithImagesStatic();
@@ -139,8 +140,16 @@ namespace WarQuest.WinFormMVC
 
         private void SetPictureBoxWithChosenUnit(int index)
         {
+            int CostOfChosenUnit = this.UnitsWithChoices.Units()[index].Cost;
+            int InitialSpendingMoney = Models.PlayerOneGame.INTIALLYSPENDINGMONEY;
+
             Bitmap imgCloned = (Bitmap)this.UnitsWithChoices.Units()[index].Image.Clone();
+            Bitmap imgClonedIllustration = (Bitmap)this.UnitsWithChoices.Units()[index].Image.Clone();
+
             this.picBxToPlace.Image = imgCloned;
+            this.lblCostOfSelected.Text = CostOfChosenUnit.ToString(CultureInfo.InvariantCulture);
+            this.lblPotentialRemainingMoney.Text = (InitialSpendingMoney - CostOfChosenUnit).ToString(CultureInfo.InvariantCulture);
+            this.picbxHuman.Image = imgClonedIllustration;
         }
 
         private void pxBxUnit02_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(1); }

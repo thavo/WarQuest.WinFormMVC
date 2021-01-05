@@ -34,7 +34,6 @@
             this.lstBxUnits = new System.Windows.Forms.ListBox();
             this.lstViewAvailableUnits = new System.Windows.Forms.ListView();
             this.imageListUnits = new System.Windows.Forms.ImageList(this.components);
-            this.lblLabel = new System.Windows.Forms.Label();
             this.lblChosen = new System.Windows.Forms.Label();
             this.lblTotalMoneySpent = new System.Windows.Forms.Label();
             this.lblCheckMaxSpendingMoney = new System.Windows.Forms.Label();
@@ -48,7 +47,7 @@
             // 
             // butStart
             // 
-            this.butStart.Location = new System.Drawing.Point(814, 207);
+            this.butStart.Location = new System.Drawing.Point(1202, 329);
             this.butStart.Name = "butStart";
             this.butStart.Size = new System.Drawing.Size(222, 23);
             this.butStart.TabIndex = 0;
@@ -60,18 +59,18 @@
             // 
             this.lstBxUnits.FormattingEnabled = true;
             this.lstBxUnits.ItemHeight = 15;
-            this.lstBxUnits.Location = new System.Drawing.Point(54, 91);
+            this.lstBxUnits.Location = new System.Drawing.Point(884, 229);
             this.lstBxUnits.Name = "lstBxUnits";
-            this.lstBxUnits.Size = new System.Drawing.Size(540, 139);
+            this.lstBxUnits.Size = new System.Drawing.Size(540, 94);
             this.lstBxUnits.TabIndex = 1;
             // 
             // lstViewAvailableUnits
             // 
             this.lstViewAvailableUnits.HideSelection = false;
             this.lstViewAvailableUnits.LargeImageList = this.imageListUnits;
-            this.lstViewAvailableUnits.Location = new System.Drawing.Point(54, 247);
+            this.lstViewAvailableUnits.Location = new System.Drawing.Point(54, 407);
             this.lstViewAvailableUnits.Name = "lstViewAvailableUnits";
-            this.lstViewAvailableUnits.Size = new System.Drawing.Size(1370, 633);
+            this.lstViewAvailableUnits.Size = new System.Drawing.Size(1370, 423);
             this.lstViewAvailableUnits.TabIndex = 2;
             this.lstViewAvailableUnits.UseCompatibleStateImageBehavior = false;
             this.lstViewAvailableUnits.SelectedIndexChanged += new System.EventHandler(this.lstViewAvailableUnits_SelectedIndexChanged);
@@ -103,28 +102,19 @@
             this.imageListUnits.Images.SetKeyName(19, "Veh-SmallTank.jpg");
             this.imageListUnits.Images.SetKeyName(20, "Veh-SpaceTowerBoss.jpg");
             // 
-            // lblLabel
-            // 
-            this.lblLabel.AutoSize = true;
-            this.lblLabel.Location = new System.Drawing.Point(814, 47);
-            this.lblLabel.Name = "lblLabel";
-            this.lblLabel.Size = new System.Drawing.Size(44, 15);
-            this.lblLabel.TabIndex = 3;
-            this.lblLabel.Text = "Money";
-            // 
             // lblChosen
             // 
             this.lblChosen.AutoSize = true;
-            this.lblChosen.Location = new System.Drawing.Point(814, 71);
+            this.lblChosen.Location = new System.Drawing.Point(54, 359);
             this.lblChosen.Name = "lblChosen";
-            this.lblChosen.Size = new System.Drawing.Size(98, 15);
+            this.lblChosen.Size = new System.Drawing.Size(66, 15);
             this.lblChosen.TabIndex = 3;
-            this.lblChosen.Text = "Chosen Elements";
+            this.lblChosen.Text = "Chosen IDs";
             // 
             // lblTotalMoneySpent
             // 
             this.lblTotalMoneySpent.AutoSize = true;
-            this.lblTotalMoneySpent.Location = new System.Drawing.Point(814, 116);
+            this.lblTotalMoneySpent.Location = new System.Drawing.Point(54, 374);
             this.lblTotalMoneySpent.Name = "lblTotalMoneySpent";
             this.lblTotalMoneySpent.Size = new System.Drawing.Size(105, 15);
             this.lblTotalMoneySpent.TabIndex = 4;
@@ -134,7 +124,7 @@
             // 
             this.lblCheckMaxSpendingMoney.AutoSize = true;
             this.lblCheckMaxSpendingMoney.ForeColor = System.Drawing.Color.Red;
-            this.lblCheckMaxSpendingMoney.Location = new System.Drawing.Point(814, 167);
+            this.lblCheckMaxSpendingMoney.Location = new System.Drawing.Point(54, 389);
             this.lblCheckMaxSpendingMoney.Name = "lblCheckMaxSpendingMoney";
             this.lblCheckMaxSpendingMoney.Size = new System.Drawing.Size(38, 15);
             this.lblCheckMaxSpendingMoney.TabIndex = 5;
@@ -183,11 +173,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1453, 961);
+            this.ClientSize = new System.Drawing.Size(1453, 830);
             this.Controls.Add(this.lblCheckMaxSpendingMoney);
             this.Controls.Add(this.lblTotalMoneySpent);
             this.Controls.Add(this.lblChosen);
-            this.Controls.Add(this.lblLabel);
             this.Controls.Add(this.lstViewAvailableUnits);
             this.Controls.Add(this.lstBxUnits);
             this.Controls.Add(this.butStart);
@@ -209,7 +198,6 @@
         private System.Windows.Forms.ListBox lstBxUnits;
         private System.Windows.Forms.ListView lstViewAvailableUnits;
         private System.Windows.Forms.ImageList imageListUnits;
-        private System.Windows.Forms.Label lblLabel;
         private System.Windows.Forms.Label lblChosen;
         private System.Windows.Forms.Label lblTotalMoneySpent;
         private System.Windows.Forms.Label lblCheckMaxSpendingMoney;

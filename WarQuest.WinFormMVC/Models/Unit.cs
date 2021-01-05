@@ -21,6 +21,16 @@ namespace WarQuest.WinFormMVC.Models
 {
     public class Unit
     {
+        public enum UnitType
+        {
+            NotDefined,
+            Human,
+            Monster,
+            Vehicle,
+            Builder,
+            Destroyer
+        }
+
         public Unit(int index, int speedPower, int jumpPower, int lifeLevel, int attackLevel, int cost, Bitmap image)
         {
             this.Index = index;

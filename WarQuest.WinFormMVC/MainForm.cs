@@ -26,15 +26,28 @@ namespace WarQuest.WinFormMVC
 {
     public partial class MainForm : Form
     {
+        private System.Drawing.Color BUILDER_COLOR = System.Drawing.Color.FromArgb(133, 220, 123);
+        private System.Drawing.Color DESTROYER_COLOR = System.Drawing.Color.FromArgb(200, 255, 153);
+        private System.Drawing.Color HUMAN_COLOR = System.Drawing.Color.FromArgb(223, 100, 223);
+        private System.Drawing.Color MONSTER_COLOR = System.Drawing.Color.FromArgb(100, 210, 223);
+        private System.Drawing.Color VEHICLE_COLOR = System.Drawing.Color.FromArgb(223, 200, 123);
+
+        private const int FIRST_FOUR_CHARS = 4;
+
         const string IMPOSSIBLECASE = "Impossible case";
-        UnitCollection _myUnits = new UnitCollection();
+        UnitCollection _myUnits = null;
+        public Unit.UnitType UnitType { get; internal set; }
 
         public MainForm()
         {
             this.InitializeComponent();
             this.Text = string.Format(CultureInfo.InvariantCulture, "{0} ; Board size {1} x {2} ", Models.Board.GAME_CODE_NAME, Models.Board.WIDTH_SIZE, Models.Board.HEIGHT_SIZE);
 
-            this._myUnits.CreateRandomUnits(this.imageListUnits);
+            
+            // Create ALL UNITS of ALL TYPES (thavo will be filtered out one the player chooses a unit type
+            _myUnits = new UnitCollection();
+            this._myUnits.CreateRandomUnits(this.imageListUnits, Unit.UnitType.NotDefined);
+
             lblCheckMaxSpendingMoney.Text = string.Empty;
         }
 
@@ -47,52 +60,61 @@ namespace WarQuest.WinFormMVC
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            this.DisplayListOfAllUnits();
+            this.DisplayListOfAllUnits(this.UnitType);
         }
 
-        private void DisplayListOfAllUnits()
+        /// <summary>
+        /// Displays ONLY the Unit of type the one that was selected previously.
+        /// </summary>
+        /// <param name="myUnitType"></param>
+        private void DisplayListOfAllUnits(Unit.UnitType myUnitType)
         {
             int index = 0;
+
             foreach (Unit unit in this._myUnits.Units())
             {
-                // Retrieves the FileName, via Keys[]
+                // Retrieves the FileName, via Keys[], and assign to Unit
                 unit.FileName = this.imageListUnits.Images.Keys[index];
 
+                // Build the text to display
+                string itemText = string.Format(
+                    CultureInfo.InvariantCulture,
+                    "{0}_{1}: S={2}, Jmp={3}, PV={4}, Attack={5}, ${6}",
+                    unit.Index,
+                    unit.FileName,
+                    unit.SpeedPower,
+                    unit.JumpPower,
+                    unit.LifeLevel,
+                    unit.AttackLevel,
+                    unit.Cost);
+
                 // Retrieves the various Unit's properties to the list view
-                lstViewAvailableUnits.Items.Add(
-                    string.Format(
-                        CultureInfo.InvariantCulture,
-                        "{0}_{1}: S={2}, Jmp={3}, PV={4}, Attack={5}, ${6}",
-                        unit.Index,
-                        unit.FileName,
-                        unit.SpeedPower,
-                        unit.JumpPower,
-                        unit.LifeLevel,
-                        unit.AttackLevel,
-                        unit.Cost),
-                    index);
+                lstViewAvailableUnits.Items.Add(itemText, index);
 
-                System.Drawing.Color BUILDER_COLOR = System.Drawing.Color.FromArgb(133, 220, 123);
-                System.Drawing.Color DESTROYER_COLOR = System.Drawing.Color.FromArgb(200, 255, 153);
-                System.Drawing.Color HUMAN_COLOR = System.Drawing.Color.FromArgb(223, 100, 223);
-                System.Drawing.Color MONSTER_COLOR = System.Drawing.Color.FromArgb(100, 210, 223);
-                System.Drawing.Color VEHICLE_COLOR = System.Drawing.Color.FromArgb(223, 200, 123); 
+                // Take first x chars
+                string prefixFileName = unit.FileName.Substring(0, FIRST_FOUR_CHARS);
 
-                // fileName
-                switch (unit.FileName.Substring(0, 4))
+                // check prefix fileName
+                if (prefixFileName == "Buil" && myUnitType == Unit.UnitType.Builder)
                 {
-                    case ("Buil"): this.lstViewAvailableUnits.Items[index].BackColor = BUILDER_COLOR; 
-                        break;
-                    case ("Dest"): this.lstViewAvailableUnits.Items[index].BackColor = DESTROYER_COLOR; 
-                        break;
-                    case ("Hum-"): this.lstViewAvailableUnits.Items[index].BackColor = HUMAN_COLOR; 
-                        break;
-                    case ("Mon-"): this.lstViewAvailableUnits.Items[index].BackColor = MONSTER_COLOR; 
-                        break;
-                    case ("Veh-"): this.lstViewAvailableUnits.Items[index].BackColor = VEHICLE_COLOR; 
-                        break;
+                    this.lstViewAvailableUnits.Items[index].BackColor = this.BUILDER_COLOR;
                 }
-
+                else if (prefixFileName == "Dest" && myUnitType == Unit.UnitType.Destroyer)
+                {
+                    this.lstViewAvailableUnits.Items[index].BackColor = this.DESTROYER_COLOR;
+                }
+                else if (prefixFileName == "Hum-" && myUnitType == Unit.UnitType.Human)
+                {
+                    this.lstViewAvailableUnits.Items[index].BackColor = this.HUMAN_COLOR;
+                }
+                else if (prefixFileName == "Mon-" && myUnitType == Unit.UnitType.Monster)
+                {
+                    this.lstViewAvailableUnits.Items[index].BackColor = this.MONSTER_COLOR;
+                }
+                else if (prefixFileName == "Veh-" && myUnitType == Unit.UnitType.Vehicle)
+                {
+                    this.lstViewAvailableUnits.Items[index].BackColor = this.VEHICLE_COLOR;
+                }
                 index++;
             }
         }

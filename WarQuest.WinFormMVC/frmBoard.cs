@@ -27,6 +27,7 @@ namespace WarQuest.WinFormMVC
     {
         // Internal, so that the main form FROM WITHIN THE SAME PROJECT could access it
         internal UnitCollection UnitsWithChoices { get; set; }
+        public Unit.UnitType UnitType { get; internal set; }
 
         public frmBoard()
         {

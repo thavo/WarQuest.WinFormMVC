@@ -99,9 +99,8 @@ namespace WarQuest.WinFormMVC.Models
         /// Creates random units of many types
         /// </summary>
         /// <param name="imageListUnits"></param>
-        internal void CreateRandomUnits(ImageList imageListUnits)
+        internal void CreateRandomUnits(ImageList imageListUnits, Unit.UnitType myUnitType)
         {
-
             string fileName = string.Empty;
 
             int i = 0;
@@ -114,21 +113,40 @@ namespace WarQuest.WinFormMVC.Models
                 
                 int myRnd = rnd.Next(120 * i, 200 * (i + 2 * i));
 
-                // fileName
+                // The fileName prefix 4 Chars of the image will determine dynamically the type of the Unit
                 switch (fileName.Substring(0, 4))
                 {
-                    case ("Buil"): this.AddUnit(new UnitBuilder(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); 
+                    case ("Buil"):
+                        if (myUnitType == Unit.UnitType.NotDefined || myUnitType == Unit.UnitType.Builder)
+                        {
+                            this.AddUnit(new UnitBuilder(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img));
+                        }
                         break;
-                    case ("Dest"): this.AddUnit(new UnitDestroyer(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); 
+                    case ("Dest"):
+                        if (myUnitType == Unit.UnitType.NotDefined || myUnitType == Unit.UnitType.Destroyer)
+                        {
+                            this.AddUnit(new UnitDestroyer(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img));
+                        }
                         break;
-                    case ("Hum-"): this.AddUnit(new UnitHuman(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); 
+                    case ("Hum-"):
+                        if (myUnitType == Unit.UnitType.NotDefined || myUnitType == Unit.UnitType.Human)
+                        {
+                            this.AddUnit(new UnitHuman(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img));
+                        }
                         break;
-                    case ("Mon-"): this.AddUnit(new UnitMonster(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); 
+                    case ("Mon-"):
+                        if (myUnitType == Unit.UnitType.NotDefined || myUnitType == Unit.UnitType.Monster)
+                        {
+                            this.AddUnit(new UnitMonster(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img));
+                        }
                         break;
-                    case ("Veh-"): this.AddUnit(new UnitVehicle(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img)); 
+                    case ("Veh-"):
+                        if (myUnitType == Unit.UnitType.NotDefined || myUnitType == Unit.UnitType.Vehicle)
+                        {
+                            this.AddUnit(new UnitVehicle(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img));
+                        }
                         break;
                 }
-
                 i++;
             }
         }

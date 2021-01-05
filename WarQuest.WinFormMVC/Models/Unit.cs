@@ -21,7 +21,7 @@ namespace WarQuest.WinFormMVC.Models
 {
     public class Unit
     {
-        public enum UnitType
+        public enum UnitTypeEnum
         {
             NotDefined,
             Human,
@@ -40,6 +40,7 @@ namespace WarQuest.WinFormMVC.Models
             this.AttackLevel = attackLevel;
             this.Cost = cost;
             this.Image = image;
+            this.UnitType = UnitTypeEnum.NotDefined;
         }
 
         public int Index { get; set; }
@@ -51,5 +52,6 @@ namespace WarQuest.WinFormMVC.Models
         public bool IsSelected { get; set; }
         public Bitmap Image { get; internal set; }
         public string FileName { get; internal set; }
+        public UnitTypeEnum UnitType { get; internal set; }
     }
 }

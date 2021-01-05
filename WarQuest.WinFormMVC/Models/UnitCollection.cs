@@ -99,13 +99,14 @@ namespace WarQuest.WinFormMVC.Models
         /// Creates random units of many types
         /// </summary>
         /// <param name="imageListUnits"></param>
-        internal void CreateRandomUnits(ImageList imageListUnits, Unit.UnitType myUnitType)
+        internal void CreateRandomUnits(ImageList imageListUnits, Unit.UnitTypeEnum myUnitType)
         {
             string fileName = string.Empty;
+            Unit myUnit = null;
 
             int i = 0;
             Random rnd = new Random();
-
+            // Loop in the image list to find the corresponding image for the chosen Unit type, and add it to the list
             foreach (Bitmap img in imageListUnits.Images)
             {
                 // Retrieves the FileName, via Keys[]
@@ -117,33 +118,48 @@ namespace WarQuest.WinFormMVC.Models
                 switch (fileName.Substring(0, 4))
                 {
                     case ("Buil"):
-                        if (myUnitType == Unit.UnitType.NotDefined || myUnitType == Unit.UnitType.Builder)
+                        if (myUnitType == Unit.UnitTypeEnum.NotDefined || myUnitType == Unit.UnitTypeEnum.Builder)
                         {
-                            this.AddUnit(new UnitBuilder(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img));
+                            myUnit = new UnitBuilder(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img);
+                            myUnit.FileName = fileName;
+                            myUnit.UnitType = myUnitType;
+                            this.AddUnit(myUnit);
                         }
                         break;
                     case ("Dest"):
-                        if (myUnitType == Unit.UnitType.NotDefined || myUnitType == Unit.UnitType.Destroyer)
+                        if (myUnitType == Unit.UnitTypeEnum.NotDefined || myUnitType == Unit.UnitTypeEnum.Destroyer)
                         {
-                            this.AddUnit(new UnitDestroyer(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img));
+                            myUnit = new UnitDestroyer(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img);
+                            myUnit.FileName = fileName;
+                            myUnit.UnitType = myUnitType;
+                            this.AddUnit(myUnit);
                         }
                         break;
                     case ("Hum-"):
-                        if (myUnitType == Unit.UnitType.NotDefined || myUnitType == Unit.UnitType.Human)
+                        if (myUnitType == Unit.UnitTypeEnum.NotDefined || myUnitType == Unit.UnitTypeEnum.Human)
                         {
-                            this.AddUnit(new UnitHuman(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img));
+                            myUnit = new UnitHuman(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img);
+                            myUnit.FileName = fileName;
+                            myUnit.UnitType = myUnitType;
+                            this.AddUnit(myUnit);
                         }
                         break;
                     case ("Mon-"):
-                        if (myUnitType == Unit.UnitType.NotDefined || myUnitType == Unit.UnitType.Monster)
+                        if (myUnitType == Unit.UnitTypeEnum.NotDefined || myUnitType == Unit.UnitTypeEnum.Monster)
                         {
-                            this.AddUnit(new UnitMonster(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img));
+                            myUnit = new UnitMonster(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img);
+                            myUnit.FileName = fileName;
+                            myUnit.UnitType = myUnitType;
+                            this.AddUnit(myUnit);
                         }
                         break;
                     case ("Veh-"):
-                        if (myUnitType == Unit.UnitType.NotDefined || myUnitType == Unit.UnitType.Vehicle)
+                        if (myUnitType == Unit.UnitTypeEnum.NotDefined || myUnitType == Unit.UnitTypeEnum.Vehicle)
                         {
-                            this.AddUnit(new UnitVehicle(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img));
+                            myUnit = new UnitVehicle(i, 20 + myRnd, 320 + myRnd, 40 + myRnd, 50 + myRnd, myRnd + i * 2, img);
+                            myUnit.FileName = fileName;
+                            myUnit.UnitType = myUnitType;
+                            this.AddUnit(myUnit);
                         }
                         break;
                 }

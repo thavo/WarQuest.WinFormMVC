@@ -88,7 +88,7 @@
             this.panelBoard.Location = new System.Drawing.Point(248, 269);
             this.panelBoard.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.panelBoard.Name = "panelBoard";
-            this.panelBoard.Size = new System.Drawing.Size(719, 288);
+            this.panelBoard.Size = new System.Drawing.Size(719, 353);
             this.panelBoard.TabIndex = 0;
             this.panelBoard.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBoard_Paint);
             this.panelBoard.MouseClick += new System.Windows.Forms.MouseEventHandler(this.panelBoard_MouseClick);

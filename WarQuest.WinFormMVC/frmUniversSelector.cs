@@ -14,21 +14,21 @@ namespace WarQuest.WinFormMVC
         private void picbxHuman_Click(object sender, EventArgs e)
         {
             MainForm myForm = new MainForm();
-            myForm.UnitType = Unit.UnitType.Human;
+            myForm.UnitType = Unit.UnitTypeEnum.Human;
             myForm.Show();
         }
 
         private void picbxMonster_Click(object sender, EventArgs e)
         {
             MainForm myForm = new MainForm();
-            myForm.UnitType = Unit.UnitType.Monster;
+            myForm.UnitType = Unit.UnitTypeEnum.Monster;
             myForm.Show();
         }
 
         private void picbxVehicle_Click(object sender, EventArgs e)
         {
             MainForm myForm = new MainForm();
-            myForm.UnitType = Unit.UnitType.Vehicle;
+            myForm.UnitType = Unit.UnitTypeEnum.Vehicle;
             myForm.Show();
         }
 

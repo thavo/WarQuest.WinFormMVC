@@ -35,20 +35,14 @@ namespace WarQuest.WinFormMVC
         private const int FIRST_FOUR_CHARS = 4;
 
         const string IMPOSSIBLECASE = "Impossible case";
-        UnitCollection _myUnits = null;
-        public Unit.UnitType UnitType { get; internal set; }
+        internal UnitCollection _myUnits = null;
+        public Unit.UnitTypeEnum UnitType { get; internal set; }
 
         public MainForm()
         {
             this.InitializeComponent();
             this.Text = string.Format(CultureInfo.InvariantCulture, "{0} ; Board size {1} x {2} ", Models.Board.GAME_CODE_NAME, Models.Board.WIDTH_SIZE, Models.Board.HEIGHT_SIZE);
-
-            
-            // Create ALL UNITS of ALL TYPES (thavo will be filtered out one the player chooses a unit type
             _myUnits = new UnitCollection();
-            this._myUnits.CreateRandomUnits(this.imageListUnits, Unit.UnitType.NotDefined);
-
-            lblCheckMaxSpendingMoney.Text = string.Empty;
         }
 
         private void butStart_Click(object sender, EventArgs e)
@@ -60,22 +54,36 @@ namespace WarQuest.WinFormMVC
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            this._myUnits.CreateRandomUnits(this.imageListUnits, UnitType);
             this.DisplayListOfAllUnits(this.UnitType);
         }
 
-        /// <summary>
-        /// Displays ONLY the Unit of type the one that was selected previously.
-        /// </summary>
-        /// <param name="myUnitType"></param>
-        private void DisplayListOfAllUnits(Unit.UnitType myUnitType)
+        private void RemoveUnselectedItemsFromList()
+        {
+            this._myUnits.DeleteUnselectedUnits();
+        }
+
+        private void ExtractImageFileNameToUnit()
         {
             int index = 0;
 
             foreach (Unit unit in this._myUnits.Units())
             {
                 // Retrieves the FileName, via Keys[], and assign to Unit
-                unit.FileName = this.imageListUnits.Images.Keys[index];
+                unit.FileName = this.imageListUnits.Images.Keys[index++];
+            }
+        }
 
+            /// <summary>
+            /// Displays ONLY the Unit of type the one that was selected previously.
+            /// </summary>
+            /// <param name="myUnitType"></param>
+            private void DisplayListOfAllUnits(Unit.UnitTypeEnum myUnitType)
+        {
+            // int index = 0;
+
+            foreach (Unit unit in this._myUnits.Units())
+            {
                 // Build the text to display
                 string itemText = string.Format(
                     CultureInfo.InvariantCulture,
@@ -88,77 +96,36 @@ namespace WarQuest.WinFormMVC
                     unit.AttackLevel,
                     unit.Cost);
 
-                // Retrieves the various Unit's properties to the list view
-                lstViewAvailableUnits.Items.Add(itemText, index);
-
                 // Take first x chars
                 string prefixFileName = unit.FileName.Substring(0, FIRST_FOUR_CHARS);
 
-                // check prefix fileName
-                if (prefixFileName == "Buil" && myUnitType == Unit.UnitType.Builder)
+                // check prefix fileName and if corresponding UnitType
+                if (prefixFileName == "Buil" && myUnitType == Unit.UnitTypeEnum.Builder)
                 {
-                    this.lstViewAvailableUnits.Items[index].BackColor = this.BUILDER_COLOR;
+                    unit.IsSelected = true;
                 }
-                else if (prefixFileName == "Dest" && myUnitType == Unit.UnitType.Destroyer)
+                else if (prefixFileName == "Dest" && myUnitType == Unit.UnitTypeEnum.Destroyer)
                 {
-                    this.lstViewAvailableUnits.Items[index].BackColor = this.DESTROYER_COLOR;
+                    unit.IsSelected = true;
                 }
-                else if (prefixFileName == "Hum-" && myUnitType == Unit.UnitType.Human)
+                else if (prefixFileName == "Hum-" && myUnitType == Unit.UnitTypeEnum.Human)
                 {
-                    this.lstViewAvailableUnits.Items[index].BackColor = this.HUMAN_COLOR;
+                    unit.IsSelected = true;
                 }
-                else if (prefixFileName == "Mon-" && myUnitType == Unit.UnitType.Monster)
+                else if (prefixFileName == "Mon-" && myUnitType == Unit.UnitTypeEnum.Monster)
                 {
-                    this.lstViewAvailableUnits.Items[index].BackColor = this.MONSTER_COLOR;
+                    unit.IsSelected = true;
                 }
-                else if (prefixFileName == "Veh-" && myUnitType == Unit.UnitType.Vehicle)
+                else if (prefixFileName == "Veh-" && myUnitType == Unit.UnitTypeEnum.Vehicle)
                 {
-                    this.lstViewAvailableUnits.Items[index].BackColor = this.VEHICLE_COLOR;
+                    unit.IsSelected = true;
                 }
-                index++;
-            }
-        }
 
-        private void lstViewAvailableUnits_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string listOfChosenIndex = string.Empty;
-            this.lblTotalMoneySpent.Text = string.Empty;
-            this.lblCheckMaxSpendingMoney.Text = string.Empty;
-
-            this._myUnits.ClearAllSelectedUnits();
-
-            this.lblChosen.Text = listOfChosenIndex = this.DisplayIntoListTheChosenUnits(this.lstBxUnits);
-
-            this.TagChosenUnitAsSelected(listOfChosenIndex);
-
-            int totalSelectedMoney = this._myUnits.GetTotalMoneySelected();
-            this.lblTotalMoneySpent.Text += "; Total=" + totalSelectedMoney.ToString(CultureInfo.InvariantCulture);
-
-            if (totalSelectedMoney > Models.PlayerOneGame.MAXSPENDINGMONEY)
-            {
-                this.lblCheckMaxSpendingMoney.Text = string.Format(
-                    CultureInfo.InvariantCulture,
-                    "NOT ENOUGH MONEY ({0} MAX = {1})",
-                    totalSelectedMoney.ToString(CultureInfo.InvariantCulture),
-                    Models.PlayerOneGame.MAXSPENDINGMONEY.ToString(CultureInfo.InvariantCulture));
-            }
-        }
-
-        private void TagChosenUnitAsSelected(string listOfChosenIndex)
-        {
-            // From the list of chosen Items, extract the Index and find the corresponding Money of the corresponding Units
-            Array arr = listOfChosenIndex.Split(' ');
-            for (int i = 0; i < arr.Length - 1; i++)
-            {
-                int chosenIndex = 0;
-                bool success = int.TryParse(arr.GetValue(i).ToString(), out chosenIndex);
-
-                if (success)
+                // Add the unit ONLY if it was selected as a corresponding Universe
+                if (unit.IsSelected)
                 {
-                    var unitSelected = this._myUnits.Units()[chosenIndex];
-                    unitSelected.IsSelected = true;
-
-                    lblTotalMoneySpent.Text += "+" + unitSelected.Cost.ToString(CultureInfo.InvariantCulture);
+                    this.lstViewAvailableUnits.Items.Add(itemText, unit.Index);
+                    this.lstViewAvailableUnits.Items[this.lstViewAvailableUnits.Items.Count-1].BackColor = System.Drawing.Color.FromArgb(133, 220, 123);
                 }
             }
         }

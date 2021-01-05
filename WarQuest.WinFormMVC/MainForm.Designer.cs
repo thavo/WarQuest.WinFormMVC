@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.butStart = new System.Windows.Forms.Button();
-            this.lstBxUnits = new System.Windows.Forms.ListBox();
             this.lstViewAvailableUnits = new System.Windows.Forms.ListView();
             this.imageListUnits = new System.Windows.Forms.ImageList(this.components);
             this.lblChosen = new System.Windows.Forms.Label();
@@ -55,15 +54,6 @@
             this.butStart.UseVisualStyleBackColor = true;
             this.butStart.Click += new System.EventHandler(this.butStart_Click);
             // 
-            // lstBxUnits
-            // 
-            this.lstBxUnits.FormattingEnabled = true;
-            this.lstBxUnits.ItemHeight = 15;
-            this.lstBxUnits.Location = new System.Drawing.Point(884, 229);
-            this.lstBxUnits.Name = "lstBxUnits";
-            this.lstBxUnits.Size = new System.Drawing.Size(540, 94);
-            this.lstBxUnits.TabIndex = 1;
-            // 
             // lstViewAvailableUnits
             // 
             this.lstViewAvailableUnits.HideSelection = false;
@@ -73,7 +63,6 @@
             this.lstViewAvailableUnits.Size = new System.Drawing.Size(1370, 423);
             this.lstViewAvailableUnits.TabIndex = 2;
             this.lstViewAvailableUnits.UseCompatibleStateImageBehavior = false;
-            this.lstViewAvailableUnits.SelectedIndexChanged += new System.EventHandler(this.lstViewAvailableUnits_SelectedIndexChanged);
             // 
             // imageListUnits
             // 
@@ -178,7 +167,6 @@
             this.Controls.Add(this.lblTotalMoneySpent);
             this.Controls.Add(this.lblChosen);
             this.Controls.Add(this.lstViewAvailableUnits);
-            this.Controls.Add(this.lstBxUnits);
             this.Controls.Add(this.butStart);
             this.Controls.Add(this.menuStripMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -195,7 +183,6 @@
         #endregion
 
         private System.Windows.Forms.Button butStart;
-        private System.Windows.Forms.ListBox lstBxUnits;
         private System.Windows.Forms.ListView lstViewAvailableUnits;
         private System.Windows.Forms.ImageList imageListUnits;
         private System.Windows.Forms.Label lblChosen;

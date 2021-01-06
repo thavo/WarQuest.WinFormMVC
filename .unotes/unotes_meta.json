@@ -1,0 +1,89 @@
+{
+  "name": "",
+  "isOrdered": true,
+  "folders": {
+    "EnterpriseArchitecture": {
+      "name": "EnterpriseArchitecture",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "Resources": {
+      "name": "Resources",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "TestResults": {
+      "name": "TestResults",
+      "isOrdered": true,
+      "folders": {},
+      "files": {}
+    },
+    "WarQuest.Tests": {
+      "name": "WarQuest.Tests",
+      "isOrdered": true,
+      "folders": {
+        "bin": {
+          "name": "bin",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "obj": {
+          "name": "obj",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {}
+    },
+    "WarQuest.WinFormMVC": {
+      "name": "WarQuest.WinFormMVC",
+      "isOrdered": true,
+      "folders": {
+        "bin": {
+          "name": "bin",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "Models": {
+          "name": "Models",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "obj": {
+          "name": "obj",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "Presenters": {
+          "name": "Presenters",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "Properties": {
+          "name": "Properties",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        },
+        "Views": {
+          "name": "Views",
+          "isOrdered": true,
+          "folders": {},
+          "files": {}
+        }
+      },
+      "files": {}
+    }
+  },
+  "files": {
+    "README": 0
+  }
+}

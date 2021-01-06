@@ -150,6 +150,18 @@ namespace WarQuest.WinFormMVC
             this.lblCostOfSelected.Text = CostOfChosenUnit.ToString(CultureInfo.InvariantCulture);
             this.lblPotentialRemainingMoney.Text = (InitialSpendingMoney - CostOfChosenUnit).ToString(CultureInfo.InvariantCulture);
             this.picbxHuman.Image = imgClonedIllustration;
+
+            this.lblMovementDocumentation.Text = this.UnitsWithChoices.Units()[index].MovementDocumentation;
+
+            this.lblUnitProperties.Text = string.Format(
+                CultureInfo.InvariantCulture,
+                "{0} \n\r Cost {1}, Jump {2} \n\r Life {3}, AttackLevel {4} \n\r Speed {5}", 
+                this.UnitsWithChoices.Units()[index].FileName,
+                this.UnitsWithChoices.Units()[index].Cost,
+                this.UnitsWithChoices.Units()[index].JumpPower,
+                this.UnitsWithChoices.Units()[index].LifeLevel,
+                this.UnitsWithChoices.Units()[index].AttackLevel,
+                this.UnitsWithChoices.Units()[index].SpeedPower);
         }
 
         private void pxBxUnit02_Click(object sender, EventArgs e) { this.SetPictureBoxWithChosenUnit(1); }

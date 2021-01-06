@@ -25,5 +25,16 @@ namespace WarQuest.WinFormMVC.Models
             base(index, speedPower, jumpPower, lifeLevel, attackLevel, cost, myImage)
         {
         }
+
+        private const string MOVEMENT_DOCUMENTATION = "This Monster can go straight,\n\rand backward.";
+
+        public override string MovementDocumentation
+        {
+            get
+            {
+                return MOVEMENT_DOCUMENTATION;
+            }
+        }
+
     }
 }

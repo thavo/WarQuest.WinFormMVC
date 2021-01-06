@@ -66,6 +66,9 @@
             this.lblPotentialRemainingMoney = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblUnitProperties = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblMovementDocumentation = new System.Windows.Forms.Label();
             this.panelBoard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBxToPlace)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picbxHuman)).BeginInit();
@@ -91,6 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pxBxUnit12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pxBxUnit11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBoard
@@ -119,7 +123,7 @@
             // picbxHuman
             // 
             this.picbxHuman.Image = ((System.Drawing.Image)(resources.GetObject("picbxHuman.Image")));
-            this.picbxHuman.Location = new System.Drawing.Point(1085, 51);
+            this.picbxHuman.Location = new System.Drawing.Point(62, 23);
             this.picbxHuman.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.picbxHuman.Name = "picbxHuman";
             this.picbxHuman.Size = new System.Drawing.Size(106, 93);
@@ -154,7 +158,7 @@
             // 
             // panelDebug
             // 
-            this.panelDebug.Location = new System.Drawing.Point(1198, 186);
+            this.panelDebug.Location = new System.Drawing.Point(1062, 348);
             this.panelDebug.Name = "panelDebug";
             this.panelDebug.Size = new System.Drawing.Size(200, 100);
             this.panelDebug.TabIndex = 10;
@@ -431,12 +435,44 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
+            // lblUnitProperties
+            // 
+            this.lblUnitProperties.AutoSize = true;
+            this.lblUnitProperties.Location = new System.Drawing.Point(21, 118);
+            this.lblUnitProperties.Name = "lblUnitProperties";
+            this.lblUnitProperties.Size = new System.Drawing.Size(68, 15);
+            this.lblUnitProperties.TabIndex = 8;
+            this.lblUnitProperties.Text = "[Properties]";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.groupBox1.Controls.Add(this.picbxHuman);
+            this.groupBox1.Controls.Add(this.lblMovementDocumentation);
+            this.groupBox1.Controls.Add(this.lblUnitProperties);
+            this.groupBox1.Location = new System.Drawing.Point(1078, 28);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(235, 296);
+            this.groupBox1.TabIndex = 13;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Selected unit detail";
+            // 
+            // lblMovementDocumentation
+            // 
+            this.lblMovementDocumentation.AutoSize = true;
+            this.lblMovementDocumentation.Location = new System.Drawing.Point(21, 190);
+            this.lblMovementDocumentation.Name = "lblMovementDocumentation";
+            this.lblMovementDocumentation.Size = new System.Drawing.Size(91, 15);
+            this.lblMovementDocumentation.TabIndex = 8;
+            this.lblMovementDocumentation.Text = "[Type of moves]";
+            // 
             // frmBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1452, 1061);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
@@ -468,7 +504,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblInitialSpendingMoney);
             this.Controls.Add(this.lblTotalCostInitialUnits);
-            this.Controls.Add(this.picbxHuman);
             this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.picbxTarget);
@@ -503,6 +538,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pxBxUnit12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pxBxUnit11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -547,5 +584,8 @@
         private System.Windows.Forms.Label lblPotentialRemainingMoney;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblUnitProperties;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblMovementDocumentation;
     }
 }

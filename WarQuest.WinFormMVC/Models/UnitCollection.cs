@@ -72,7 +72,7 @@ namespace WarQuest.WinFormMVC.Models
         {
             for (int i = 0; i < numberOfUnits; i++)
             {
-                this.AddUnit(new Unit(i, 20 * i, 30 * i, 40 * i, 50 * i, costPerUnit, null));
+                this.AddUnit(new UnitBuilder (i, 20 * i, 30 * i, 40 * i, 50 * i, costPerUnit, null));
             }
             return this.Count();
         }

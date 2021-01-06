@@ -21,9 +21,21 @@ namespace WarQuest.WinFormMVC.Models
 {
     public class UnitVehicle : Unit
     {
+
         public UnitVehicle(int index, int speedPower, int jumpPower, int lifeLevel, int attackLevel, int cost, Bitmap myImage)
             : base(index, speedPower, jumpPower, lifeLevel, attackLevel, cost, myImage)
         {
         }
+
+        private const string MOVEMENT_DOCUMENTATION = "This vehicle can go straight,\n\rand backward.";
+
+        public override string MovementDocumentation
+        {
+            get
+            {
+                return MOVEMENT_DOCUMENTATION; 
+            }
+        }
+// public override string TypeOfMoveDoc => throw new System.NotImplementedException();
     }
 }

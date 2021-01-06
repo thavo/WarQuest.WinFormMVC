@@ -27,5 +27,15 @@ namespace WarQuest.WinFormMVC.Models
         }
 
         public int BuidingType { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+
+        private const string MOVEMENT_DOCUMENTATION = "This Builder can go straight,  \n\r and backward AND build a construction.";
+
+        public override string MovementDocumentation
+        {
+            get
+            {
+                return MOVEMENT_DOCUMENTATION;
+            }
+        }
     }
 }

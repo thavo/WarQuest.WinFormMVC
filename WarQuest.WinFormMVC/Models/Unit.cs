@@ -19,7 +19,10 @@ using System.Drawing;
 
 namespace WarQuest.WinFormMVC.Models
 {
-    public class Unit
+    /// <summary>
+    /// The base class of all units. Ensures by design that it is abstract so that we cannot instanciate it by error.
+    /// </summary>
+    public abstract class Unit
     {
         public enum UnitTypeEnum
         {
@@ -52,6 +55,9 @@ namespace WarQuest.WinFormMVC.Models
         public bool IsSelected { get; set; }
         public Bitmap Image { get; internal set; }
         public string FileName { get; internal set; }
+        public virtual string MovementDocumentation { get; }
+
         public UnitTypeEnum UnitType { get; internal set; }
+
     }
 }

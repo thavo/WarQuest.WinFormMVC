@@ -26,6 +26,16 @@ namespace WarQuest.WinFormMVC.Models
         {
         }
 
+        private const string MOVEMENT_DOCUMENTATION = "This Destroyer can go straight, and backward,  \n\r AND Destroy buildings.";
+
+        public override string MovementDocumentation
+        {
+            get
+            {
+                return MOVEMENT_DOCUMENTATION;
+            }
+        }
+
         public int DestroyType { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     }
 }

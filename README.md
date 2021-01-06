@@ -33,5 +33,8 @@ This basic game illustrates to kids the various technical of a development proje
 1. Agility to create iteratively an application
 2. Object Oriented Programming applied to this real and fun example, imagined by a "kid for kids" (Polymorphism, inheritance, encapsulation)
 3. A glimpse of Clean Code, with TDD, notions of BDD,
-4. Application Life Cycle Management with CI/CD based on Github and SonarCloud (no AzureDevOps for this tiny project)
+4. Application Life Cycle Management with CI/CD 
+    1. based on Github (this repo) :[https://github.com/thavo/WarQuest.WinFormMVC](https://github.com/thavo/WarQuest.WinFormMVC)
+    2. SonarCloud (no AzureDevOps for this tiny project) :  [https://sonarcloud.io/dashboard?id=thavo_WarQuest.WinFormMVC](https://sonarcloud.io/dashboard?id=thavo_WarQuest.WinFormMVC)
+     [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/dashboard?id=thavo_WarQuest.WinFormMVC)
 5. UML class modeling
